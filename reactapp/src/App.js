@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+//ROUTER DOM
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+//SCREENS
+import AboutScreen    from './screens/About'
+import AccountScreen  from './screens/Account'
+import BookScreen     from './screens/Book'
+import HomeScreen     from './screens/Home'
+import BasketScreen   from './screens/Basket'
+import ResultsScreen  from './screens/Results'
+import SigninScreen   from './screens/Signin'
+import SignupScreen   from './screens/Signup'
+import SucessScreen   from './screens/Sucess'
+import VisitScreen    from './screens/Visit'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/"         exact component={HomeScreen} />
+        <Route path="/home"     component={HomeScreen} />
+        <Route path="/about"    component={AboutScreen} />
+        <Route path="/account"  component={AccountScreen} />
+        <Route path="/book"     component={BookScreen} />
+        <Route path="/home"     component={HomeScreen} />
+        <Route path="/basket"   component={BasketScreen} />
+        <Route path="/results"  component={ResultsScreen} />
+        <Route path="/signin"   component={SigninScreen} />
+        <Route path="/signup"   component={SignupScreen} />
+        <Route path="/sucess"   component={SucessScreen} />
+        <Route path="/visit"    component={VisitScreen} />
+      </Switch>
+    </Router>
   );
 }
 
