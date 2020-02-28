@@ -13,7 +13,7 @@ import BasketScreen   from './screens/Basket'
 import ResultsScreen  from './screens/Results'
 import SigninScreen   from './screens/Signin'
 import SignupScreen   from './screens/Signup'
-import SucessScreen   from './screens/Sucess'
+import SuccessScreen  from './screens/Success'
 import VisitScreen    from './screens/Visit'
 
 
@@ -30,7 +30,7 @@ export default function App() {
         <Route path="/results"  component={ResultsScreen} />
         <Route path="/signin"   component={SigninScreen} />
         <Route path="/signup"   component={SignupScreen} />
-        <Route path="/sucess"   component={SucessScreen} />
+        <Route path="/success"   component={SuccessScreen} />
         <Route path="/visit"    component={VisitScreen} />
       </Switch>
     </Router>
