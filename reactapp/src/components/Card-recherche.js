@@ -1,44 +1,46 @@
 import React, {useState} from 'react'
-import './index.css';
+import '../index.css';
 
 function Card() {
-
 
 
     return (
 
         <div>
-            <p style={info}>Paris</p>
-            <img style={img}/>
+            <p style={info}>PARIS</p>
+            <img src='..//public/chanel.jpg'/>
             <p style={titre}>Appartement Chanel</p>
-            <p style={prix}>À partir de €</p>
-            <p style={notes}>Notes</p>
+            <div style={prixnotes}>
+                <p style={prix}>À partir de 30 €</p>
+                <p style={notes}>Notes</p>
+            </div>
         </div>
 
     )
 }
 
-var info = {
+const info = {
     fontFamily: 'Montserrat'
-
 }
 
-var titre = {
-    fontFamily: 'Montserrat'
-
+const titre = {
+    fontFamily: 'Montserrat',
+    fontWeight: '500',
+    fontSize: 18
 }
 
-var img = {
-    fontFamily: 'Montserrat'
-
+const prixnotes = {
+    display: 'flex',
 }
 
-var prix = {
-    fontFamily: 'Montserrat'
-
+const prix = {
+    fontFamily: 'Montserrat',
+    fontWeight: '300',
+    fontSize: 16
 }
 
-var notes = {
+const notes = {
     fontFamily: 'Montserrat'
-
 }
+
+export default Card;
