@@ -17,11 +17,10 @@ import SucessScreen   from './screens/Sucess'
 import VisitScreen    from './screens/Visit'
 
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/"         exact component={HomeScreen} />
         <Route path="/home"     component={HomeScreen} />
         <Route path="/about"    component={AboutScreen} />
         <Route path="/account"  component={AccountScreen} />
@@ -37,5 +36,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
