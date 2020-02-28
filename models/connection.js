@@ -8,9 +8,13 @@ var options = {
 
 mongoose.connect('mongodb+srv://BenAdmin:MyBenAdmin@2020@miam-jpk9b.mongodb.net/MYDOMOS?retryWrites=true&w=majority',
     options,
-    function(err){
-        console.log(err)
+    function(error) {
+        if (error) {
+            console.log('*** DB ERROR:', error);
+        } else {
+            console.log('*** DB OK');
+        }
     }
-)
+);
 
 module.exports = mongoose
