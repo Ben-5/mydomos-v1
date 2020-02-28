@@ -13,7 +13,7 @@ import BasketScreen   from './screens/Basket'
 import ResultsScreen  from './screens/Results'
 import SigninScreen   from './screens/Signin'
 import SignupScreen   from './screens/Signup'
-import SuccessScreen   from './screens/Success'
+import SuccessScreen  from './screens/Success'
 import VisitScreen    from './screens/Visit'
 
 
