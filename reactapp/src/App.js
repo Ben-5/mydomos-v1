@@ -21,7 +21,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/home"     exact component={HomeScreen} />
+        <Route path="/"         exact component={HomeScreen} />
+        <Route path="/home"     component={HomeScreen} />
         <Route path="/about"    component={AboutScreen} />
         <Route path="/account"  component={AccountScreen} />
         <Route path="/book"     component={BookScreen} />
