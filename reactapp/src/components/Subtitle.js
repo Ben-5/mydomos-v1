@@ -2,11 +2,11 @@ import React from 'react';
 import '../App.css';
 
 
-export default function Subtitle(){
+export default function Subtitle(props){
 
     return(
 
-        <h2 className="SubtitleStyle">Aenean massa.</h2>
+        <h2 className="subtitle paragraphe-container">{props.subtitle}</h2>
 
     );
 }
