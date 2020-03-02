@@ -43,9 +43,10 @@ import Button from '../components/Button';
 ```
 
 * Props :
-|Props Name|Description|Obligatoire ?|type de valeur|Example d'utilisation|Par Default|
+
+|Props Name|Description|Obligatoire|type de valeur|Example d'utilisation|Par Default|
 |----|----|----|----|----|----|
-|buttonTitle|une props qui représente le nom du bouton|Oui|string| buttonTitle="Résevation"|none|*
+|buttonTitle|une props qui représente le nom du bouton|Oui|string|`buttonTitle="Résevation"`|none|
 
 
 ## Text/Title/Subtitle (Maria)
@@ -63,8 +64,9 @@ import Text from '../components/Text';
 ```
 
 * Props :
+
 |Props Name|Description|Obligatoire ?|type de valeur|Example d'utilisation|Par Default|
 |----|----|----|----|----|----|
-|title|une props qui représente le titre |Oui|string| title="MonTitre"
-|subtitle|une props qui représente le sous-titre |Oui|string| subtitle="MonSous-titre"
-|text|une props qui représente tout le texte du paragraphe |Oui|string| text="MonTexte"
+|title|une props qui représente le titre|Oui|string|title="MonTitre"|
+|subtitle|une props qui représente le sous-titre |Oui|string| subtitle="MonSous-titre"|
+|text|une props qui représente tout le texte du paragraphe |Oui|string| text="MonTexte"|
