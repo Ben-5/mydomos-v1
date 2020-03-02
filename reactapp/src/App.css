@@ -158,21 +158,32 @@
 }
 
 .card_col {
-    margin: 10px;
+    margin: 5px 0 5px 10px;
+    display: inline-block;
+    text-decoration: none
 }
 
-.card_titre {
+.card_link {
+  color: black
+}
+
+.card_link:hover  {
+  color: black
+}
+
+.card_title {
+    margin-top: 3px;
     font-weight: 500;
     font-size: 18
 }
 
-.card_prixnotes {
+.card_pricerate {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.card_prix {
+.card_price {
     font-weight: 300;
     font-size: 16
 }
@@ -181,14 +192,38 @@
     width:100%
 }
 
-.card_div_notes {
+.card_div_rate {
     display: flex;
 }
 
-.card_notes {
+.card_rate {
     width: 12px;
     height: 12px;
     margin-left: 3px
 }
 
 /* END section CARD */
+
+/* START section SLIDER */
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+  .card_slider {
+    flex: 0 0 auto;
+    border: 2px solid red;
+    width: 150px;
+    height: 75px;
+    background: black;
+  }
+
+  .sliderTitle {
+    font-weight: bold;
+    margin-left: 10px
+  }
+
+  /* END section SLIDER */

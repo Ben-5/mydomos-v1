@@ -1,45 +1,31 @@
 import React, {useState} from 'react'
 import '../index.css';
-import { Row, Col} from 'antd';
-import 'antd/dist/antd.css'
+import {Col} from 'antd';
+import {Link} from 'react-router-dom'
 
-export default function Card({}) {
+export default function Card(props) {
 
-//Infos visite
+//ATTENTION
+//Penser à encapsuler toutes les cards dans <Row className="card_row"> sur la page Results
 
-var ville = 'PARIS'
-var imageSource = require=('/chanel.jpg')
-var titre = 'Appartement Chanel'
-var prix = '30'
+
 
     return (
 
-        <Row className="card_row" >
-
-            <Col className="card_col"sm={12} md={6} lg={4}>
-                <p className="card_info">{ville}</p>
-                <img className="card_img" alt="visit cover" src={imageSource}/>
-                <p className="card_titre">{titre}</p>
-                <div className="card_prixnotes">
-                    <p className="card_prix">À partir de {prix} €</p>
-                    <div className="card_div_notes">
-                        <img className="card_notes" alt="note" src='/note.png'/><img className="card_notes" alt="note" src='/note.png'/><img className="card_notes" alt="note" src='/note.png'/><img className="card_notes" alt="note" src='/noteG.png'/><img className="card_notes" alt="note" src='/noteG.png'/>
+            <Col className="card_col" sm={12} md={6} lg={4}>
+                <Link className="card_link" to={`/visit/${props.id}`}>
+                    <p className="card_info">{props.info}</p>
+                    <img className="card_img" alt="visit cover" src={props.image}/>
+                    <p className="card_title">{props.title}</p>
+                 </Link>
+                    <div className="card_pricerate">
+                        <p className="card_price">À partir de {props.price} €</p>
+                        <div className="card_div_rate">
+                            <img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
+                        </div>
                     </div>
-                </div>
+               
             </Col>
 
-            <Col className="card_col"sm={12} md={6} lg={4}>
-                <p className="card_info">{ville}</p>
-                <img className="card_img" alt="visit cover" src={imageSource}/>
-                <p className="card_titre">{titre}</p>
-                <div className="card_prixnotes">
-                    <p className="card_prix">À partir de {prix} €</p>
-                    <div className="card_div_notes">
-                        <img className="card_notes" alt="note" src='/note.png'/><img className="card_notes" alt="note" src='/note.png'/><img className="card_notes" alt="note" src='/note.png'/><img className="card_notes" alt="note" src='/noteG.png'/><img className="card_notes" alt="note" src='/noteG.png'/>
-                    </div>
-                </div>
-            </Col>
-
-        </Row>
     )
 }
