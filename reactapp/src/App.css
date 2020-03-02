@@ -1,5 +1,12 @@
 @import '~antd/dist/antd.css';
 
+/* SET FONT */
+* {
+  font-family: 'Montserrat';
+  
+}
+/* SET FONT end */
+
 
 /* Header style */
 
@@ -129,11 +136,123 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
 
 
-
 /* INPUT START */
 
 .input-container {
   width: 100%;
+  border: 1px solid rgb(145, 145, 145);
+  border-radius: 1px;
+  padding: 4px;
+  padding-left: 0.5em;
 }
 
+.input-container:hover {
+  border: 1px solid #D35F5F;
+}
+
+.input-container:focus {
+  outline: none;
+  border: 1px solid #D35F5F;
+  box-shadow: 0px 0px 0px 3px #7912122a;
+}
 /* INPUT END */
+
+
+/* <---Start section BUTTON ---> */
+.button-container {
+  background-color: #791212;
+  border: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 15%;
+  margin: auto; 
+}
+
+.button-container>p {
+  color: #DCD1D1;
+  margin: auto;
+}
+
+.button-container:hover {
+  background-color: #C83737;
+  display: 'inline-block'
+} 
+
+.button-container:active {
+  background-color: #791212;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 'transform .3s';
+}
+
+.button-container:focus {
+  outline: none
+}
+/* <---END section BUTTON  ---> */
+
+
+/* <---Start section PARAGRAPHE ---> */
+.paragraphe-container {
+  width: 100%; 
+  max-width: 1140px;
+  margin: auto;
+}
+
+/*TEXT*/
+  .Text>p {
+    font-size: 1.243em;
+      }
+
+/*TITLE*/
+.title>h1 {
+font-size: 1.912em;  
+}
+
+/*SUBTITLE*/
+.sutitle>h2 {
+  font-size: 1.471em;
+  }
+/* <---END section PARAGRAPHE  ---> */
+
+
+
+
+/* START section CARD */
+
+.card_row {
+    display : flex
+}
+
+.card_col {
+    margin: 10px;
+}
+
+.card_titre {
+    font-weight: 500;
+    font-size: 18
+}
+
+.card_prixnotes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_prix {
+    font-weight: 300;
+    font-size: 16
+}
+
+.card_img {
+    width:100%
+}
+
+.card_div_notes {
+    display: flex;
+}
+
+.card_notes {
+    width: 12px;
+    height: 12px;
+    margin-left: 3px
+}
+
+/* END section CARD */

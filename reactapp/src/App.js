@@ -30,7 +30,7 @@ export default function App() {
         <Route path="/results"  component={ResultsScreen} />
         <Route path="/signin"   component={SigninScreen} />
         <Route path="/signup"   component={SignupScreen} />
-        <Route path="/success"   component={SuccessScreen} />
+        <Route path="/success"  component={SuccessScreen} />
         <Route path="/visit"    component={VisitScreen} />
       </Switch>
     </Router>
