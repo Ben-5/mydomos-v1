@@ -5,7 +5,7 @@ var connect = require('../models/connection')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'My Domos' });
 });
 
 module.exports = router;

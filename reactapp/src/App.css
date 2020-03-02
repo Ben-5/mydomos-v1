@@ -1,21 +1,76 @@
-/* .App {
-  text-align: center;
-} */
+@import '~antd/dist/antd.css';
+
+
+/* Header style */
+
+/* Logo MyDomos */
 
 .header-logo {
-  height: 7vmin;
-  padding: 3vmin;
+  height: 6.6vmin;
+  margin: 3.3vmin;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.header-logo:hover {
+  -webkit-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
+  cursor: pointer;
 }
 
 .header-container {
   display: flex;
   background-color: #f4f3f3;
   min-height: 10vh;
-  color: black;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .header-title {
-
   font-size: calc(5px + 2vmin);
+  color: black;
+  font-family: "Montserrat";
+  font-weight: 500;
 }
+
+/* Menu lang */
+
+.header-lang {
+  margin-left: auto;
+  color: #6b696a;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: calc(3px + 2vmin);
+}
+
+/* Menu lang */
+
+.header-menu {
+  display: flex;
+  align-items: center;
+}
+
+.picto {
+  height: 6vmin;
+  width: 6vmin;
+  padding: 0.3vmin;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.picto:hover {
+  -webkit-transform: scale(1.45, 1.45);
+  transform: scale(1.45, 1.45);
+  cursor: pointer;
+}
+ 
+.picto-background {
+  height: 8vmin;
+  width: 8vmin;
+  padding: 1.2vmin;
+  background-color:#f4f3f3;
+  border-radius: 50%;
+  margin-right: 4vmin;
+}
+
+/* Import font Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
