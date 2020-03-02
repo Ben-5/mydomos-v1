@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import '../index.css';
 
-function Card() {
+export default function Card() {
 
 
     return (
@@ -42,5 +42,3 @@ const prix = {
 const notes = {
     fontFamily: 'Montserrat'
 }
-
-export default Card;

@@ -3,7 +3,7 @@ import { Select, Tooltip } from 'antd';
 
 const { Option } = Select;
 
-function Header() {
+export default function Header() {
   return (
         <header className="header-container">
             <img src="../logo.png" className="header-logo" alt="logo" />
@@ -26,5 +26,3 @@ function Header() {
         </header>
     );
 }
-
-export default Header;
