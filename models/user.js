@@ -5,7 +5,9 @@ var userSchema = mongoose.Schema({
     userName: String,
     userFirstname: String,
     userEmail: String,
+    salt: String,
     userPassword: String,
+    token: String,
     userAddress: String,
     userZIP: String,
     userCity: String,
@@ -13,4 +15,4 @@ var userSchema = mongoose.Schema({
 
 var userModel = mongoose.model('users', userSchema)
 
-module.exports = orderModel;
+module.exports = userModel;

@@ -15,7 +15,7 @@ import Input from '../components/Input';
 
 * Props :
 
-|Props Name|Description|Obligatoire ?|type de valeur|Example d'utilisation|Par Default|
+|Props Name|Description|Obligatoire|type de valeur|Example d'utilisation|Par Default|
 |----|----|----|----|----|----|
 |onChange|Une props qui "return" la valeur de l'input à chaque changement|Oui|function|`onChange={(value)=>console.log(value)}`|none|
 |type|Défini le type de l'input|Non|String (https://bit.ly/2uJR8rG) |`type='password'`|`'text'`|
