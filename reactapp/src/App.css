@@ -3,6 +3,7 @@
 /* SET FONT */
 * {
   font-family: 'Montserrat';
+  
 }
 /* SET FONT end */
 
@@ -96,51 +97,59 @@
 /* INPUT END */
 
 
-/* <---Start section BUTTON-plein ---> */
-.MainButton {
+/* <---Start section BUTTON ---> */
+
+.button-container {
   background-color: #791212;
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 15vh;
-  height: 5vh;
-  font-size: 18px;
-  color: #F4F3F3;
+  width: 15%;
+  margin: auto;
 }
 
-.MainButton:hover {
+.button-container>p {
+  color: #DCD1D1;
+  margin: auto;
+}
+
+.button-container:hover {
   background-color: #C83737;
-  margin: '0rem 0.2rem'; 
-  display: 'inline-block'}
+  display: 'inline-block'
+} 
 
-.MainButton:active {
+.button-container:active {
   background-color: #791212;
-  border-top : 1.2px solid #DCD1D1 ;
-  border-bottom : 0.5px solid #DCD1D1 ;
-  border-left : 1px solid #DCD1D1 ; 
-  border-right : 1px solid #DCD1D1 ;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transform:  translateY(0.2px) ;
-  transition: 'transform .3s',
+  transition: 'transform .3s';
 }
-/* <---END section BUTTON-plein  ---> */
+
+.button-container:focus {
+  outline: none
+}
+/* <---END section BUTTON  ---> */
 
 
-/* <---Start section TEXT ---> */
-  .TextStyle {
-    font-size: 12px;
-    }
-/* <---END section TEXT  ---> */
+/* <---Start section PARAGRAPHE ---> */
+.paragraphe-container {
+  width: 100%; 
+  max-width: 1140px;
+  margin: auto;
+}
+
+/*TEXT*/
+  .Text>p {
+    font-size: 1.243em;
+      }
 
 
-/* <---Start section Title ---> */
-.TitleStyle {
-  font-size: 20px;
+/*TITLE*/
+.title>h1 {
+font-size: 1.912em;  
+}
+
+
+/*SUBTITLE*/
+.sutitle>h2 {
+  font-size: 1.471em;
   }
-/* <---END section Title  ---> */
-
-
-/* <---Start section Subtitle ---> */
-.SubtitleStyle {
-  font-size: 16px;
-  }
-/* <---END section Subtitle  ---> */
+/* <---END section PARAGRAPHE  ---> */

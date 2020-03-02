@@ -1,15 +1,11 @@
 import React from 'react';
 import '../App.css';
+import { PromiseProvider } from 'mongoose';
 
 
-export default function Text(){
+export default function Text(props){
 
     return(
-            <p className="TextStyle">
-        Aenean commodo ligula eget dolor. Aenean massa. <br />
-        Cum sociis natoque penatibus et magnis dis parturient montes, <br />
-        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, <br />
-        pretium quis, sem. Nulla consequat massa quis enim. <br />
-            </p>
+            <p className="Text paragraphe-container">{props.text}</p>
     );
 }
