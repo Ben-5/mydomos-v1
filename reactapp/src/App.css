@@ -218,7 +218,7 @@ font-size: 1.912em;
 /* START section CARD */
 
 .card_row {
-    display : flex
+    display : flex;
 }
 
 .card_col {
@@ -235,10 +235,14 @@ font-size: 1.912em;
   color: black
 }
 
+.card_info {
+text-transform : uppercase;
+}
+
 .card_title {
     margin-top: 3px;
     font-weight: 500;
-    font-size: 18
+    font-size: 15px;
 }
 
 .card_pricerate {
@@ -249,7 +253,9 @@ font-size: 1.912em;
 
 .card_price {
     font-weight: 300;
-    font-size: 16
+    font-size: 15px;
+    align-self: center;
+    margin-bottom: 0px
 }
 
 .card_img {
@@ -258,6 +264,7 @@ font-size: 1.912em;
 
 .card_div_rate {
     display: flex;
+    margin-left: 10px
 }
 
 .card_rate {
@@ -271,23 +278,24 @@ font-size: 1.912em;
 /* START section SLIDER */
 
 .scrolling-wrapper {
+  /* width: 100%; */
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  white-space: nowrap;
+  margin-right: 10px;
   -webkit-overflow-scrolling: touch;
 }
 
-  .card_slider {
-    flex: 0 0 auto;
-    border: 2px solid red;
-    width: 150px;
-    height: 75px;
-    background: black;
-  }
+.slider_rate {
+  width: 2vmin;
+  height: 2vmin;
+  margin-left: 3px
+}
 
-  .sliderTitle {
-    font-weight: bold;
-    margin-left: 10px
-  }
+.sliderTitle {
+  font-weight: bold;
+  margin-left: 10px
+}
 
   /* END section SLIDER */
