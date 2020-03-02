@@ -13,14 +13,10 @@ export default function Home(){
 
     return(
         <div>
-            <p>
-            <Title/>
-            <Subtitle/>
-            <Text/>
-            <Button/>
-            </p>
+          
         </div>
 
 
     );
 }
+

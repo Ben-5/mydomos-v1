@@ -1,48 +1,94 @@
-.App {
-  text-align: center;
+@import '~antd/dist/antd.css';
+
+
+/* Header style */
+
+/* Logo MyDomos */
+
+.header-logo {
+  height: 6.6vmin;
+  margin: 3.3vmin;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-logo:hover {
+  -webkit-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-container {
   display: flex;
-  flex-direction: column;
+  background-color: #f4f3f3;
+  min-height: 10vh;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-title {
+  font-size: calc(5px + 2vmin);
+  color: black;
+  font-family: "Montserrat";
+  font-weight: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Menu lang */
+
+.header-lang {
+  margin-left: auto;
+  color: #6b696a;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: calc(3px + 2vmin);
 }
 
-/* <---Start section BOUTON-plein ---> */
+/* Menu lang */
+
+.header-menu {
+  display: flex;
+  align-items: center;
+}
+
+.picto {
+  height: 6vmin;
+  width: 6vmin;
+  padding: 0.3vmin;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.picto:hover {
+  -webkit-transform: scale(1.45, 1.45);
+  transform: scale(1.45, 1.45);
+  cursor: pointer;
+}
+ 
+.picto-background {
+  height: 8vmin;
+  width: 8vmin;
+  padding: 1.2vmin;
+  background-color:#f4f3f3;
+  border-radius: 50%;
+  margin-right: 4vmin;
+}
+
+/* Import font Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
+
+
+/* INPUT START */
+
+.input-container {
+  width: 100%;
+}
+/* INPUT END */
+
+
+/* <---Start section BUTTON-plein ---> */
 .MainButton {
   background-color: #791212;
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: "Montserrat";
   width: 15vh;
   height: 5vh;
   font-size: 18px;
@@ -64,27 +110,25 @@
   transform:  translateY(0.2px) ;
   transition: 'transform .3s',
 }
-/* <---END section BOUTON-plein  ---> */
+/* <---END section BUTTON-plein  ---> */
 
 
 /* <---Start section TEXT ---> */
   .TextStyle {
-    font-family: "Montserrat";  
     font-size: 12px;
     }
 /* <---END section TEXT  ---> */
 
 
-/* <---Start section TITRE ---> */
+/* <---Start section Title ---> */
 .TitleStyle {
-  font-family: "Montserrat";  
   font-size: 20px;
   }
-/* <---END section TITRE  ---> */
+/* <---END section Title  ---> */
 
 
-/* <---Start section TITRE ---> */
+/* <---Start section Subtitle ---> */
 .SubtitleStyle {
-  font-family: "Montserrat";  
   font-size: 16px;
   }
+/* <---END section Subtitle  ---> */
