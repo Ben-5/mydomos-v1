@@ -3,7 +3,7 @@ import React from 'react';
 export default function Input (props) {
     return (
         <input
-        //get content
+        //*****REQUIRED***** to get the content
         onChange={e=>props.onChange(e.target.value)}
         //set value
         value={props.value}
