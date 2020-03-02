@@ -74,3 +74,13 @@
 
 /* Import font Montserrat */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
+
+
+
+/* INPUT START */
+
+.input-container {
+  width: 100%;
+}
+
+/* INPUT END */
