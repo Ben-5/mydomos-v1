@@ -144,6 +144,7 @@
   border-radius: 1px;
   padding: 4px;
   padding-left: 0.5em;
+  transition: 0.1s ease-out;
 }
 
 .input-container:hover {
@@ -157,13 +158,60 @@
 }
 /* INPUT END */
 
+/* FORM START */
+
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-top-container {
+  width: 100%;
+  margin-bottom: 1vh;
+}
+
+.form-top-container>.input-container {
+  margin-bottom: 2vh;
+}
+
+.form-submit-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-button-container {
+  width: 70%;
+  background-color: lawngreen;
+  display: flex;
+}
+
+.form-button-container>.space-between-btn {
+  content: '';
+  width: 5vw;
+}
+
+.form-bottom-container {
+  width: 100%;
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORM END */
+
 
 /* <---Start section BUTTON ---> */
 .button-container {
   background-color: #791212;
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 15%;
+  width: 100%;
   margin: auto; 
 }
 
@@ -191,15 +239,25 @@
 
 /* <---Start section PARAGRAPHE ---> */
 .paragraphe-container {
-  width: 100%; 
   max-width: 1140px;
   margin: auto;
 }
 
 /*TEXT*/
-  .Text>p {
-    font-size: 1.243em;
-      }
+
+.Text {
+  font-size: 1.243em;
+}
+
+.Text-link {
+  font-size: 1.243em;
+  color: #791212;
+  text-decoration-line: underline;
+}
+
+.Text-link:hover {
+  color: #C83737;
+}
 
 /*TITLE*/
 .title>h1 {
