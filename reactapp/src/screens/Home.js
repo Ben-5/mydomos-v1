@@ -1,26 +1,15 @@
-import React from 'react';
-import Button from '../components/Button';
-import Text from '../components/Text';
-import Title from '../components/Title';
-import Subtitle from '../components/Subtitle';
-import OkButton from '../components/OkButton';
-import Input from '../components/Input';
+import React from 'react';
 
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
-import '../App.css';
+function App() {
+    return (
+      <div>
+        <Header/>
+        <Footer/>
+      </div>
+    )
+  }
 
-
-export default function Home(){
-
-    return(
-        <div>
-          <Title title="SDFzefEF" />
-          <Subtitle subtitle="ljhhjkqsd" />
-          <Text text="qsefzeferf" />
-          <Button buttonTitle="blablablablablabla"/>
-          <Input placeholder='hello' onChange={e=>console.log(e)} />
-          <OkButton />
-        </div>
-
-    );
-}
+export default App;
