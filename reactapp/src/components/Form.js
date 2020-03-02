@@ -75,3 +75,20 @@ export default function Form (props) {
         </div>
     );
 }
+
+
+{/* <Form
+            route= '/test'
+            inputList={[
+                {name: 'username', placeholder: 'username'},
+                {name: 'mail',placeholder:'mdp', type:'password'}
+            ]}
+            btnList={[
+                {title: 'YESS'},
+                {title: 'YESS'}
+            ]}
+            linkList={[
+                {title: 'YESS', link: '/home'},
+                {title: "J'ai oublier mon mdp", link: '/home'},
+            ]}
+            /> */}s

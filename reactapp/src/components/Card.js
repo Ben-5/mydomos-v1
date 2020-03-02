@@ -12,12 +12,12 @@ export default function Card(props) {
 
     return (
 
-            <Col className="card_col" sm={12} md={6} lg={4}>
-                <Link className="card_link" to={`/visit/${props.id}`}>
+            <Col className="card_col" sm={8} md={6} lg={4}>
                     <p className="card_info">{props.info}</p>
-                    <img className="card_img" alt="visit cover" src={props.image}/>
-                    <p className="card_title">{props.title}</p>
-                 </Link>
+                    <Link className="card_link" to={`/visit/${props.id}`}>
+                        <img className="card_img" alt="visit cover" src={props.image}/>
+                        <p className="card_title">{props.title}</p>
+                    </Link>
                     <div className="card_pricerate">
                         <p className="card_price">À partir de {props.price} €</p>
                         <div className="card_div_rate">
