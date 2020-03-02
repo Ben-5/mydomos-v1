@@ -87,24 +87,31 @@
 
 .input-container {
   width: 100%;
-  border: 1px solid rgb(55, 55, 90);
-  border-radius: 2px;
+  border: 1px solid rgb(145, 145, 145);
+  border-radius: 1px;
+  padding: 4px;
+  padding-left: 0.5em;
+}
+
+.input-container:hover {
+  border: 1px solid #D35F5F;
 }
 
 .input-container:focus {
-  outline: 3px solid rgba(145, 114, 114, 0.089);
+  outline: none;
+  border: 1px solid #D35F5F;
+  box-shadow: 0px 0px 0px 3px #7912122a;
 }
 /* INPUT END */
 
 
 /* <---Start section BUTTON ---> */
-
 .button-container {
   background-color: #791212;
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 15%;
-  margin: auto;
+  margin: auto; 
 }
 
 .button-container>p {
@@ -141,15 +148,58 @@
     font-size: 1.243em;
       }
 
-
 /*TITLE*/
 .title>h1 {
 font-size: 1.912em;  
 }
-
 
 /*SUBTITLE*/
 .sutitle>h2 {
   font-size: 1.471em;
   }
 /* <---END section PARAGRAPHE  ---> */
+
+
+
+
+/* START section CARD */
+
+.card_row {
+    display : flex
+}
+
+.card_col {
+    margin: 10px;
+}
+
+.card_titre {
+    font-weight: 500;
+    font-size: 18
+}
+
+.card_prixnotes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_prix {
+    font-weight: 300;
+    font-size: 16
+}
+
+.card_img {
+    width:100%
+}
+
+.card_div_notes {
+    display: flex;
+}
+
+.card_notes {
+    width: 12px;
+    height: 12px;
+    margin-left: 3px
+}
+
+/* END section CARD */
