@@ -10,7 +10,16 @@ import Input from '../components/Input';
 
 * Exemple d'utilisation :
 ```
-<Input placeholder='hello' onChange={e=>console.log(e)} />
+export default function Home () {
+    const [content, setContent] = useState('');
+    return (
+        <div>
+            <Input onChange={e=>setContent(e)}/>
+            
+            <button onClick={()=>console.log(content)}>submit</button>
+        </div>
+    );
+}
 ```
 
 * Props :
@@ -21,6 +30,7 @@ import Input from '../components/Input';
 |type|Défini le type de l'input|Non|String (https://bit.ly/2uJR8rG) |`type='password'`|`'text'`|
 |value|Défini la valeur de l'input|Non|String|`value='Votre email'`|`''`|
 |placeholder|Défini le placeholder|Non|String|`placeholder='try paris'`|`'PLACE HOLDER PROPS MISSING'`|
+|name|Défini le nom (pour les form)|Non|String|`name='firstname'`|none|
 
 ## Button (Maria)
 * Import
@@ -33,9 +43,10 @@ import Button from '../components/Button';
 ```
 
 * Props :
-|Props Name|Description|Obligatoire ?|type de valeur|Example d'utilisation|Par Default|
+
+|Props Name|Description|Obligatoire|type de valeur|Example d'utilisation|Par Default|
 |----|----|----|----|----|----|
-|buttonTitle|une props qui représente le nom du bouton|Oui|string| buttonTitle="Résevation"|none|*
+|buttonTitle|une props qui représente le nom du bouton|Oui|string|`buttonTitle="Résevation"`|none|
 
 
 ## Text/Title/Subtitle (Maria)
@@ -53,8 +64,9 @@ import Text from '../components/Text';
 ```
 
 * Props :
+
 |Props Name|Description|Obligatoire ?|type de valeur|Example d'utilisation|Par Default|
 |----|----|----|----|----|----|
-|title|une props qui représente le titre |Oui|string| title="MonTitre"
-|subtitle|une props qui représente le sous-titre |Oui|string| subtitle="MonSous-titre"
-|text|une props qui représente tout le texte du paragraphe |Oui|string| text="MonTexte"
+|title|une props qui représente le titre|Oui|string|title="MonTitre"|
+|subtitle|une props qui représente le sous-titre |Oui|string| subtitle="MonSous-titre"|
+|text|une props qui représente tout le texte du paragraphe |Oui|string| text="MonTexte"|

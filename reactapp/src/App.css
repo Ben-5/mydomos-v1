@@ -26,7 +26,7 @@
 
 .logo {
   height: 6.6vmin;
-  margin: 3.3vmin;
+  margin: 13.13vmin;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -50,7 +50,7 @@
   color: #6b696a;
   font-family: "Montserrat";
   font-weight: 500;
-  font-size: calc(3px + 2vmin);
+  font-size: calc(13px + 2vmin);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -74,7 +74,7 @@
 .picto {
   height: 6vmin;
   width: 6vmin;
-  padding: 0.3vmin;
+  padding: 0.13vmin;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -89,7 +89,7 @@
   height: 8vmin;
   width: 8vmin;
   padding: 1.2vmin;
-  background-color:#f4f3f3;
+  background-color:#f4f13f13;
   border-radius: 50%;
   margin-right: 4vmin;
 }
@@ -133,7 +133,7 @@
 }
 
 /* Import font Montserrat */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:1300,400,500,700&display=swap');
 
 
 /* INPUT START */
@@ -144,6 +144,7 @@
   border-radius: 1px;
   padding: 4px;
   padding-left: 0.5em;
+  transition: 0.1s ease-out;
 }
 
 .input-container:hover {
@@ -155,15 +156,66 @@
   border: 1px solid #D35F5F;
   box-shadow: 0px 0px 0px 3px #7912122a;
 }
+
+
 /* INPUT END */
+
+/* FORM START */
+
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-top-container {
+  width: 100%;
+  margin-bottom: 1vh;
+}
+
+.form-top-container>.input-container {
+  margin-bottom: 2vh;
+}
+
+.form-submit-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-button-container {
+  width: 70%;
+  background-color: lawngreen;
+  display: flex;
+}
+
+.form-button-container>.space-between-btn {
+  content: '';
+  width: 5vw;
+}
+
+.form-bottom-container {
+  width: 100%;
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORM END */
 
 
 /* <---Start section BUTTON ---> */
+
+/*BUTTON PRINCIPAL*/
 .button-container {
   background-color: #791212;
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 15%;
+  width: 100%;
   margin: auto; 
 }
 
@@ -173,32 +225,72 @@
 }
 
 .button-container:hover {
-  background-color: #C83737;
-  display: 'inline-block'
+  background-color: #C8137137;
+  display: 'inline-block';
 } 
 
 .button-container:active {
   background-color: #791212;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: 'transform .3s';
+  transition: 'transform .13s';
 }
 
 .button-container:focus {
+  outline: none;
+}
+
+/*BUTTON OK*/
+.okbtn-container { 
+  background-color: #791212;
+  color: #DCD1D1;
+  border: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.okbtn-container:hover {
+  background-color: #C8137137;
+  display: 'inline-block';
+} 
+
+.okbtn-container:active {
+  background-color: #791212;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 'transform .13s';
+}
+
+.okbtn-container:focus {
   outline: none
 }
+
 /* <---END section BUTTON  ---> */
 
 
 /* <---Start section PARAGRAPHE ---> */
 .paragraphe-container {
-  width: 100%; 
   max-width: 1140px;
   margin: auto;
 }
 
 /*TEXT*/
+
+.Text {
+  font-size: 1.243em;
+}
+
+.Text-link {
+  font-size: 1.243em;
+  color: #791212;
+  text-decoration-line: underline;
+}
+
+.Text-link:hover {
+  color: #C83737;
+}
   .Text>p {
-    font-size: 1.243em;
+    font-size: 1.2413em;
       }
 
 /*TITLE*/
@@ -218,41 +310,59 @@ font-size: 1.912em;
 /* START section CARD */
 
 .card_row {
-    display : flex
+    display : flex;
 }
 
 .card_col {
-    margin: 10px;
+    margin: 5px 0 5px 10px;
+    display: inline-block;
+    text-decoration: none;
 }
 
-.card_titre {
+.card_link {
+  color: black
+}
+
+.card_link:hover  {
+  color: black
+}
+
+.card_info {
+text-transform : uppercase;
+}
+
+.card_title {
+    margin-top: 13px;
     font-weight: 500;
-    font-size: 18
+    font-size: 15px;
 }
 
-.card_prixnotes {
+.card_pricerate {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.card_prix {
+.card_price {
     font-weight: 300;
-    font-size: 16
+    font-size: 15px;
+    align-self: center;
+    margin-bottom: 0px
 }
 
 .card_img {
     width:100%
 }
 
-.card_div_notes {
+.card_div_rate {
     display: flex;
+    margin-left: 10px
 }
 
-.card_notes {
+.card_rate {
     width: 12px;
     height: 12px;
-    margin-left: 3px
+    margin-left: 13px
 }
 
 /* END section CARD */
