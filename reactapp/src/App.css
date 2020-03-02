@@ -13,7 +13,7 @@
 /* Logo MyDomos */
 
 .header-container {
-  background-color: #f4f3f3;
+  background-color: #f4f13f13;
   min-height: 10vh;
   position:fixed;
   top: 0;
@@ -26,7 +26,7 @@
 
 .logo {
   height: 6.6vmin;
-  margin: 3.3vmin;
+  margin: 13.13vmin;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -50,7 +50,7 @@
   color: #6b696a;
   font-family: "Montserrat";
   font-weight: 500;
-  font-size: calc(3px + 2vmin);
+  font-size: calc(13px + 2vmin);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -74,7 +74,7 @@
 .picto {
   height: 6vmin;
   width: 6vmin;
-  padding: 0.3vmin;
+  padding: 0.13vmin;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -89,7 +89,7 @@
   height: 8vmin;
   width: 8vmin;
   padding: 1.2vmin;
-  background-color:#f4f3f3;
+  background-color:#f4f13f13;
   border-radius: 50%;
   margin-right: 4vmin;
 }
@@ -133,7 +133,7 @@
 }
 
 /* Import font Montserrat */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:1300,400,500,700&display=swap');
 
 
 /* INPUT START */
@@ -155,15 +155,19 @@
   border: 1px solid #D35F5F;
   box-shadow: 0px 0px 0px 3px #7912122a;
 }
+
+
 /* INPUT END */
 
 
 /* <---Start section BUTTON ---> */
+
+/*BUTTON PRINCIPAL*/
 .button-container {
   background-color: #791212;
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 15%;
+  width: 100%;
   margin: auto; 
 }
 
@@ -173,19 +177,46 @@
 }
 
 .button-container:hover {
-  background-color: #C83737;
-  display: 'inline-block'
+  background-color: #C8137137;
+  display: 'inline-block';
 } 
 
 .button-container:active {
   background-color: #791212;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: 'transform .3s';
+  transition: 'transform .13s';
 }
 
 .button-container:focus {
+  outline: none;
+}
+
+/*BUTTON OK*/
+.okbtn-container { 
+  background-color: #791212;
+  color: #DCD1D1;
+  border: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.okbtn-container:hover {
+  background-color: #C8137137;
+  display: 'inline-block';
+} 
+
+.okbtn-container:active {
+  background-color: #791212;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 'transform .13s';
+}
+
+.okbtn-container:focus {
   outline: none
 }
+
 /* <---END section BUTTON  ---> */
 
 
@@ -198,7 +229,7 @@
 
 /*TEXT*/
   .Text>p {
-    font-size: 1.243em;
+    font-size: 1.2413em;
       }
 
 /*TITLE*/
@@ -224,7 +255,7 @@ font-size: 1.912em;
 .card_col {
     margin: 5px 0 5px 10px;
     display: inline-block;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .card_link {
@@ -236,7 +267,7 @@ font-size: 1.912em;
 }
 
 .card_title {
-    margin-top: 3px;
+    margin-top: 13px;
     font-weight: 500;
     font-size: 18
 }
@@ -248,7 +279,7 @@ font-size: 1.912em;
 }
 
 .card_price {
-    font-weight: 300;
+    font-weight: 1300;
     font-size: 16
 }
 
@@ -263,7 +294,7 @@ font-size: 1.912em;
 .card_rate {
     width: 12px;
     height: 12px;
-    margin-left: 3px
+    margin-left: 13px
 }
 
 /* END section CARD */
