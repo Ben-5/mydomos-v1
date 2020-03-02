@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Input (props) {
+
+    const [content, setContent] = useState(props.value || '')
+
     return (
         <input
         //*****REQUIRED***** to get the content
-        onChange={e=>props.onChange(e.target.value)}
+        onChange={e=>{props.onChange(e.target.value); setContent(e.target.value)}}
         //set value
-        value={props.value}
+        value={content}
         //set type (default text) - email - password - etc
-        type={props.type}
+        type={props.type || 'text'}
         //set placeholder
-        placeholder={props.placeholder}
-        //set style
+        placeholder={props.placeholder || 'PLACE HOLDER PROPS MISSING'}
+        //style
         className='input-container'
         >
         </input>
     );
 }
-
-
