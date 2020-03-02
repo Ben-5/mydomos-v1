@@ -150,3 +150,45 @@
   font-size: 16px;
   }
 /* <---END section Subtitle  ---> */
+
+/* START section CARD */
+
+.card_row {
+    display : flex
+}
+
+.card_col {
+    margin: 10px;
+}
+
+.card_titre {
+    font-weight: 500;
+    font-size: 18
+}
+
+.card_prixnotes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_prix {
+    font-weight: 300;
+    font-size: 16
+}
+
+.card_img {
+    width:100%
+}
+
+.card_div_notes {
+    display: flex;
+}
+
+.card_notes {
+    width: 12px;
+    height: 12px;
+    margin-left: 3px
+}
+
+/* END section CARD */
