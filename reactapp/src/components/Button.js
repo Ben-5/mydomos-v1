@@ -4,6 +4,6 @@ import '../App.css';
 export default function Button(props){
 
     return(
-              <button onClick={props.onClick} className="button-container"> <p> {props.buttonTitle} </p> </button>
+              <button onClick={props.onClick} className="square-button"> <p> {props.buttonTitle} </p> </button>
         );
 }

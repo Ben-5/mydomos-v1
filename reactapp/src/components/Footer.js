@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../components/input';
+import Input from '../components/Input';
 import OkButton from '../components/OkButton';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
