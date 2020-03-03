@@ -6,6 +6,7 @@ export default function Input (props) {
 
     return (
         <input
+        name={props.name}
         //*****REQUIRED***** to get the content
         onChange={e=>{props.onChange(e.target.value); setContent(e.target.value)}}
         //set value
