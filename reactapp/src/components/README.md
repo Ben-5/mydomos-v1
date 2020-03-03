@@ -70,3 +70,100 @@ import Text from '../components/Text';
 |title|une props qui représente le titre|Oui|string|title="MonTitre"|
 |subtitle|une props qui représente le sous-titre |Oui|string| subtitle="MonSous-titre"|
 |text|une props qui représente tout le texte du paragraphe |Oui|string| text="MonTexte"|
+
+## Card (Sophie)
+##### Les composants <Card> doivent être tous encapsuler dans une balise <Row> dans la page Results comme ci-dessous pour permettre le responsive.
+* Import
+```
+import Card from '../components/Card';
+import {Row} from 'antd';
+```
+
+* Exemple d'utilisation :
+```
+export default function Home () {
+    return (
+
+            <Row className="card_row">
+            
+            <Card/>
+
+            </Row>
+
+    );
+}
+```
+
+* Props :
+
+|Props Name|Description|Obligatoire|type de valeur|Example d'utilisation|Par Default|
+|----|----|----|----|----|----|
+|info|L'information mise en avant, au dessus de l'image : ville, date, particularité... (majuscules automatiques)|Non|String|`info='paris'`|none|
+|image|Source de l'image|Oui|String |`image='chanel.jpg'`|none|
+|title|Titre de la visite|Oui|String|`title='Appatement Klein'`|none|
+|price|Prix de la visite|Oui|Number|`price=30`|none|
+|id|Lien vers la page de la visite grâce à l'ID de la BDD|Oui|String|`id='/idBDD'`|none|
+
+## Slider (Sophie)
+##### Le composant <Slider> comprend un paragraphe de texte et une Card encapsulée dans un <div> wrapper permettant le défilement horizontal.
+* Import
+```
+import Slider from '../components/Card';
+```
+
+* Exemple d'utilisation :
+```
+export default function Home () {
+    return (
+
+            <Slider/>
+
+    );
+}
+```
+
+* Props :
+
+|Props Name|Description|Obligatoire|type de valeur|Example d'utilisation|Par Default|
+|----|----|----|----|----|----|
+|sliderTitle|Titre du slider|Oui|String|`sliderTitle='Découvrez d'autres visites exclusives'`|none|
+|info|L'information mise en avant, au dessus de l'image de la Card : ville, date, particularité... (majuscules automatiques)|Non|String|`info='paris'`|none|
+|image|Source de l'image de la Card|Oui|String |`image='chanel.jpg'`|none|
+|title|Titre de la visite de la Card|Oui|String|`title='Appatement Klein'`|none|
+|price|Prix de la visite de la Card|Oui|Number|`price="30"`|none|
+|id|Lien vers la page de la visite grâce à l'ID de la BDD de la Card|Oui|String|`id='/idBDD'`|none|
+
+## Form (Cosmo)
+* Import
+```
+import Form from '../components/Form';
+```
+
+* Exemple d'utilisation :
+```
+<Form
+    route = '/signin'
+    inputList={[
+    {name: 'username', placeholder: 'username'},
+    {name: 'mdp',placeholder:'mdp', type:'password'}
+    ]}
+
+    btn={[{title: 'YESS'}]}
+
+    linkList={[
+    {title: "Mdp oublié", link: '/home'},
+    ]}
+
+    getRes={e=>console.log(e)}
+/>
+```
+
+* Props :
+
+|Props Name|Description|Obligatoire|type de valeur|Example d'utilisation|Par Default|
+|----|----|----|----|----|----|
+|route|Défini la route que le form vas utiliser|Oui|String|`route='/signin'`|none|
+|inputList|regrouper les différents input|oui|tableau d'objet (voir doc input)|`inputList={[{name: 'username', placeholder: 'username'},{name: 'mdp',placeholder:'mdp', type:'password'}]}`|none|
+|btn|paramètre le bouton du form|oui|tableau d'un objet (voir doc boutton)|`btn={[{title: 'YESS'}]}`|none|
+|linkList|regrouper les différents liens|oui|tableau d'objet (title / lien)|`linkList={[{title: "Mdp oublié", link: '/home'}]}`|none|
+|getRes|récuperer le resultat de la requete du form|oui|function|`getRes={(resultat)=>console.log(resultat)}`|none|

@@ -3,7 +3,6 @@
 /* SET FONT */
 * {
   font-family: 'Montserrat';
-  
 }
 /* SET FONT end */
 
@@ -25,6 +24,7 @@
   position:fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 .header-logo {
   display: flex;
@@ -72,7 +72,6 @@
 }
 
 @media only screen and (max-width: 576px) {
-
   .header-menu {
       display:none;
   }
@@ -222,6 +221,7 @@
 .form-top-container {
   width: 100%;
   margin-bottom: 1vh;
+  padding-top: 2vh;
 }
 
 .form-top-container>.input-container {
@@ -235,14 +235,8 @@
 }
 
 .form-button-container {
-  width: 70%;
-  background-color: lawngreen;
+  width: 50%;
   display: flex;
-}
-
-.form-button-container>.space-between-btn {
-  content: '';
-  width: 5vw;
 }
 
 .form-bottom-container {
@@ -274,8 +268,9 @@
 }
 
 .button-container:hover {
-  background-color: #C8137137;
+  background-color: #C83737;
   display: 'inline-block';
+  cursor: pointer;
 } 
 
 .button-container:active {
@@ -364,10 +359,11 @@ font-weight: 510;
 
 .card_row {
     display : flex;
+    justify-content: center;
 }
 
 .card_col {
-    margin: 5px 0 5px 10px;
+    margin: 5px 0 20px 10px;
     display: inline-block;
     text-decoration: none;
 }
@@ -415,12 +411,36 @@ text-transform : uppercase;
 .card_rate {
     width: 12px;
     height: 12px;
-    margin-left: 13px
+    margin-left: 2px
 }
 
 
 
 /* END section CARD */
+
+/* START section SLIDER */
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-right: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slider_rate {
+  width: 2vmin;
+  height: 2vmin;
+  margin-left: 3px
+}
+
+.sliderTitle {
+  font-weight: bold;
+  margin-left: 10px
+}
+
+
+  /* END section SLIDER */
 
 
 /* START section Footer */
