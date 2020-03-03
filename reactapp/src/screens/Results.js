@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Title from '../components/Title';
 import Card from '../components/Card';
-import Input from '../components/input';
+import Input from '../components/Input';
 import Button from '../components/Button';
 
 import {Row} from 'antd'
