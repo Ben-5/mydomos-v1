@@ -76,7 +76,7 @@ import Text from '../components/Text';
 * Import
 ```
 import Card from '../components/Card';
-import {Col} from 'antd';
+import {Row} from 'antd';
 ```
 
 * Exemple d'utilisation :
@@ -130,5 +130,5 @@ export default function Home () {
 |info|L'information mise en avant, au dessus de l'image de la Card : ville, date, particularité... (majuscules automatiques)|Non|String|`info='paris'`|none|
 |image|Source de l'image de la Card|Oui|String |`image='chanel.jpg'`|none|
 |title|Titre de la visite de la Card|Oui|String|`title='Appatement Klein'`|none|
-|price|Prix de la visite de la Card|Oui|Number|`price=30`|none|
+|price|Prix de la visite de la Card|Oui|Number|`price="30"`|none|
 |id|Lien vers la page de la visite grâce à l'ID de la BDD de la Card|Oui|String|`id='/idBDD'`|none|

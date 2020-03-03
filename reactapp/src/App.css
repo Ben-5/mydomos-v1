@@ -3,7 +3,6 @@
 /* SET FONT */
 * {
   font-family: 'Montserrat';
-  
 }
 /* SET FONT end */
 
@@ -18,6 +17,7 @@
   position:fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 .header-logo {
   display: flex;
@@ -306,10 +306,11 @@ font-size: 1.912em;
 
 .card_row {
     display : flex;
+    justify-content: center;
 }
 
 .card_col {
-    margin: 5px 0 5px 10px;
+    margin: 5px 0 20px 10px;
     display: inline-block;
     text-decoration: none;
 }
@@ -357,10 +358,34 @@ text-transform : uppercase;
 .card_rate {
     width: 12px;
     height: 12px;
-    margin-left: 13px
+    margin-left: 2px
 }
 
 /* END section CARD */
+
+/* START section SLIDER */
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-right: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slider_rate {
+  width: 2vmin;
+  height: 2vmin;
+  margin-left: 3px
+}
+
+.sliderTitle {
+  font-weight: bold;
+  margin-left: 10px
+}
+
+
+  /* END section SLIDER */
 
 
 /* START section Footer */
@@ -369,7 +394,6 @@ text-transform : uppercase;
 .footer-container {
   background-color: #B5ACAC;
   min-height: 66vmin;
-  position:fixed;
   bottom: 0;
   width: 100%;
   display: flex;
