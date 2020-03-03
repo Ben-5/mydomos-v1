@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+import React from 'react';
+=======
 import React from 'react'
 import '../index.css';
+>>>>>>> f5fb3a330fcde38eee2a29b9b2d20438d5b34c5a
 import {Col} from 'antd';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import '../App.css';
+
 
 export default function Card(props) {
 
