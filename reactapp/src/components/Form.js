@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Input from '../components/Input'
 import Button from '../components/Button'
 import Text from '../components/Text'
@@ -6,14 +6,37 @@ import Text from '../components/Text'
 export default function Form (props) {
 
     const [inputDis] = useState(props.inputList);
-    const [btnDis] = useState(props.btnList);
+    const [btnDis] = useState(props.btn);
     const [linkDis] = useState(props.linkList);
+
+    var formPost = async (req) => {
+        var request = '';
+        var errors = false;
+
+        for(var i=0;i<req.length;i++) {
+            if (req[i].value) {
+                errors = true;
+            }
+        }
+
+        if (!errors) {
+            var rawRes = await fetch(props.route, {
+                method: 'POST',
+                headers: {'Content-Type':'application/x-www-form-urlencoded'},
+                body: request
+            });
+            var parseRes = await rawRes.json();
+            props.getRes(parseRes);
+        } else {
+            props.getRes({result:false});
+        }
+    }
+
 
     var result = [];
 
     var listInput = inputDis.map((input, i) =>{
         result.push({name: input.name, value: input.value});
-
         return (
             <Input
             key={i}
@@ -27,18 +50,12 @@ export default function Form (props) {
     });
 
     var listBtn = btnDis.map((btn, i) =>{
-        var space = <div />;
-        if(!i+1 === btnDis.length){
-            space = <div className='space-between-btn'/>
-        }
         return (
-            <div key={i}>
             <Button
-            onClick={()=>console.log('result :', result)}
+            key={i}
+            onClick={()=>formPost(result)}
             buttonTitle={btn.title}
             />
-            {space}
-            </div>
         );
     });
 
@@ -48,7 +65,6 @@ export default function Form (props) {
         );
     });
 
-
     return (
         <div className='form-container'>
             <div className='form-top-container'>
@@ -57,15 +73,7 @@ export default function Form (props) {
 
             <div className='form-submit-container'>
                 <div className='form-button-container'>
-                <Button
-            onClick={()=>console.log('result :', result)}
-            buttonTitle={'bhdk'}
-            />
-            <div className='space-between-btn'/>
-            <Button
-            onClick={()=>console.log('result :', result)}
-            buttonTitle={'bhdk'}
-            />
+                    {listBtn}
                 </div>
             </div>
 
@@ -75,20 +83,3 @@ export default function Form (props) {
         </div>
     );
 }
-
-
-{/* <Form
-            route= '/test'
-            inputList={[
-                {name: 'username', placeholder: 'username'},
-                {name: 'mail',placeholder:'mdp', type:'password'}
-            ]}
-            btnList={[
-                {title: 'YESS'},
-                {title: 'YESS'}
-            ]}
-            linkList={[
-                {title: 'YESS', link: '/home'},
-                {title: "J'ai oublier mon mdp", link: '/home'},
-            ]}
-            /> */}s
