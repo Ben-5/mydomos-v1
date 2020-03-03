@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
-import '../index.css';
+import React from 'react';
 import {Col} from 'antd';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import '../App.css';
+
 
 export default function Card(props) {
 

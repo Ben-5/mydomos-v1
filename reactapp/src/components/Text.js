@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { PromiseProvider } from 'mongoose';
+// import { PromiseProvider } from 'mongoose';
 
 
 export default function Text(props){
