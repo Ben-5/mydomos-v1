@@ -8,35 +8,28 @@ export default function Form (props) {
     const [inputDis] = useState(props.inputList);
     const [btnDis] = useState(props.btn);
     const [linkDis] = useState(props.linkList);
-    const [errorDis, setErrorDis] = useState([])
 
     var formPost = async (req) => {
-        var errors = [];
         var request = '';
+        var errors = false;
 
         for(var i=0;i<req.length;i++) {
-            if(req[i].value === undefined) {
-                errors.push({name: req[i].name});
-            } else {
-                request = request + `&${req[i].name}=${req[i].value}`
+            if (req[i].value) {
+                errors = true;
             }
         }
 
-        console.log('errors :', errors);
-        
-        if (errors[0]) {
-            setErrorDis(errors);
-            return false;
+        if (!errors) {
+            var rawRes = await fetch(props.route, {
+                method: 'POST',
+                headers: {'Content-Type':'application/x-www-form-urlencoded'},
+                body: request
+            });
+            var parseRes = await rawRes.json();
+            props.getRes(parseRes);
+        } else {
+            props.getRes({result:false});
         }
-
-        var rawRes = await fetch(props.route, {
-            method: 'POST',
-            headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            body: request
-        });
-
-        var parseRes = await rawRes.json();
-        props.getRes(parseRes);
     }
 
 
@@ -44,15 +37,8 @@ export default function Form (props) {
 
     var listInput = inputDis.map((input, i) =>{
         result.push({name: input.name, value: input.value});
-        var isEmpty = false;
-        if (errorDis[i]) {
-            if (errorDis[i].name === input.name) {
-                isEmpty = true;
-            }
-        }
         return (
             <Input
-            error={isEmpty}
             key={i}
             name={input.name}
             placeholder={input.placeholder}
