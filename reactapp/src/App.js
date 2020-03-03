@@ -16,11 +16,13 @@ import SignupScreen   from './screens/Signup'
 import SuccessScreen  from './screens/Success'
 import VisitScreen    from './screens/Visit'
 
+import RedirectToHome from '../src/toHome'
 
 export default function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/"         exact component={RedirectToHome} />
         <Route path="/home"     component={HomeScreen} />
         <Route path="/about"    component={AboutScreen} />
         <Route path="/account"  component={AccountScreen} />

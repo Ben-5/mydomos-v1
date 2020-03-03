@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Input from '../components/Input'
 import Button from '../components/Button'
 import Text from '../components/Text'
@@ -8,42 +8,67 @@ export default function Form (props) {
     const [inputDis] = useState(props.inputList);
     const [btnDis] = useState(props.btn);
     const [linkDis] = useState(props.linkList);
+    const [result, setResult] = useState([]);
+    const [errorDis, setErrorDis] = useState([]);
+    
+    useEffect(()=> {
+        var test = props.inputList
+        var cpy = [];
+        for (var i=0;i<test.length;i++){
+            cpy.push({name: test[i].name, value: test[i].value});
+        }
+        setResult(cpy);
+    }, [props.inputList]);
 
-    var formPost = async (req) => {
+    var changeToState = (content, position) => {
+        var cpy = [...result];
+        cpy[position].value = content;
+        setResult(cpy);
+    }
+
+    var finalPost = async() => {
         var request = '';
-        var errors = false;
+        for(var i=0;i<result.length;i++) {
+            if (i === 0) {request = request + `${result[i].name}=${result[i].value}`}
+            else {request = request + `&${result[i].name}=${result[i].value}`}
+        }
+        var rawRes = await fetch(props.route, {
+            method: 'POST',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: request
+        });
+        var prsRes = await rawRes.json();
+        props.getRes(prsRes)
+    }
 
-        for(var i=0;i<req.length;i++) {
-            if (req[i].value) {
-                errors = true;
+    var postTheForm = async() => {
+        var toPost = [...result];
+        var cpy = [];
+        for (var i=0;i<toPost.length;i++) {
+            if (toPost[i].value === undefined || toPost[i].value === '') {
+                cpy.push(toPost[i].name);
+            }
+        }
+        setErrorDis(cpy);
+        if (!cpy[0]) {finalPost()}
+    }
+
+    var listInput = inputDis.map((input, i) =>{
+        var isError = false;
+
+        for(var index=0;index<errorDis.length;index++) {
+            if (errorDis[index] === input.name) {
+                isError = true;
             }
         }
 
-        if (!errors) {
-            var rawRes = await fetch(props.route, {
-                method: 'POST',
-                headers: {'Content-Type':'application/x-www-form-urlencoded'},
-                body: request
-            });
-            var parseRes = await rawRes.json();
-            props.getRes(parseRes);
-        } else {
-            props.getRes({result:false});
-        }
-    }
-
-
-    var result = [];
-
-    var listInput = inputDis.map((input, i) =>{
-        result.push({name: input.name, value: input.value});
         return (
             <Input
             key={i}
+            error={isError}
             name={input.name}
             placeholder={input.placeholder}
-            value={input.value}
-            onChange={e=>{props.inputList.value=e;result[i].value = e}}
+            onChange={e=>changeToState(e, i)}
             type={input.type}
             />
         );
@@ -53,7 +78,7 @@ export default function Form (props) {
         return (
             <Button
             key={i}
-            onClick={()=>formPost(result)}
+            onClick={()=>postTheForm()}
             buttonTitle={btn.title}
             />
         );
