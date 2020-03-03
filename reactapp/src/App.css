@@ -7,6 +7,13 @@
 }
 /* SET FONT end */
 
+/* Page Background */
+
+.background {
+
+  background-color: #f4f3f3;
+  ;
+}
 
 /* Header style */
 
@@ -136,6 +143,44 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:1300,400,500,700&display=swap');
 
 
+/* Body style */
+
+.body-screen {
+
+  padding-top: 15vmin;
+  padding-left: 12.6vmin;
+  padding-right: 12.6vmin;
+}
+
+/* Page START */
+
+.main-caption {
+
+  padding-top: 5vmin;
+  padding-bottom: 10vmin;
+  display: flex;
+  align-items: center;
+}
+
+.main-caption-text {
+
+  width: 50%;
+}
+
+.main-caption-image {
+
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.hand {
+
+  height: 37vmin;
+
+}
+
+
 /* INPUT START */
 
 .input-container {
@@ -145,6 +190,10 @@
   padding: 4px;
   padding-left: 0.5em;
   transition: 0.1s ease-out;
+}
+
+::placeholder {
+  font-size: 2vmin;
 }
 
 .input-container:hover {
@@ -242,12 +291,12 @@
 /*BUTTON OK*/
 .okbtn-container { 
   background-color: #791212;
-  color: #DCD1D1;
-  border: 0;
+  color: #f3f3f4;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 5vmin;
+  height: 5vmin;
   cursor: pointer;
+  /* margin: 2vmin; */
 }
 
 .okbtn-container:hover {
@@ -278,6 +327,7 @@
 
 .Text {
   font-size: 1.243em;
+  font-size: calc(10px + 4vmin);
 }
 
 .Text-link {
@@ -294,13 +344,16 @@
       }
 
 /*TITLE*/
-.title>h1 {
-font-size: 1.912em;  
+.title-paragraphe-container {
+font-size: calc(5px + 5.5vmin); 
+font-weight: 510;
 }
 
 /*SUBTITLE*/
-.sutitle>h2 {
-  font-size: 1.471em;
+.subtitle-paragraphe-container {
+  font-size: calc(5px + 2.5vmin); 
+  font-weight: 400;
+
   }
 /* <---END section PARAGRAPHE  ---> */
 
@@ -365,16 +418,47 @@ text-transform : uppercase;
     margin-left: 13px
 }
 
+
+
 /* END section CARD */
 
 
 /* START section Footer */
 
+.newsletter-container{
+  display: flex;
+  align-items: center;
+  padding-top: 5vmin;
+  padding-bottom: 5vmin;
+}
+
+.newsletter {
+
+  width: 50%;
+  padding-left: 12.6vmin;
+
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  padding-top: 3vmin;
+}
+
+.legs-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.newsletter-legs {
+  width: 70vmin;
+}
 
 .footer-container {
   background-color: #B5ACAC;
   min-height: 66vmin;
-  position:fixed;
   bottom: 0;
   width: 100%;
   display: flex;
@@ -392,8 +476,8 @@ text-transform : uppercase;
 
 .socials-button {
 
-  height: 11vmin;
-  width: 11vmin;
+  height: 11.5vmin;
+  width: 11.5vmin;
   padding: 2.5vmin;
   margin-top: 2vmin;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -416,11 +500,12 @@ text-transform : uppercase;
       -webkit-transform: rotate(0deg);
   }
   to{
-      -webkit-transform: rotate(5deg);
+      -webkit-transform: rotate(4deg);
   }
 }
 
 .sleep {
+  transform-origin: 80% 80%;
   animation: rotating 3s infinite;
   animation-direction: alternate;
 }
