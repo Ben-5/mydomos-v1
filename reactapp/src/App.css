@@ -65,7 +65,6 @@
 }
 
 @media only screen and (max-width: 576px) {
-
   .header-menu {
       display:none;
   }
@@ -173,6 +172,7 @@
 .form-top-container {
   width: 100%;
   margin-bottom: 1vh;
+  padding-top: 2vh;
 }
 
 .form-top-container>.input-container {
@@ -186,14 +186,8 @@
 }
 
 .form-button-container {
-  width: 70%;
-  background-color: lawngreen;
+  width: 50%;
   display: flex;
-}
-
-.form-button-container>.space-between-btn {
-  content: '';
-  width: 5vw;
 }
 
 .form-bottom-container {
@@ -225,8 +219,9 @@
 }
 
 .button-container:hover {
-  background-color: #C8137137;
+  background-color: #C83737;
   display: 'inline-block';
+  cursor: pointer;
 } 
 
 .button-container:active {
