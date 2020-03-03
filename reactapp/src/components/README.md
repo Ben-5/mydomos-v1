@@ -132,3 +132,38 @@ export default function Home () {
 |title|Titre de la visite de la Card|Oui|String|`title='Appatement Klein'`|none|
 |price|Prix de la visite de la Card|Oui|Number|`price="30"`|none|
 |id|Lien vers la page de la visite grâce à l'ID de la BDD de la Card|Oui|String|`id='/idBDD'`|none|
+
+## Form (Cosmo)
+* Import
+```
+import Form from '../components/Form';
+```
+
+* Exemple d'utilisation :
+```
+<Form
+    route = '/signin'
+    inputList={[
+    {name: 'username', placeholder: 'username'},
+    {name: 'mdp',placeholder:'mdp', type:'password'}
+    ]}
+
+    btn={[{title: 'YESS'}]}
+
+    linkList={[
+    {title: "Mdp oublié", link: '/home'},
+    ]}
+
+    getRes={e=>console.log(e)}
+/>
+```
+
+* Props :
+
+|Props Name|Description|Obligatoire|type de valeur|Example d'utilisation|Par Default|
+|----|----|----|----|----|----|
+|route|Défini la route que le form vas utiliser|Oui|String|`route='/signin'`|none|
+|inputList|regrouper les différents input|oui|tableau d'objet (voir doc input)|`inputList={[{name: 'username', placeholder: 'username'},{name: 'mdp',placeholder:'mdp', type:'password'}]}`|none|
+|btn|paramètre le bouton du form|oui|tableau d'un objet (voir doc boutton)|`btn={[{title: 'YESS'}]}`|none|
+|linkList|regrouper les différents liens|oui|tableau d'objet (title / lien)|`linkList={[{title: "Mdp oublié", link: '/home'}]}`|none|
+|getRes|récuperer le resultat de la requete du form|oui|function|`getRes={(resultat)=>console.log(resultat)}`|none|
