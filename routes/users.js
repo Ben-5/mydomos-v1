@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var mongoose = require('mongoose')
 
 //crypto.js
 var SHA256 = require("crypto-js/sha256");
