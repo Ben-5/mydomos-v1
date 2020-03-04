@@ -13,7 +13,9 @@ export default function Footer() {
                 <Subtitle subtitle="N'attendez plus ! Abbonez-vous à notre newsletter pour découvrir les nouvelles visites et offres exclusives en priorité !"/>
                 <div className="newsletter-form">
                     <Input/>
-                    <OkButton/>
+                    <div>
+                        <OkButton/> 
+                    </div>
                 </div>
             </div>
             <div className="legs-container">
