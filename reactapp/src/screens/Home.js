@@ -7,12 +7,13 @@ import Header from '../components/Header';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 import Button from '../components/Button';
+import LightButton from '../components/LightButton';
 
 function App() {
     return (
       <div className="background">
         <Header/>
-        <div className= "body-screen">
+            <div className="body-screen">
 
 {/* Accroche  */}
 
@@ -28,7 +29,7 @@ function App() {
                 </div>
 
             </div>
- 
+        </div>
  {/* Slider visites à la une  */}
 
             <div className="breaking-visits">
@@ -115,29 +116,123 @@ function App() {
 
                 </div>
 
-{/* Deuxieme accroche  */}
-
-                <div style={{width:'25vmin', height: '25vmin', marginLeft: '2vmin', marginTop: '7vmin'}}>
+                <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
                     <Button buttonTitle="Voir plus"/>
                 </div>
+
+            </div>
+
+{/* Deuxieme accroche  */}
 
                 <div className= "middle-caption">
                     <div className="middle-caption-image">
                         <span className="middle-caption-background"><img src="../headset.png" className="headset" alt="headset"/></span>  
                     </div>
                     <div className="middle-caption-text-button">
-                        <div>
-                            <Title title="Ceci n'est pas un musée"/>
-                            <Subtitle subtitle="Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés"/>
+                        <div className="middle-caption-text">
+                            <h1 className="middle-caption-title">Ceci n'est pas un musée</h1>
+                            <Subtitle subtitle="Résérvéz des visites exclusives de maisons historiques privées animées par des propriétaires passionés"/>
                         </div>
-                        <div style={{width:'25vmin', height: '25vmin', marginTop: '7vmin', marginBottom: '1vmin'}}>
-                            <Button buttonTitle="Voir plus"/>
-                        </div>
+                        <LightButton buttonTitle="Découvrir"/>
                     </div>
                 </div>
 
-             </div>
-  
+{/* Slider 'En ce moment à Paris'  */}
+
+        <div className="paris-visits">
+            
+            <h3 className="sliderTitle">En ce moment à Paris</h3>
+
+            <div className="scrolling-wrapper">
+
+                <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Paris</h3>
+                    <Link className="card_link">
+                        <img className="card_img" alt="visit cover" src="/cover/rivoli.jpg"/>
+                        <h4 className="card_title">Hôtel de Rivoli</h4>
+                    </Link>
+                        <div className="card_pricerate">
+                            <div>
+                                <p className="card_price">À partir de 35 €</p>
+                            </div>
+                            <div className="card_div_rate">
+                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Paris</h3>
+                    <Link className="card_link">
+                        <img className="card_img" alt="visit cover" src="/cover/mallet-stevens.jpg"/>
+                        <h4 className="card_title">Hôtel Mallet Stevens</h4>
+                    </Link>
+                        <div className="card_pricerate">
+                            <div>
+                                <p className="card_price">À partir de 50 €</p>
+                            </div>
+                            <div className="card_div_rate">
+                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Paris</h3>
+                    <Link className="card_link">
+                        <img className="card_img" alt="visit cover" src="/cover/collectionneur.jpg"/>
+                        <h4 className="card_title">Maison de collectionneur</h4>
+                    </Link>
+                        <div className="card_pricerate">
+                            <div>
+                                <p className="card_price">À partir de 59 €</p>
+                            </div>
+                            <div className="card_div_rate">
+                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Paris</h3>
+                    <Link className="card_link">
+                        <img className="card_img" alt="visit cover" src="/cover/klein.jpg"/>
+                        <h4 className="card_title">Appartement d'Yves klein</h4>
+                    </Link>
+                        <div className="card_pricerate">
+                            <div>
+                                <p className="card_price">À partir de 39 €</p>
+                            </div>
+                            <div className="card_div_rate">
+                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Paris</h3>
+                    <Link className="card_link">
+                        <img className="card_img" alt="visit cover" src="/cover/bievre.jpg"/>
+                        <h4 className="card_title">Château de la Bièvre</h4>
+                    </Link>
+                        <div className="card_pricerate">
+                            <div>
+                                <p className="card_price">À partir de 45 €</p>
+                            </div>
+                            <div className="card_div_rate">
+                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
+                            </div>
+                        </div>
+                    </Col>
+                </div>
+                    <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
+                    <Button buttonTitle="Voir plus"/>
+                    </div>
+                </div>
+        
+
+{/* Troisieme accroche  */}
+
+        <div className= "bottom-caption">
+                        <span className="bottom-caption-image"><img src="../closer.png" className="closer" alt="closer"/></span>  
+                        <h1 className="closer-title">Y'a quelq'un ?</h1>
+                        <LightButton buttonTitle="Entrez !"/>
         </div>
       <Footer/>
     </div>

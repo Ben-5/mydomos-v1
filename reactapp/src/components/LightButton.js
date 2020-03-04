@@ -3,30 +3,23 @@ import '../App.css';
 import {Redirect} from 'react-router-dom'
 
 
-export default function Button(props){
+export default function LightButton(props){
 
-    const [lien, setLien] = useState(null)
+const [lien, setLien] = useState(null)
 
-    var handleClick = () => {
-        if (lien) {
-            setLien(props.link)
-        } 
-        else {
-            props.onClick()
-        }
-    }
-
+var handleClick = () => {
+    setLien(props.lien)
+}
     if(lien){
         return <Redirect to={lien} />
     }
-
         return(
             <div>
                 <button 
                         //style
-                        className="button-container" 
+                        className="button-light" 
                         //for redirect
-                        onClick={()=>handleClick()}
+                        onClick={ ()=>handleClick() }
                         > 
                         {/* set youy title button */}
                     <p>{props.buttonTitle} </p> 

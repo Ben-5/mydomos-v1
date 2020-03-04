@@ -9,6 +9,11 @@ var usersRouter = require('./routes/users');
 var visitRouter = require('./routes/visit');
 
 var app = express();
+var uniqid = require('uniqid');
+
+app.locals.userRefForm = function(){
+  return `${uniqid.time('user#')}`;
+}
 
 app.locals.visitRefForm = function(country, city, nb){
   return `${country}${city}#${nb}`;
