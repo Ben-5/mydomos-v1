@@ -90,7 +90,8 @@ import Button from '../components/Button';
 |Props Name|Description|Obligatoire|type de valeur|Example d'utilisation|Par Default|
 |----|----|----|----|----|----|
 |buttonTitle|une props qui représente le nom du bouton|Oui|string|`buttonTitle="Résevation"`|none|
-
+|onClick|fonction qui s'execute onclick|non|fonction|`onClick={()=>console.log('boutton)}`|none|
+|link|défini le lien de redirection onClick (incompatible avec onClick)|non|string|`link='/home'`|none|
 
 ## Text/Title/Subtitle (Maria)
 * Import

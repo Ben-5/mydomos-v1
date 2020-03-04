@@ -337,6 +337,12 @@
 
 /* FORM START */
 
+.sign-body {
+  min-width: 70vmin;
+  padding: 0vw 20vw 3vw 20vw;
+  display: flex;
+}
+
 .form-container {
   flex: 1;
   display: flex;
@@ -362,7 +368,6 @@
 }
 
 .form-button-container {
-  width: 50%;
   display: flex;
 }
 
@@ -756,3 +761,7 @@ height: 20vmin;
 height: 65vmin;
 }
 /* end SECTION SCREEN VISIT */
+
+/* SIGN START */
+
+/* SIGN END */
