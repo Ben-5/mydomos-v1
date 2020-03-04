@@ -33,15 +33,15 @@ function App() {
 
             <div className="breaking-visits">
             
-                <p className="sliderTitle">Visites à la une</p>
+                <h3 className="sliderTitle">Visites à la une</h3>
 
                 <div className="scrolling-wrapper">
 
-                    <Col className="card_col" sm={8} md={6} lg={4}>
-                        <p className="card_info">Paris</p>
+                    <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/chanel.jpg"/>
-                        <p className="card_title">Appartement Chanel</p>
+                        <h4 className="card_title">Appartement Chanel</h4>
                     </Link>
                         <div className="card_pricerate">
                             <div>
@@ -52,11 +52,11 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" sm={8} md={6} lg={4}>
-                        <p className="card_info">Bruxelles</p>
+                    <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Bruxelles</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/tassinier.jpg"/>
-                        <p className="card_title">Hôtel Tassinier</p>
+                        <h4 className="card_title">Hôtel Tassinier</h4>
                     </Link>
                         <div className="card_pricerate">
                             <div>
@@ -67,11 +67,11 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" sm={8} md={6} lg={4}>
-                        <p className="card_info">Paris</p>
+                    <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/tournelles.jpg"/>
-                        <p className="card_title">Hôtel des Tournelles</p>
+                        <h4 className="card_title">Hôtel des Tournelles</h4>
                     </Link>
                         <div className="card_pricerate">
                             <div>
@@ -82,11 +82,11 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" sm={8} md={6} lg={4}>
-                        <p className="card_info">Paris</p>
+                    <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/gainsbourg.jpg"/>
-                        <p className="card_title">Maison de Gainsbourg</p>
+                        <h4 className="card_title">Maison de Gainsbourg</h4>
                     </Link>
                         <div className="card_pricerate">
                             <div>
@@ -97,11 +97,11 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" sm={8} md={6} lg={4}>
-                        <p className="card_info">Paris</p>
+                    <Col className="card_col" sm={8} md={6} lg={6}>
+                        <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/ponti.jpg"/>
-                        <p className="card_title">Villa Ponti</p>
+                        <h4 className="card_title">Villa Ponti</h4>
                     </Link>
                         <div className="card_pricerate">
                             <div>
@@ -117,6 +117,10 @@ function App() {
 
 {/* Deuxieme accroche  */}
 
+                <div style={{width:'25vmin', height: '25vmin', marginLeft: '2vmin', marginTop: '7vmin'}}>
+                    <Button buttonTitle="Voir plus"/>
+                </div>
+
                 <div className= "middle-caption">
                     <div className="middle-caption-image">
                         <span className="middle-caption-background"><img src="../headset.png" className="headset" alt="headset"/></span>  
@@ -126,7 +130,9 @@ function App() {
                             <Title title="Ceci n'est pas un musée"/>
                             <Subtitle subtitle="Résérvéz des visites exclusives de maisons historiques privées animées par des propriétaires passionés"/>
                         </div>
-                        <Button buttonTitle="Découvrir"/>
+                        <div style={{width:'25vmin', height: '25vmin', marginTop: '7vmin', marginBottom: '1vmin'}}>
+                            <Button buttonTitle="Voir plus"/>
+                        </div>
                     </div>
                 </div>
 

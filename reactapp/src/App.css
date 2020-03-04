@@ -2,8 +2,8 @@
 
 .body-screen {
   padding-top: 15vmin;
-  padding-left: 12.6vmin;
-  padding-right: 12.6vmin;
+  padding-left: 16.6vmin;
+  padding-right: 16.6vmin;
 }
 
 /* SET FONT */
@@ -26,11 +26,12 @@
 
 .header-container {
   background-color: #f4f3f3;
-  min-height: 10vmin;
+  height: 14vmin;
   position:fixed;
   top: 0;
   width: 100%;
   z-index: 1;
+  padding-top: 2.2vmin;
 }
 .header-logo {
   display: flex;
@@ -40,7 +41,7 @@
 .logo {
   height: 6.6vmin;
   margin: 3vmin;
-  padding-left: 5vmin;
+  padding-left: 6vmin;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -149,30 +150,19 @@
 /* Import font Montserrat */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:1300,400,500,700&display=swap');
 
-
-/* Body style */
-
-.body-screen {
-
-  padding-top: 15vmin;
-  padding-left: 17.6vmin;
-  padding-right: 17.6vmin;
-}
-
 /* Page START */
 
 /* Main caption */
 
 .main-caption {
-
-  padding-top: 13vmin;
-  padding-bottom: 13vmin;
+  margin-left: 2vmin;
+  padding-top: 11vmin;
+  padding-bottom: 11vmin;
   display: flex;
   align-items: center;
 }
 
 .main-caption-text {
-
   width: 50%;
 }
 
@@ -185,30 +175,43 @@
 
 .hand {
 
-  height: 37vmin;
+  height: 33vmin;
 
 }
+
+/* @keyframes rotating {
+  from{
+      -webkit-transform: rotate(0deg);
+  }
+  to{
+      -webkit-transform: rotate(5deg);
+  }
+}
+
+.hand {
+  transform-origin: 50% 50%;
+  animation: rotating 1s infinite;
+  animation-direction: alternate;
+  
+} */
 
 /* Middle caption */
 
 .middle-caption {
 
-  padding-top: 13vmin;
-  padding-bottom: 13vmin;
+  padding-top: 8vmin;
+  padding-bottom: 8vmin;
   display: flex;
   align-items: center;
 }
 
-.middle-caption-text {
-
-  width: 50%;
-}
 
 .middle-caption-text-button {
 
-  
+  width: 50%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 
 }
@@ -319,11 +322,13 @@
   background-color: #791212;
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 100%;
-  margin: auto; 
+  width: 100%; 
+  margin: auto;
 }
 
 .button-container>p {
+  font-size: 3vmin;
+  font-weight: 500;
   color: #DCD1D1;
   margin: auto;
 }
@@ -401,14 +406,14 @@
 
 /*TITLE*/
 .title-paragraphe-container {
-font-size: calc(5px + 5.5vmin); 
+font-size: calc(5px + 5.8vmin); 
 font-weight: 510;
 }
 
 /*SUBTITLE*/
 .subtitle-paragraphe-container {
   font-size: calc(5px + 2.5vmin); 
-  font-weight: 400;
+  font-weight: 500;
 
   }
 /* <---END section PARAGRAPHE  ---> */
@@ -424,7 +429,7 @@ font-weight: 510;
 }
 
 .card_col {
-    margin: 5px 0 20px 10px;
+    margin: 2vmin;
     display: inline-block;
     text-decoration: none;
 }
@@ -439,12 +444,15 @@ font-weight: 510;
 
 .card_info {
 text-transform : uppercase;
+font-weight: 500;
+font-size: 2.2vmin;
+margin-bottom: 1vmin;
 }
 
 .card_title {
-    margin-top: 13px;
-    font-weight: 500;
-    font-size: 15px;
+    margin-top: 2vmin;
+    font-weight: 550;
+    font-size: 2.7vmin;
 }
 
 .card_pricerate {
@@ -454,14 +462,21 @@ text-transform : uppercase;
 }
 
 .card_price {
-    font-weight: 300;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 2.4vmin;
     align-self: center;
     margin-bottom: 0px
 }
 
 .card_img {
-    width:100%
+    width:100%;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card_img:hover {
+  -webkit-transform: scale(1.07, 1.07);
+  transform: scale(1.07, 1.07);
 }
 
 .card_div_rate {
@@ -470,9 +485,9 @@ text-transform : uppercase;
 }
 
 .card_rate {
-    width: 12px;
-    height: 12px;
-    margin-left: 2px
+    width: 1.2vmin;
+    height: 1.2vmin;
+    margin-left: 1vmin
 }
 
 
@@ -491,15 +506,16 @@ text-transform : uppercase;
 }
 
 .slider_rate {
-  width: 2vmin;
-  height: 2vmin;
+  width: 1.2vmin;
+  height: 1.2vmin;
   margin-left: 3px
 }
 
 .sliderTitle {
-  font-size: 3vmin;
+  font-size: 3.3vmin;
   font-weight: 510;
-  margin-left: 10px
+  margin-left: 2vmin;
+  margin-bottom: 2vmin;
 }
 
 
@@ -513,12 +529,13 @@ text-transform : uppercase;
   align-items: center;
   padding-top: 5vmin;
   padding-bottom: 5vmin;
+  margin-left: 18.6vmin;
+  margin-right: 18.6vmin;
 }
 
 .newsletter {
 
   width: 50%;
-  padding-left: 12.6vmin;
 
 }
 
