@@ -6,7 +6,7 @@ export default function Subtitle(props){
 
     return(
 
-        <h2 className="subtitle paragraphe-container">{props.subtitle}</h2>
+        <h2 className="subtitle-paragraphe-container">{props.subtitle}</h2>
 
     );
 }

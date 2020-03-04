@@ -6,39 +6,81 @@ import Text from '../components/Text'
 export default function Form (props) {
 
     const [inputDis] = useState(props.inputList);
-    const [btnDis] = useState(props.btnList);
+    const [btnDis] = useState(props.btn);
     const [linkDis] = useState(props.linkList);
+    const [result, setResult] = useState([]);
+    const [errorDis, setErrorDis] = useState([]);
+    
+    useEffect(()=> {
+        var test = props.inputList
+        var cpy = [];
+        for (var i=0;i<test.length;i++){
+            cpy.push({name: test[i].name, value: test[i].value});
+        }
+        setResult(cpy);
+    }, [props.inputList]);
 
-    var result = [];
+    var changeToState = (content, position) => {
+        var cpy = [...result];
+        cpy[position].value = content;
+        setResult(cpy);
+    }
+
+    var finalPost = async() => {
+        var request = '';
+        for(var i=0;i<result.length;i++) {
+            if (i === 0) {request = request + `${result[i].name}=${result[i].value}`}
+            else {request = request + `&${result[i].name}=${result[i].value}`}
+        }
+        var rawRes = await fetch(props.route, {
+            method: 'POST',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: request
+        });
+        var prsRes = await rawRes.json();
+        props.getRes(prsRes)
+    }
+
+    var postTheForm = async() => {
+        var toPost = [...result];
+        var cpy = [];
+        for (var i=0;i<toPost.length;i++) {
+            if (toPost[i].value === undefined || toPost[i].value === '') {
+                cpy.push(toPost[i].name);
+            }
+        }
+        setErrorDis(cpy);
+        if (!cpy[0]) {finalPost()}
+    }
 
     var listInput = inputDis.map((input, i) =>{
-        result.push({name: input.name, value: input.value});
+        var isError = false;
+
+        for(var index=0;index<errorDis.length;index++) {
+            if (errorDis[index] === input.name) {
+                isError = true;
+            }
+        }
 
         return (
             <Input
             key={i}
+            error={isError}
             name={input.name}
             placeholder={input.placeholder}
-            value={input.value}
-            onChange={e=>{props.inputList.value=e;result[i].value = e}}
+            onChange={e=>changeToState(e, i)}
             type={input.type}
             />
         );
     });
 
     var listBtn = btnDis.map((btn, i) =>{
-        var space = <div />;
-        if(!i+1 === btnDis.length){
-            space = <div className='space-between-btn'/>
-        }
         return (
-            <div key={i}>
             <Button
-            onClick={()=>console.log('result :', result)}
+            key={i}
+            onClick={()=>postTheForm()}
             buttonTitle={btn.title}
             />
-            {space}
-            </div>
         );
     });
 
@@ -48,7 +90,6 @@ export default function Form (props) {
         );
     });
 
-
     return (
         <div className='form-container'>
             <div className='form-top-container'>
@@ -57,15 +98,7 @@ export default function Form (props) {
 
             <div className='form-submit-container'>
                 <div className='form-button-container'>
-                <Button
-            onClick={()=>console.log('result :', result)}
-            buttonTitle={'bhdk'}
-            />
-            <div className='space-between-btn'/>
-            <Button
-            onClick={()=>console.log('result :', result)}
-            buttonTitle={'bhdk'}
-            />
+                    {listBtn}
                 </div>
             </div>
 
@@ -75,20 +108,3 @@ export default function Form (props) {
         </div>
     );
 }
-
-
-{/* <Form
-            route= '/test'
-            inputList={[
-                {name: 'username', placeholder: 'username'},
-                {name: 'mail',placeholder:'mdp', type:'password'}
-            ]}
-            btnList={[
-                {title: 'YESS'},
-                {title: 'YESS'}
-            ]}
-            linkList={[
-                {title: 'YESS', link: '/home'},
-                {title: "J'ai oublier mon mdp", link: '/home'},
-            ]}
-            /> */}s

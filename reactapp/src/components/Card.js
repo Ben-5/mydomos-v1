@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 import '../index.css';
 import {Col} from 'antd';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import '../App.css';
+
 
 export default function Card(props) {
 

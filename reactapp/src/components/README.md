@@ -31,6 +31,49 @@ export default function Home () {
 |value|Défini la valeur de l'input|Non|String|`value='Votre email'`|`''`|
 |placeholder|Défini le placeholder|Non|String|`placeholder='try paris'`|`'PLACE HOLDER PROPS MISSING'`|
 |name|Défini le nom (pour les form)|Non|String|`name='firstname'`|none|
+|error|Défini si l'input est en état d'érreur|Non|boolean|`error=true`|false|
+
+## Form (Cosmo)
+* Explications
+
+Le form dépend des autres composants, il permet de creer un ensemble d'input et de lier le tout.
+Attention, tout les input doivent être différents de '' pour pouvoir lancer la requete.
+En définissant la route le Form utilise une methode POST et compile l'ensemble des input en requete urlencoded.
+
+* Import
+```
+import Form from '../components/Form';
+```
+
+* Exemple d'utilisation :
+```
+<Form
+    route = '/signin'
+    inputList={[
+    {name: 'username', placeholder: 'username'},
+    {name: 'mdp',placeholder:'mdp', type:'password'}
+    ]}
+
+    btn={[{title: 'YESS'}]}
+
+    linkList={[
+    {title: "Mdp oublié", link: '/home'},
+    ]}
+
+    getRes={e=>console.log(e)}
+/>
+```
+
+* Props :
+
+|Props Name|Description|Obligatoire|type de valeur|Example d'utilisation|Par Default|
+|----|----|----|----|----|----|
+|route|Défini la route que le form vas utiliser|Oui|String|`route='/signin'`|none|
+|inputList|regrouper les différents input|oui|tableau d'objet (voir doc input)|`inputList={[{name: 'username', placeholder: 'username'},{name: 'mdp',placeholder:'mdp', type:'password'}]}`|none|
+|btn|paramètre le bouton du form|oui|tableau d'un objet (voir doc boutton)|`btn={[{title: 'YESS'}]}`|none|
+|linkList|regrouper les différents liens|oui|tableau d'objet (title / lien)|`linkList={[{title: "Mdp oublié", link: '/home'}]}`|none|
+|getRes|récuperer le resultat de la requete du form|oui|function|`getRes={(resultat)=>console.log(resultat)}`|none|
+
 
 ## Button (Maria)
 * Import
