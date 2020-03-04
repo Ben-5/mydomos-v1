@@ -11,17 +11,16 @@ router.get('/search', async function(req, res, next) {
 
   var visits = await VisitModel.find();
 
-  res.json({res: true, result: visits});
+  res.json({result: true, list: visits});
 });
 
 router.post('/addvisit', async function(req, res, next) {
-  console.log('req.body :', req.body);
 
   // generate a ref
   var nbCity = await VisitModel.countDocuments({}, function (err, count) {
     if (err) {res.json({result: false, error: err})} else {return count};
   });
-  var newRef = await req.app.locals.refForm(req.body.country, req.body.zip, nbCity + 1);
+  var newRef = await req.app.locals.visitRefForm(req.body.country, req.body.zip, nbCity + 1);
   
   //push to db the new visit
   var newVisit = await new VisitModel ({

@@ -1,7 +1,7 @@
 # Routes
 ##### une petite doc pour les routes
 
-## /addvisit
+## /addvisit (POST)
 * Explications
 
 Cette route permet d'ajouter une nouvelle visite.

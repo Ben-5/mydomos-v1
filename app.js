@@ -10,8 +10,7 @@ var visitRouter = require('./routes/visit');
 
 var app = express();
 
-app.locals.refForm = function(country, city, nb){
-  console.log('country, city, nb :', country, city, nb);
+app.locals.visitRefForm = function(country, city, nb){
   return `${country}${city}#${nb}`;
 }
 

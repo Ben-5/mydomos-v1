@@ -8,7 +8,6 @@ export default function Button(props){
 const [lien, setLien] = useState(null)
 
 var handleClick = () => {
-    setLien(props.lien)
 }
     if(lien){
         return <Redirect to={lien} />
