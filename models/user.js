@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var userSchema = mongoose.Schema({
     userOrders:     [{ type: mongoose.Schema.Types.ObjectId, ref: 'orders' }],
     userRef:        String,
-    userName:       String,
+    userLastName:   String,
     userFirstname:  String,
     userEmail:      String,
     salt:           String,

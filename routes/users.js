@@ -29,7 +29,7 @@ router.post('/signup', async function(req, res, next) {
     var salt = uid2(32);
     var newUser = new UserModel ({
     userRef: await req.app.locals.userRefForm(),
-    userName: lastname,
+    userLastName: lastname,
     userFirstname: firstname,
     userEmail: mail,
     salt: salt,

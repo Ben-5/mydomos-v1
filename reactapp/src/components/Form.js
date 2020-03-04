@@ -91,19 +91,21 @@ export default function Form (props) {
     });
 
     return (
-        <div className='form-container'>
-            <div className='form-top-container'>
-                {listInput}
-            </div>
-
-            <div className='form-submit-container'>
-                <div className='form-button-container'>
-                    {listBtn}
+        <div className='sign-body'>
+            <div className='form-container'>
+                <div className='form-top-container'>
+                    {listInput}
                 </div>
-            </div>
 
-            <div className='form-bottom-container'>
-                {listLink}
+                <div className='form-submit-container'>
+                    <div className='form-button-container'>
+                        {listBtn}
+                    </div>
+                </div>
+
+                <div className='form-bottom-container'>
+                    {listLink}
+                </div>
             </div>
         </div>
     );
