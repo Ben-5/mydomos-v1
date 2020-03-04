@@ -25,9 +25,10 @@ var visitSchema = mongoose.Schema({
     host:       String,
     rate:       Number,
     isRmv:      Boolean,
+    cover:      String,
     pics:       [String],
     info:       [visitInfoSchema],
-    address:    {visitAddressSchema},
+    address:    visitAddressSchema,
 });
 
 var visitModel = mongoose.model('visits', visitSchema);
