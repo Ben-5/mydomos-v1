@@ -479,9 +479,6 @@ text-transform : uppercase;
 .col-visit{
   margin: 10px;
 }
-.container-visit{
-  display: inline-flex;
-}
 
 .img-column-visit {
 width: 20vmin ;

@@ -14,16 +14,16 @@ var handleClick = () => {
         return <Redirect to={lien} />
     }
         return(
-            <div>
-                <button 
-                        //style
-                        className="button-container" 
-                        //for redirect
-                        onClick={ ()=>handleClick() }
-                        > 
-                        {/* set youy title button */}
-                    <p>{props.buttonTitle} </p> 
-                </button>
-            </div>
+        <div>
+            <button 
+                    //style
+                    className="button-container" 
+                    //for redirect
+                    onClick={ ()=>handleClick() }
+                    > 
+                    {/* set youy title button */}
+                <p>{props.buttonTitle} </p> 
+            </button>
+        </div>
         );
 }
