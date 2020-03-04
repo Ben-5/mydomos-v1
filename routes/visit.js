@@ -3,9 +3,6 @@ var router = express.Router();
 
 var VisitModel = require('../models/visit');
 
-router.get('/', function(req, res, next) {
-});
-
 router.get('/results', async function(req, res, next) {
   var searchParams = {isRmv: false, };
   var visits = await VisitModel.find(searchParams);
