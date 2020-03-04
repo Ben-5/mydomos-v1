@@ -23,12 +23,12 @@ Cette route permet d'ajouter une nouvelle visite.
 
 * Exemple de requête :
 ```
-"city=paris&country=fr&street=43 rue saint-denis&zip=75001&desc=Super visite&host=5e5f997d9b80313c8411dd5e&pic=https://image.com&pic=https://image.com"
+"city=paris&country=fr&street=43 rue saint-denis&zip=75001&desc=Super visite&host=5e5f997d9b80313c8411dd5e&cover=https://image.com&pic=https://image.com&pic=https://image.com"
 ```
 
 * Pour les images :
 
-Ajoutez les a la suite avec la même key ("pic"); 
+Ajoutez avec la même key pour en ajouter plusieurs ("pic"); 
 ```
 ...&pic=https://image.com&pic=https://image.com&pic=https://image.com"
 ```
