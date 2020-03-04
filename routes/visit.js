@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/search', async function(req, res, next) {
 
-  var visits = await VisitModel.find();
+  var visits = await VisitModel.find({isRmv: false});
 
   res.json({result: true, list: visits});
 });
@@ -28,7 +28,7 @@ router.post('/addvisit', async function(req, res, next) {
     title:      req.body.title,
     desc:       req.body.desc,
     host:       req.body.host,
-    pics:       req.body.pics,
+    pics:       req.body.pic,
     rate:       -1,
     isRmv:      false,
     address:    {
