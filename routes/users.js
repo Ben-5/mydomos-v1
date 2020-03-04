@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var mongoose = require('mongoose')
 
 //crypto.js
 var SHA256 = require("crypto-js/sha256");
@@ -15,6 +14,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+
 router.post('/signup', async function(req, res, next) {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
@@ -26,10 +26,10 @@ router.post('/signup', async function(req, res, next) {
   });
 
   if(!user) {
-
     var salt = uid2(32);
     var newUser = new UserModel ({
-    userName: lastname,
+    userRef: await req.app.locals.userRefForm(),
+    userLastName: lastname,
     userFirstname: firstname,
     userEmail: mail,
     salt: salt,
@@ -44,7 +44,6 @@ router.post('/signup', async function(req, res, next) {
   } 
   
   else {
-
     //result
     res.json({result: false, user: user}); 
   }

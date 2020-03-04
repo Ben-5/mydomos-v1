@@ -1,13 +1,13 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
 
 var orderSchema = mongoose.Schema({
-    orderNumber: Number,
-    orderDate: Date,
+    orderNumber:    Number,
+    orderDate:      Date,
     orderNbTickets: Number,
-    orderTotal: Number,
-    orderVisits: [{ type: mongoose.Schema.Types.ObjectId, ref: 'visits' }],
-})
+    orderTotal:     Number,
+    orderVisits:    [{ type: mongoose.Schema.Types.ObjectId, ref: 'visits' }],
+});
 
-var orderModel = mongoose.model('orders', orderSchema)
+var orderModel = mongoose.model('orders', orderSchema);
 
 module.exports = orderModel;
