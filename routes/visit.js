@@ -3,13 +3,9 @@ var router = express.Router();
 
 var VisitModel = require('../models/visit');
 
-router.get('/', function(req, res, next) {
-  res.redirect('/search');
-});
-
-router.get('/search', async function(req, res, next) {
-
-  var visits = await VisitModel.find();
+router.get('/results', async function(req, res, next) {
+  var searchParams = {isRmv: false, };
+  var visits = await VisitModel.find(searchParams);
 
   res.json({result: true, list: visits});
 });
@@ -28,7 +24,8 @@ router.post('/addvisit', async function(req, res, next) {
     title:      req.body.title,
     desc:       req.body.desc,
     host:       req.body.host,
-    pics:       req.body.pics,
+    pics:       req.body.pic,
+    cover:      req.body.cover,
     rate:       -1,
     isRmv:      false,
     address:    {

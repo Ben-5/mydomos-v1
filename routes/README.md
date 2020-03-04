@@ -18,16 +18,17 @@ Cette route permet d'ajouter une nouvelle visite.
 |zip|(adresse) code postal|Number|`zip=75001`|1|
 |host|id/ref de l'hôte|String|`host=5e5f997d9b80313c8411dd5e`|1|
 |pic|les url des images de la visite|String|`pic=https://image.com/image.png`|1>=|
+|cover|les url de la cover de la visite|String|`cover=https://image.com/image.png`|1|
 
 
 * Exemple de requête :
 ```
-"city=paris&country=fr&street=43 rue saint-denis&zip=75001&desc=Super visite&host=5e5f997d9b80313c8411dd5e&pic=https://image.com&pic=https://image.com"
+"city=paris&country=fr&street=43 rue saint-denis&zip=75001&desc=Super visite&host=5e5f997d9b80313c8411dd5e&cover=https://image.com&pic=https://image.com&pic=https://image.com"
 ```
 
 * Pour les images :
 
-Ajoutez les a la suite avec la même key ("pic"); 
+Ajoutez avec la même key pour en ajouter plusieurs ("pic"); 
 ```
 ...&pic=https://image.com&pic=https://image.com&pic=https://image.com"
 ```
