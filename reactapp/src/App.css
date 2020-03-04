@@ -667,6 +667,11 @@ margin-bottom: 1vmin;
   font-weight: 300;
 }
 
+.account-subtitle {
+  margin-top: 5vmin;
+  margin-bottom: 3vmin
+}
+
 .avatar {
   display: flex;
   margin-top: 4vmin;
@@ -691,6 +696,10 @@ margin-bottom: 1vmin;
   border-radius: 50%;
 }
 
+.background-wig:hover {
+  background-color: #bda6a6;
+}
+
 .background-armor {
   display: flex;
   justify-content: center;
@@ -701,6 +710,10 @@ margin-bottom: 1vmin;
   border-radius: 50%;
 }
 
+.background-armor:hover {
+  background-color: #a39a9a;
+}
+
 .background-medusa {
   display: flex;
   justify-content: center;
@@ -709,6 +722,10 @@ margin-bottom: 1vmin;
   width: 30vmin;
   background-color: #AA848B;
   border-radius: 50%;
+}
+
+.background-medusa:hover {
+  background-color: #967878;
 }
 
 .picto-medusa {

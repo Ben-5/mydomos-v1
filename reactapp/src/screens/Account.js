@@ -8,7 +8,7 @@ import Text from '../components/Text';
 import Input from '../components/Input';
 import Button from '../components/Button';
 
-import {Col} from 'antd';
+import {Col, List} from 'antd';
 import {Link} from 'react-router-dom'
 
 function Account(props) {
@@ -44,15 +44,24 @@ function Account(props) {
 //     //     console.log("oh yeah")
 //         var accountInput = <Input placeholder="info"/>
     
-    
+//Afficher une bordure sur le portrait sélectionné    
     var border = {}
     var choosePortrait = () => {
-        console.log("blabla")
         border = {border: 'solid 1px #791212'} 
         console.log('la bordure', border)
     }
-    
-    console.log('la bordure', border)
+
+//Afficher les réservations de l'utilisateur
+
+const data = [
+    {
+        title: 'Réservation 357',
+        description: 'lundi 1 janvier 2020'
+    },{
+        title: 'Réservation 841',
+        description: 'lundi 1 janvier 2020'
+    },
+    ];
   
     return (
 
@@ -103,32 +112,51 @@ function Account(props) {
                 </div>
 
             {/* AVATAR */}
-                <div></div>
+                <div className="account-subtitle">
                 <Subtitle subtitle="Mon portrait"/>
+                </div>
 
                 <div className="avatar">
 
                     <div className="middle-caption-image">
-                        <span className="background-wig" style={{border: 'solid 1px #791212'}}><img src="../picto-wig.png" className="picto-portrait" alt="headset" onClick={ () => choosePortrait() }/></span>  
+                        <span className="background-wig" style={border}><img src="../picto-wig.png" className="picto-portrait" alt="picto-portrait" onClick={ () => choosePortrait() }/></span>  
                     </div>
 
                     <div className="middle-caption-image">
-                        <span className="background-armor"><img src="../picto-armor.png" className="picto-portrait" alt="headset" onClick={ () => choosePortrait() }/></span>  
+                        <span className="background-armor"><img src="../picto-armor.png" className="picto-portrait" alt="picto-portrait" onClick={ () => choosePortrait() }/></span>  
                     </div>
 
                     <div className="middle-caption-image">
-                        <span className="background-medusa"><img src="../picto-medusa.png" className="picto-medusa" alt="headset" onClick={ () => choosePortrait() }/></span>  
+                        <span className="background-medusa"><img src="../picto-medusa.png" className="picto-medusa" alt="picto-portrait" onClick={ () => choosePortrait() }/></span>  
                     </div>
 
                 </div>
 
             {/* RESERVATIONS DU COMPTE */}
-                <Subtitle subtitle="Mes réservations"/>
+                <div className="account-subtitle">
+                    <Subtitle subtitle="Mes réservations"/>
+                </div>
+
+                <List
+                    itemLayout="horizontal"
+                    dataSource={data}
+                    renderItem={item => (
+                    <List.Item
+                        actions={[<Button buttonTitle="Voir ma réservation" />]}>
+                        <List.Item.Meta
+                        title={<Text text={item.title}></Text>}
+                        description={item.description}
+                        />
+                    </List.Item>
+                    )}
+                />
 
 
 
             {/* CHANGER MDP */}
-                <Subtitle subtitle="Modifier mon mot de passe"/>
+                <div className="account-subtitle">
+                    <Subtitle subtitle="Modifier mon mot de passe"/>
+                </div>
 
 
             {/* SLIDER */}
