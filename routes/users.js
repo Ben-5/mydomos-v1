@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+
 router.post('/signup', async function(req, res, next) {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
@@ -25,9 +26,9 @@ router.post('/signup', async function(req, res, next) {
   });
 
   if(!user) {
-
     var salt = uid2(32);
     var newUser = new UserModel ({
+    userRef: await req.app.locals.userRefForm(),
     userName: lastname,
     userFirstname: firstname,
     userEmail: mail,
@@ -43,7 +44,6 @@ router.post('/signup', async function(req, res, next) {
   } 
   
   else {
-
     //result
     res.json({result: false, user: user}); 
   }
