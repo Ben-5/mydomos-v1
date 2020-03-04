@@ -14,8 +14,8 @@ var handleClick = () => {
         return <Redirect to={lien} />
     }
         return(
-        <div>
-            <button 
+            <div>
+                <button 
                     //style
                     className="button-container" 
                     //for redirect
@@ -24,6 +24,7 @@ var handleClick = () => {
                     {/* set youy title button */}
                 <p>{props.buttonTitle} </p> 
             </button>
-        </div>
+            </div>
+            
         );
 }

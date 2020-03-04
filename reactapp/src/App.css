@@ -148,7 +148,7 @@
 }
 
 /* Import font Montserrat */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:1300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:1270,400,500,700&display=swap');
 
 /* Page START */
 
@@ -229,8 +229,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vmin;
-  width: 60vmin;
+  height: 50vmin;
+  width: 50vmin;
   background-color: white;
   border-radius: 50%;
 
@@ -388,7 +388,6 @@
 
 .Text {
   font-size: 1.243em;
-  font-size: calc(10px + 4vmin);
 }
 
 .Text-link {
@@ -408,6 +407,7 @@
 .title-paragraphe-container {
 font-size: calc(5px + 5.8vmin); 
 font-weight: 510;
+margin-bottom: 0;
 }
 
 /*SUBTITLE*/
@@ -489,13 +489,10 @@ margin-bottom: 1vmin;
     height: 1.2vmin;
     margin-left: 1vmin
 }
-
-
-
 /* END section CARD */
 
-/* START section SLIDER */
 
+/* START section SLIDER */
 .scrolling-wrapper {
   display: flex;
   justify-content: space-between;
@@ -638,12 +635,40 @@ margin-bottom: 1vmin;
 }
 
 .img-column-visit {
-width: 20vmin ;
-height: 20vmin;
+  width: 130px ;
+  height: 130px;
+  margin: 1vmax;
 }
 
 .img-row-visit{
-  width: 65vmin ;
-height: 65vmin;
+  width: 270px ;
+  height: 270px;
+  margin: 1vmax;
+}
+
+.fixed-menu-visit {
+  background-color: #f4f3f3;
+  height: 14vmin;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  /* padding-bottom: 2.2vmin; A voir avec BEN */ 
+}
+
+@media only screen and (min-width: 576px) {
+  .fixed-menu-visit {
+      display:none;
+  }
+}
+
+.menu-visit{
+  justify-content: space-around;
+  padding-bottom: 1vmax;
+}
+
+@media only screen and (max-width: 576px) {
+  .menu-visit  {
+      display:none;
+  }
 }
 /* end SECTION SCREEN VISIT */
