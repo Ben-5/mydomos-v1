@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import '../index.css';
 import {Col} from 'antd';
 import {Link} from 'react-router-dom'
@@ -24,7 +24,6 @@ export default function Card(props) {
                             <img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
                         </div>
                     </div>
-               
             </Col>
 
     )
