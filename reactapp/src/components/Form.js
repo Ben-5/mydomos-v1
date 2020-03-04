@@ -50,6 +50,7 @@ export default function Form (props) {
             }
         }
         setErrorDis(cpy);
+        console.log('isError :', cpy);
         if (!cpy[0]) {finalPost()}
     }
 
