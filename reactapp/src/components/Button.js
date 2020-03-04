@@ -5,12 +5,21 @@ import {Redirect} from 'react-router-dom'
 
 export default function Button(props){
 
-const [lien, setLien] = useState(null)
+    const [lien, setLien] = useState(null)
 
-var handleClick = () => {if (lien) {setLien(props.lien)} else {props.onClick()}}
+    var handleClick = () => {
+        if (lien) {
+            setLien(props.link)
+        } 
+        else {
+            props.onClick()
+        }
+    }
+
     if(lien){
         return <Redirect to={lien} />
     }
+
         return(
             <div>
                 <button 
