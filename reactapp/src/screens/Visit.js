@@ -6,6 +6,8 @@ import Text from '../components/Text';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 import {Row, Col, Avatar} from 'antd';
+// import {Link} from 'react-router-dom'
+
 import { UserOutlined } from '@ant-design/icons';
 
 import 'antd/dist/antd.css';
@@ -20,40 +22,52 @@ return(
         <Header/>
           <div className="body-screen">
 
-                        {/* SECTION GALLERY A REVOIR DANS LE DETAIL */}
+                        {/* SECTION SLIDER */}
+<div>
+    <p className="sliderTitle">-> à inserer BD props.id</p>
+        <div className="scrolling-wrapper">
+            <Col className="card_col" xs={24} md={12} lg={6}>
+                <img className="card_img" alt="visit cover" src="/visit/1.jpg"/>
+            </Col>
+            <Col className="card_col" xs={24} md={12} lg={6}>
+                <img className="card_img" alt="visit cover" src="/visit/2.jpg"/>
+            </Col>
+            <Col className="card_col" xs={24} md={12} lg={6}>
+                <img className="card_img" alt="visit cover" src="/visit/5.jpg"/>
+            </Col> 
+            <Col className="card_col" xs={24} md={12} lg={6}>
+                <img className="card_img" alt="visit cover" src="/visit/1.jpg"/>
+            </Col>
+            <Col className="card_col" xs={24} md={12} lg={6}>
+                <img className="card_img" alt="visit cover" src="/visit/2.jpg"/>
+            </Col>
+            <Col className="card_col" xs={24} md={12} lg={6}>
+                <img className="card_img" alt="visit cover" src="/visit/5.jpg"/>
+            </Col> 
+        </div>
 
-            <Row gutter={[16, 16]} className="img-visit">
-                <Col xs={{span:24}} md={{span:18}} lg={{span:16}} xl={{span:10}}>
-                    <img  className="img-row-visit" src="/visit/1.jpg" />
-                </Col>
-                <Col xs={{span:24}} md={{span:18}}  lg={{span:16}} xl={{span:14}}>
-                    <img  className="img-column-visit" src="/visit/2.jpg" />
-                    <img  className="img-column-visit" src="/visit/5.jpg" />
-                    <img  className="img-column-visit" src="/visit/4.jpg" />
-                    <img  className="img-column-visit" src="/visit/3.jpg" />
-                </Col>
-            </Row>
-
+</div>
                           {/* SECTION DESCRIPTION VISIT  */}
 
-            <Row justify="space-between" className="desc-visit">
-                <Col>
+            <Row justify="space-between" className="text-visit">
+                <Col >
                     <img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
                     <Title title="Hotel MALLET" />
                     <Text text="Paris, France" />
                 </Col>
 
                 {/* start partie remplacé par className=fixed-menu-visit  */}
-                <Col className="menu-visit">
-                    <Text text="A partir de 49 €" />
+                <Row align="middle" className="menu-visit">
+                    <Text  text="A partir de 69 €" />
                     <Button lien="/book" buttonTitle="Voir les dates" />
-                </Col>
+                </Row>
+                
             </Row>
                {/* end partie remplacé fixed-menu-visit  */} 
 
                           {/* SECTION TEXT VISIT  */}
 
-            <Row gutter={[32, 32]} className="visite-lieu">
+            <Row gutter={[32, 32]} className="visite-lieu text-visit">
                 <Col lg={{span:12}}>
                     <Subtitle subtitle="La Visite" />
                     <Text text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
@@ -66,11 +80,11 @@ return(
                 </Col>
             </Row>
 
-            <Row gutter={[16, 16]} className="votre-hote">
-                <Col lg={{span:16}}>
-                    <Avatar size={64} icon={<UserOutlined />} />
+            <Row gutter={[112, 112]} className="votre-hote">
+                <Col lg={{span:112}}>
+                    <Avatar className="avatar-hote" size={100} icon={<UserOutlined />} />
                     <Subtitle subtitle="Votre Hôte" />
-                    <Text text="Lorem ipsum dolor sit amet, consectetuerCum sociis natoque penatibus et 
+                    <Text  text="Lorem ipsum dolor sit amet, consectetuerCum sociis natoque penatibus et 
                                 ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa 
                                 quis enim. Donec pede justo,  imperdiet." />
                 </Col>     
@@ -82,7 +96,7 @@ return(
 
                       {/*  start partie mobile-fixed qui remplace className=menu-visit  */}
     <Row align="middle" justify="space-around"  className="fixed-menu-visit">
-        <Text text="A partir de 49 €" />
+        <Text text="A partir de 69 €" />
         <Button lien="/book" buttonTitle="Voir les dates" />
     </Row>
                      {/*  end partie mobile-fixed qui remplace className=menu-visit  */}
