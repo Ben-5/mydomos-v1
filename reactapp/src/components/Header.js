@@ -16,7 +16,7 @@ export default function Header() {
             <div className="header-title">MYDOMOS</div>
             </Col>
             <Col className="header-lang" xs={12} sm={12} md={12} lg={12} xl={12}>
-            <Select className="header-lang" defaultValue="fr" style={{ width: 66, marginRight:'4vmin' }} bordered={false}>
+            <Select className="header-lang" defaultValue="fr" style={{ width: 77, marginRight:'3vmin' }} bordered={false}>
                 <Option value="fr">FR</Option>
                 <Option value="en">EN</Option>
             </Select>

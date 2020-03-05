@@ -117,18 +117,29 @@
 .navigation-menu {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: white;
-  min-height: 12vh;
+  min-height: 16vmin;
   position:fixed;
   bottom: 0;
   width: 100%;
+}
+
+.navigation-menu-padding {
+  background-color: #B5ACAC;
+  min-height: 16vmin;
+  width: 100%;
+
 }
 
 @media only screen and (min-width: 576px) {
 
   .navigation-menu {
       display:none;
+  }
+  
+  .navigation-menu-padding {
+    display:none;
   }
 }
 
@@ -270,7 +281,7 @@
 .middle-caption-title {
 
     font-size: calc(5px + 5.8vmin); 
-    font-weight: 510;
+    font-weight: 700;
     color:rgb(43, 18, 18);
   
 }
@@ -535,7 +546,7 @@
 /*TITLE*/
 .title-paragraphe-container {
 font-size: calc(5px + 5.8vmin); 
-font-weight: 510;
+font-weight: 700;
 margin-bottom: 0;
 }
 
