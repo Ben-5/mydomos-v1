@@ -383,10 +383,25 @@
 /* FORM START */
 
 .sign-body {
-  min-width: 70vmin;
-  padding: 0vw 20vw 3vw 20vw;
+  /* min-width: 70vmin; */
+  padding: 5vmin 0vmin 0vmin 0vmin;
   display: flex;
+  width: 100%;
 }
+
+@media only screen and (max-width: 576px) {
+  .sign-body {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign-form {
+    padding-top: 10vmin;
+  }
+}
+
+
 
 .form-container {
   flex: 1;
@@ -960,3 +975,19 @@ margin-bottom: 1vmin;
 /* SIGN START */
 
 /* SIGN END */
+
+
+
+
+/*  START SUCCESS screen */
+.bubble {
+  height: 64vmin;
+  margin-bottom: 3vmin;
+  margin-top: 3vmin;
+}
+
+.success-container{
+  justify-content: center;
+  margin-bottom: 10vmin;
+}
+/*  END SUCCESS screen*/
