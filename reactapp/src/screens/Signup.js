@@ -9,24 +9,31 @@ export default function Signup() {
         <div className='background'>
             <Header />
             <div className='body-screen'>
-                <Form
-                    route = '/user/signup'
-                    inputList={[
-                        {name: 'firstname', placeholder: 'firstname'},
-                        {name: 'lastname',placeholder:'lastname'},
-                        {name: 'email',placeholder:'email'},
-                        {name: 'password',placeholder:'password', type:'password'},
-                        {name: 'confirmpassword',placeholder:'confirm password',type:'password', match: 3}
-                    ]}
+                <div className="sign-body">
+                    <div className="main-caption-image">
+                        <img src="../hand.png" className="hand" alt="hand" />  
+                    </div>
+                    <Form
+                        containerClassName='sign-form'
+                        containerStyle={{paddingLeft: '10vmin'}}
+                        route = '/user/signup'
+                        inputList={[
+                            {name: 'firstname', placeholder: 'firstname'},
+                            {name: 'lastname',placeholder:'lastname'},
+                            {name: 'email',placeholder:'email'},
+                            {name: 'password',placeholder:'password', type:'password'},
+                            {name: 'confirmpassword',placeholder:'confirm password',type:'password', match: 3}
+                        ]}
 
-                    btn={[{title: "S'inscrire"}]}
+                        btn={[{title: "S'inscrire"}]}
 
-                    linkList={[
-                        {title: "J'ai déja les clefs !", link: '/signin'},
-                    ]}
+                        linkList={[
+                            {title: "J'ai déja les clefs !", link: '/signin'},
+                        ]}
 
-                    getRes={e=>console.log(e)}
-                />
+                        getRes={e=>console.log(e)}
+                    />
+                </div>
             </div>
             <Footer />
         </div>

@@ -67,7 +67,6 @@ export default function Form (props) {
                     }
                 }
             }
-            console.log('notMatch :', notMatch);
             if (notMatch[0]) {
                 setErrorDis(notMatch);
             } else {
@@ -114,7 +113,7 @@ export default function Form (props) {
     });
 
     return (
-        <div className='sign-body'>
+        <div className={props.containerClassName} style={props.containerStyle}>
             <div className='form-container'>
                 <div className='form-top-container'>
                     {listInput}
