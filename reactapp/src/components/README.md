@@ -73,6 +73,7 @@ import Form from '../components/Form';
 |btn|paramètre le bouton du form|oui|tableau d'un objet (voir doc boutton)|`btn={[{title: 'YESS'}]}`|none|
 |linkList|regrouper les différents liens|oui|tableau d'objet (title / lien)|`linkList={[{title: "Mdp oublié", link: '/home'}]}`|none|
 |getRes|récuperer le resultat de la requete du form|oui|function|`getRes={(resultat)=>console.log(resultat)}`|none|
+|match|Sert a dire a un input d'etre égal a un autre (dans l'objet d'in input)|non|Number (position de l'index a égaler)|`inputList={[{name: 'confirmpassword', match: 1, placeholder: 'confirmpassword'},{name: 'mdp',placeholder:'mdp', type:'password'}]}`|none|
 
 
 ## Button (Maria)

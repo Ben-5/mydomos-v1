@@ -32,5 +32,6 @@ export default function Button(props){
                     <p>{props.buttonTitle} </p> 
                 </button>
             </div>
+            
         );
 }

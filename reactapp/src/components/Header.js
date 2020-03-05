@@ -23,17 +23,17 @@ export default function Header() {
             </Col>
             <Col className="header-menu" md={5} lg={6} xl={6}>
                 <Link to='/results'>
-                <Tooltip title="recherche">
+                <Tooltip placement="bottomRight" title="recherche">
                 <span className="picto-background"><img src="../picto-search.png" className="picto" alt="picto" /></span>
                 </Tooltip>
                 </Link>
                 <Link to='/basket'>
-                <Tooltip title="mon panier">
+                <Tooltip placement="bottomRight" title="mon panier">
                 <span className="picto-background"><img src="../picto-bag.png" className="picto" alt="picto"/></span>
                 </Tooltip>
                 </Link>
                 <Link to='/signin'>
-                <Tooltip title="connexion">
+                <Tooltip placement="bottomRight" title="connexion">
                 <span className="picto-background"><img src="../picto-key.png" className="picto" alt="picto"/></span>
                 </Tooltip>
                 </Link>
