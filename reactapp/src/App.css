@@ -186,9 +186,11 @@
 
 .hand {
 
-  height: 33vmin;
+  height: 34vmin;
+  
 
 }
+
 
 /* @keyframes rotating {
   from{
@@ -201,10 +203,28 @@
 
 .hand {
   transform-origin: 50% 50%;
+  
   animation: rotating 1s infinite;
   animation-direction: alternate;
   
-} */
+}  */
+
+@keyframes pop { 
+  0%   {transform: scale(1)  rotate(0deg);}
+  25%  {transform: scale(1.18) rotate(7deg);}
+  40%  {transform: rotate(0deg);}
+  60%  {transform: rotate(-7deg);}
+  85%  {transform: rotate(10deg);}
+  90%  {transform: rotate(0deg);}
+  95%  {transform: rotate(5deg);}
+  100% {transform: rotate(0deg);}
+}
+
+.hand{    
+  animation: pop 4s alternate ease-out;
+  animation-delay: 0.3s;
+
+}
 
 /* Middle caption */
 
@@ -393,6 +413,7 @@
   width: 20vmin;
   height: 9vmin;
   cursor: pointer;
+  transition: 0.2s ease-out;
 }
 
 .button-container>p {
@@ -426,6 +447,7 @@
   margin: auto;
   width: 20vmin;
   height: 9vmin;
+  transition: 0.2s ease-out;
 }
 
 .button-light>p {
@@ -464,6 +486,7 @@
   height: 7vmin;
   cursor: pointer;
   margin: 4vmin;
+  transition: 0.2s ease-out;
 }
 
 .okbtn-container:hover {
@@ -695,13 +718,13 @@ margin-bottom: 1vmin;
 }
 
 .socials-button:hover {
-  -webkit-transform: scale(1.4, 1.4);
-  transform: scale(1.4, 1.4);
+  -webkit-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3);
   cursor: pointer;
 }
 
 .sleep {
-  height: 25vmin;
+  height: 27vmin;
   padding-top: 5vmin;
   padding-bottom: 3vmin;
 }
