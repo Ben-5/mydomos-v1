@@ -6,6 +6,8 @@ import Text from '../components/Text';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 import {Row, Col, Avatar} from 'antd';
+// import {Link} from 'react-router-dom'
+
 import { UserOutlined } from '@ant-design/icons';
 
 import 'antd/dist/antd.css';
@@ -21,8 +23,21 @@ return(
           <div className="body-screen">
 
                         {/* SECTION GALLERY A REVOIR DANS LE DETAIL */}
+<div>
 
-            <Row gutter={[16, 16]} className="img-visit">
+<p className="sliderTitle">votre visite</p>
+<div className="scrolling-wrapper">
+    <Col className="card_col" sm={8} md={6} lg={4}>
+            <img className="card_img" alt="visit cover" src="/visit/2.jpg"/>
+        <div className="card_pricerate">
+        </div>
+    </Col>
+
+</div>
+
+</div>
+
+            {/* <Row gutter={[16, 16]} className="img-visit">
                 <Col xs={{span:24}} md={{span:18}} lg={{span:16}} xl={{span:10}}>
                     <img  className="img-row-visit" src="/visit/1.jpg" />
                 </Col>
@@ -32,22 +47,23 @@ return(
                     <img  className="img-column-visit" src="/visit/4.jpg" />
                     <img  className="img-column-visit" src="/visit/3.jpg" />
                 </Col>
-            </Row>
+            </Row> */}
 
                           {/* SECTION DESCRIPTION VISIT  */}
 
             <Row justify="space-between" className="desc-visit">
-                <Col>
+                <Col >
                     <img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
                     <Title title="Hotel MALLET" />
                     <Text text="Paris, France" />
                 </Col>
 
                 {/* start partie remplacé par className=fixed-menu-visit  */}
-                <Col className="menu-visit">
-                    <Text text="A partir de 49 €" />
+                <Row className="menu-visit">
+                    <Text  text="A partir de 49 €" />
                     <Button lien="/book" buttonTitle="Voir les dates" />
-                </Col>
+                </Row>
+                
             </Row>
                {/* end partie remplacé fixed-menu-visit  */} 
 
