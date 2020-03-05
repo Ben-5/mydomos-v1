@@ -10,19 +10,17 @@ export default function Footer() {
     <footer>
         <div className="newsletter-container">
             <Row>
-            <Col className="newsletter" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:12, order:1}} lg ={{span:12, order:1}}>
-                <Title title="Soyez exclusifs !"/>
-                <Subtitle subtitle="N'attendez plus ! Abbonez-vous à notre newsletter pour découvrir les nouvelles visites et offres exclusives en priorité !"/>
-                <div className="newsletter-form" >
-                    <Input/>
-                    <div>
-                        <OkButton/> 
+                <Col className="newsletter" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:1}} lg ={{span:12, order:1}}>
+                    <Title title="Soyez exclusifs !"/>
+                    <Subtitle subtitle="Abonez-vous à notre newsletter pour découvrir les nouvelles visites et offres exclusives en priorité !"/>
+                    <div className="newsletter-form" >
+                            <Input/>
+                            <OkButton/>
                     </div>
-                </div>
-            </Col>
-            <Col className="legs-container" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:12, order:2}} lg ={{span:12, order:2}}>
-                <img src="../legs.png" className="legs" alt="legs" /> 
-            </Col>
+                </Col>
+                <Col className="legs-container" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:2}} lg ={{span:12, order:2}}>
+                    <img src="../legs.png" className="legs" alt="legs" /> 
+                </Col>
             </Row>
         </div>    
         <div className= "footer-container">

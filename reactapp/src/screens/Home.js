@@ -22,12 +22,12 @@ function App() {
                 
                 <Row>
 
-                <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:12, order:1}} lg ={{span:12, order:1}}>
+                <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:1}} lg ={{span:12, order:1}}>
                     <Title title="Voulez-vous visiter ?"/>
                     <Subtitle subtitle="Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés"/>
                 </Col>
 
-                <Col className="main-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:12, order:2}} lg ={{span:12, order:2}}>
+                <Col className="main-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:2}} lg ={{span:12, order:2}}>
                     <img src="../hand.png" className="hand" alt="hand" />  
                 </Col>
 
@@ -43,7 +43,7 @@ function App() {
 
                 <div className="scrolling-wrapper">
 
-                    <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link to="" className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/chanel.jpg"/>
@@ -58,7 +58,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Bruxelles</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/tassinier.jpg"/>
@@ -73,7 +73,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/tournelles.jpg"/>
@@ -88,7 +88,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/gainsbourg.jpg"/>
@@ -103,7 +103,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/ponti.jpg"/>
@@ -131,10 +131,10 @@ function App() {
             
                 <div className= "middle-caption">
                 <Row>
-                    <Col className="middle-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:12, order:1}} lg ={{span:12, order:1}}>
+                    <Col className="middle-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:1}} lg ={{span:12, order:1}}>
                         <span className="middle-caption-background"><img src="../headset.png" className="headset" alt="headset"/></span>  
                     </Col>
-                    <Col className="middle-caption-text-button" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:12, order:2}} lg ={{span:12, order:2}}>
+                    <Col className="middle-caption-text-button" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:2}} lg ={{span:12, order:2}}>
                         <div className="middle-caption-text">
                             <h1 className="middle-caption-title">Ceci n'est pas un musée</h1>
                             <Subtitle subtitle="Résérvéz des visites exclusives de maisons historiques privées animées par des propriétaires passionés"/>
@@ -152,7 +152,7 @@ function App() {
 
             <div className="scrolling-wrapper">
 
-                <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/rivoli.jpg"/>
@@ -167,7 +167,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/mallet-stevens.jpg"/>
@@ -182,7 +182,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/collectionneur.jpg"/>
@@ -197,7 +197,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/klein.jpg"/>
@@ -212,7 +212,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" xs={17} sm={17} md={6} lg={6}>
+                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/bievre.jpg"/>
