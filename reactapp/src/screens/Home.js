@@ -40,7 +40,7 @@ function App() {
 
                     <Col className="card_col" sm={8} md={6} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link className="card_link">
+                    <Link to="" className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/chanel.jpg"/>
                         <h4 className="card_title">Appartement Chanel</h4>
                     </Link>

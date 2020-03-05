@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -13,10 +13,12 @@ import {Link} from 'react-router-dom'
 
 function Account(props) {
 
-//   const [content, setContent] = useState('')
-//   const [resultList, setResultList] = useState([])
+  const [wig, setWig] = useState(true)
+  const [armor, setArmor] = useState(false)
+  const [medusa, setMedusa] = useState(false)
   
-//   //Récupérer les visites de la BDD
+//   //Récupérer les infos de l'utilisateur depuis la BDD
+
 //     useEffect(() => {
 //         const findResults = async() => {
 //         const response = await fetch('/results/')
@@ -26,30 +28,41 @@ function Account(props) {
 //         findResults()  
 //     },[])
 
-//     //Afficher par recherche
-//     var getSearch = () => {
-//         const findResults = async() => {
-//         const response = await fetch(`/results/${props.match.params.id}`)
-//         const data = await response.json()
-//         setResultList(data) 
-//         }
-
-//         findResults()  
-//     }
-
-//     //Afficher champ pour modifier ses coordonnées
-
-//     // var accountInput
-//     // var updateInfo = () => {
-//     //     console.log("oh yeah")
-//         var accountInput = <Input placeholder="info"/>
     
-//Afficher une bordure sur le portrait sélectionné    
-    var border = {}
-    var choosePortrait = () => {
-        border = {border: 'solid 1px #791212'} 
-        console.log('la bordure', border)
+//Sélectionner avatar
+
+    var chooseWig = () => {
+        setWig(true)
+        setArmor(false)
+        setMedusa(false)
     }
+
+    var chooseArmor = () => {
+        setWig(false)
+        setArmor(true)
+        setMedusa(false)
+    }
+
+    var chooseMedusa = () => {
+        setWig(false)
+        setArmor(false)
+        setMedusa(true)
+    }
+
+    if(wig) {
+       var borderW = {border: 'solid 2px #791212'}
+       var borderA = {border: 'none'} 
+       var borderM = {border: 'none'} 
+    } else if (armor) {
+         borderA = {border: 'solid 2px #791212'}
+         borderW = {border: 'none'} 
+         borderM = {border: 'none'} 
+    } else {
+         borderM = {border: 'solid 2px #791212'}
+         borderW = {border: 'none'} 
+         borderA = {border: 'none'} 
+    }
+
 
 //Afficher les réservations de l'utilisateur
 
@@ -119,15 +132,15 @@ const data = [
                 <div className="avatar">
 
                     <div className="middle-caption-image">
-                        <span className="background-wig" style={border}><img src="../picto-wig.png" className="picto-portrait" alt="picto-portrait" onClick={ () => choosePortrait() }/></span>  
+                        <span className="background-wig" style={borderW}><img src="../picto-wig.png" className="picto-portrait" alt="picto-portrait" onClick={() => chooseWig() }/></span>  
                     </div>
 
                     <div className="middle-caption-image">
-                        <span className="background-armor"><img src="../picto-armor.png" className="picto-portrait" alt="picto-portrait" onClick={ () => choosePortrait() }/></span>  
+                        <span className="background-armor" style={borderA}><img src="../picto-armor.png" className="picto-portrait" alt="picto-portrait" onClick={() => chooseArmor() }/></span>  
                     </div>
 
                     <div className="middle-caption-image">
-                        <span className="background-medusa"><img src="../picto-medusa.png" className="picto-medusa" alt="picto-portrait" onClick={ () => choosePortrait() }/></span>  
+                        <span className="background-medusa" style={borderM}><img src="../picto-medusa.png" className="picto-medusa" alt="picto-portrait" onClick={() => chooseMedusa() }/></span>  
                     </div>
 
                 </div>
@@ -154,10 +167,25 @@ const data = [
 
 
             {/* CHANGER MDP */}
+
                 <div className="account-subtitle">
                     <Subtitle subtitle="Modifier mon mot de passe"/>
                 </div>
 
+
+                <div className="grid-container">
+
+                    <div className="grid-item account-info"><Text text="Mot de passe actuel"/></div>
+                    <div className="grid-item "><Input placeholder="Mot de passe actuel" type="password"/></div>
+
+                    <div className="grid-item account-info"><Text text="Nouveau mot de passe"/></div>
+                    <div className="grid-item"><Input placeholder="Nouveau mot de passe" type="password"/></div>
+
+                    <div className="grid-item account-info"><Text text="Confirmez le nouveau mot de passe"/></div>
+                    <div className="grid-item"><Input placeholder="Confirmez le nouveau mot de passe" type="password"/></div>
+                </div>
+
+                <Button buttonTitle="Valider mon nouveau mot de passe"/>
 
             {/* SLIDER */}
             <div className="breaking-visits">

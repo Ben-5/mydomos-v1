@@ -16,25 +16,15 @@ function Results(props) {
   
   //Récupérer les visites de la BDD
     useEffect(() => {
-        const findResults = async() => {
-        const response = await fetch('/results/')
+        const getlist = async() => {
+        const response = await fetch('/visit/results')
         const data = await response.json()
-        setResultList(data) 
+        console.log(data.list)
+        setResultList(data.list) 
         }
-        findResults()  
+        getlist()  
     },[])
 
-    //Afficher par recherche
-    var getSearch = () => {
-        const findResults = async() => {
-        const response = await fetch(`/results/${props.match.params.id}`)
-        const data = await response.json()
-        setResultList(data) 
-        }
-
-        findResults()  
-    }
-    
   
     return (
 
@@ -62,7 +52,7 @@ function Results(props) {
                     <div style={{width:'75px', marginLeft: '3vmin'}}>
                         <Button 
                         buttonTitle="Valider"
-                        onClick={()=> {getSearch()}}/>
+                        />
                     </div>
 
                 </div>
@@ -73,8 +63,8 @@ function Results(props) {
                 {resultList.map((visit, i) => (
                     <Card
                         key={i}
-                        info={visit.info}
-                        image={visit.image}
+                        info={visit.address.city}
+                        image={visit.cover}
                         title={visit.title}
                         price={visit.price}/>
                 ))}

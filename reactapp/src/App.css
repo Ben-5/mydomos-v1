@@ -847,6 +847,10 @@ margin-bottom: 1vmin;
   cursor: pointer
 }
 
+.account-password {
+  display: flex
+}
+
 /* END screen ACCOUNT */
 /* start SECTION SCREEN VISIT */
 .col-visit{
