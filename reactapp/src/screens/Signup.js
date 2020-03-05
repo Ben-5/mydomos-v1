@@ -16,7 +16,7 @@ export default function Signup() {
                         {name: 'lastname',placeholder:'lastname'},
                         {name: 'email',placeholder:'email'},
                         {name: 'password',placeholder:'password', type:'password'},
-                        {name: 'confirmpassword',placeholder:'confirm password', type:'password'}
+                        {name: 'confirmpassword',placeholder:'confirm password',type:'password', match: 3}
                     ]}
 
                     btn={[{title: "S'inscrire"}]}

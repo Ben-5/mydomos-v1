@@ -15,7 +15,11 @@ export default function Form (props) {
         var test = props.inputList
         var cpy = [];
         for (var i=0;i<test.length;i++){
-            cpy.push({name: test[i].name, value: test[i].value});
+            var toInsert = {name: test[i].name, value: test[i].value};
+            if (test[i].match) {
+                toInsert.match = test[i].match;
+            }
+            cpy.push(toInsert)
         }
         setResult(cpy);
     }, [props.inputList]);
@@ -44,14 +48,32 @@ export default function Form (props) {
     var postTheForm = async() => {
         var toPost = [...result];
         var cpy = [];
+
         for (var i=0;i<toPost.length;i++) {
             if (toPost[i].value === undefined || toPost[i].value === '') {
                 cpy.push(toPost[i].name);
             }
         }
+
         setErrorDis(cpy);
-        console.log('isError :', cpy);
-        if (!cpy[0]) {finalPost()}
+
+        var notMatch = [];
+        if (!cpy[0]) {
+            for (var j=0;j<toPost.length;j++) {
+                if (toPost[j].match){
+                    if (toPost[toPost[j].match].value !== toPost[j].value) {
+                        notMatch.push(toPost[j].name);
+                        notMatch.push(toPost[toPost[j].match].name);
+                    }
+                }
+            }
+            console.log('notMatch :', notMatch);
+            if (notMatch[0]) {
+                setErrorDis(notMatch);
+            } else {
+                finalPost();
+            }
+        }
     }
 
     var listInput = inputDis.map((input, i) =>{
