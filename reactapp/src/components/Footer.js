@@ -38,6 +38,7 @@ export default function Footer() {
                 <h4 className="footer-title">© MYDOMOS</h4>
             </div>
         </div>
+        <div className="navigation-menu-padding"></div>
     </footer>
         );
     }

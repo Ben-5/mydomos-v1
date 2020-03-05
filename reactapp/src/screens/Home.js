@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Navigation from '../components/Navigation';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 import Button from '../components/Button';
@@ -38,7 +39,7 @@ function App() {
 
                 <div className="scrolling-wrapper">
 
-                    <Col className="card_col" sm={8} md={6} lg={6}>
+                    <Col className="card_col" xs={16} sm={16} md={6} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/chanel.jpg"/>
@@ -53,7 +54,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" sm={8} md={6} lg={6}>
+                    <Col className="card_col" xs={16} sm={16} md={6} lg={6}>
                         <h3 className="card_info">Bruxelles</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/tassinier.jpg"/>
@@ -68,7 +69,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" sm={8} md={6} lg={6}>
+                    <Col className="card_col" xs={16} sm={16} md={6} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/tournelles.jpg"/>
@@ -83,7 +84,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" sm={8} md={6} lg={6}>
+                    <Col className="card_col" xs={16} sm={16} md={6} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/gainsbourg.jpg"/>
@@ -98,7 +99,7 @@ function App() {
                             </div>
                         </div>
                     </Col>
-                    <Col className="card_col" sm={8} md={6} lg={6}>
+                    <Col className="card_col" xs={16} sm={16} md={6} lg={6}>
                         <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/ponti.jpg"/>
@@ -235,6 +236,7 @@ function App() {
                         <LightButton buttonTitle="Entrez !"/>
         </div>
       <Footer/>
+      <Navigation/>
     </div>
     )
   }
