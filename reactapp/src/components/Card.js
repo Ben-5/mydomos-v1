@@ -26,7 +26,6 @@ export default function Card(props) {
                             <img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
                         </div>
                     </div>
-               
             </Col>
 
     )

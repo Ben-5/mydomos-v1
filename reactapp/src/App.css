@@ -1,5 +1,6 @@
 @import '~antd/dist/antd.css';
 
+
 .body-screen {
   padding-top: 15vmin;
   padding-left: 16.6vmin;
@@ -9,6 +10,7 @@
 /* SET FONT */
 * {
   font-family: 'Montserrat';
+  color: black;
 }
 /* SET FONT end */
 
@@ -148,7 +150,7 @@
 }
 
 /* Import font Montserrat */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:1270,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
 
 /* Page START */
 
@@ -658,7 +660,6 @@ margin-bottom: 1vmin;
   margin-bottom: 2vmin;
 }
 
-
   /* END section SLIDER */
 
 
@@ -777,6 +778,114 @@ margin-bottom: 1vmin;
   align-items: center;
 }
 
+/* START screen ACCOUNT */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 40vmin 40vmin;
+  margin-bottom: 4vmin;
+}
+
+.grid-item {
+  margin-bottom: 2vmin;
+  margin-left: 3vmin;
+  font-size: 13px
+}
+
+@media only screen and (max-width: 576px) {
+
+  .grid-item {
+    font-size: 10px;
+  }
+}
+
+.accountUpdateInfo {
+  width: 40vmin;
+  margin-bottom: 3vmin
+}
+
+.account-info {
+  font-weight: 300;
+}
+
+.account-info {
+  font-weight: 300;
+}
+
+.account-subtitle {
+  margin-top: 5vmin;
+  margin-bottom: 3vmin
+}
+
+.avatar {
+  display: flex;
+  margin-top: 4vmin;
+  margin-bottom: 4vmin
+}
+
+.picto-portrait {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.background-wig {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vmin;
+  width: 30vmin;
+  background-color: #DACBCB;
+  border-radius: 50%;
+}
+
+.background-wig:hover {
+  background-color: #bda6a6;
+}
+
+.background-armor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vmin;
+  width: 30vmin;
+  background-color: #B5ACAC;
+  border-radius: 50%;
+}
+
+.background-armor:hover {
+  background-color: #a39a9a;
+}
+
+.background-medusa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vmin;
+  width: 30vmin;
+  background-color: #AA848B;
+  border-radius: 50%;
+}
+
+.background-medusa:hover {
+  background-color: #967878;
+}
+
+.picto-medusa {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer
+}
+
+.account-password {
+  display: flex
+}
+
+/* END screen ACCOUNT */
 /* start SECTION SCREEN VISIT */
 .text-visit {
   margin-top: 1vmax;
