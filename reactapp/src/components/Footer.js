@@ -1,4 +1,5 @@
 import React from 'react';
+import {Col, Row} from 'antd';
 import Input from '../components/Input';
 import OkButton from '../components/OkButton';
 import Title from '../components/Title';
@@ -8,19 +9,21 @@ export default function Footer() {
     return (
     <footer>
         <div className="newsletter-container">
-            <div className="newsletter">
+            <Row>
+            <Col className="newsletter" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:12, order:1}} lg ={{span:12, order:1}}>
                 <Title title="Soyez exclusifs !"/>
                 <Subtitle subtitle="N'attendez plus ! Abbonez-vous à notre newsletter pour découvrir les nouvelles visites et offres exclusives en priorité !"/>
-                <div className="newsletter-form">
+                <div className="newsletter-form" >
                     <Input/>
                     <div>
                         <OkButton/> 
                     </div>
                 </div>
-            </div>
-            <div className="legs-container">
-                <img src="../legs.png" className="newsletter-legs" alt="legs" />  
-            </div>
+            </Col>
+            <Col className="legs-container" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:12, order:2}} lg ={{span:12, order:2}}>
+                <img src="../legs.png" className="legs" alt="legs" /> 
+            </Col>
+            </Row>
         </div>    
         <div className= "footer-container">
             <div className= "socials-container">
