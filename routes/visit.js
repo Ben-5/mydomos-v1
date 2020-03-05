@@ -4,10 +4,14 @@ var router = express.Router();
 var VisitModel = require('../models/visit');
 
 router.get('/results', async function(req, res, next) {
-  var searchParams = {isRmv: false, };
-  var visits = await VisitModel.find(searchParams);
+  console.log("hellooooo");
+  
+  // var searchParams = {isRmv: false, };
+  var visits = await VisitModel.find();
 
-  res.json({result: true, list: visits});
+  console.log(visits)
+
+  res.json({result: true, list: visits}); 
 });
 
 router.post('/addvisit', async function(req, res, next) {

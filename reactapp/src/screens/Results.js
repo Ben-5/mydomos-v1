@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -9,100 +9,77 @@ import Button from '../components/Button';
 
 import {Row} from 'antd'
 
-function App() {
+function Results(props) {
+
+  const [content, setContent] = useState('')
+  const [resultList, setResultList] = useState([])
+  
+  //Récupérer les visites de la BDD
+    useEffect(() => {
+        const getlist = async() => {
+        const response = await fetch('/visit/results')
+        const data = await response.json()
+        console.log(data.list)
+        setResultList(data.list) 
+        }
+        getlist()  
+    },[])
+
+  
     return (
 
-      <div style={{marginTop: '15vmin'}}>
-
-        <Header/>
-
-
-        <div style={{marginLeft: '2vmin'}}>
-            <Title title="Trouvez des visites"/>
-        </div>
-
-        <div style={{display:'flex', alignItems : 'center', marginLeft: '8vh', marginTop:'4vmin', marginBottom:'4vmin'}}>
-
-            <div style={{width:'60vw'}}>
-                <Input 
-                    placeholder="essayer 'Paris'"/>
-            </div>
-            <div style={{width:'75px', height: '32px', marginLeft: '3vmin'}}>
-                <Button buttonTitle="Valider"/>
-            </div>
-
-        </div>
+        <div>
     
+            <Header/>
 
-        <Row className="card_row">
+            <div className="body-screen">
 
-            <Card
-                info="paris"
-                image="/cover/chanel.jpg"
-                title="Appartement Chanel"
-                price="39"/>
 
-            <Card
-                info="bruxelles"
-                image="/cover/tassinier.jpg"
-                title="Hôtel Tassinier"
-                price="49"/>
+                <div style={{marginLeft: '2vmin'}}>
+                    <Title title="Trouvez des visites"/>
+                </div>
 
-            <Card
-                info="paris"
-                image="/cover/tournelles.jpg"
-                title="Hôtel des Tournelles"
-                price="35"/>
+                <div style={{display:'flex', marginLeft: '6vmin', alignItems:'center', marginTop:'4vmin', marginBottom:'4vmin'}}>
 
-            <Card
-                info="paris"
-                image="/cover/gainsbourg.jpg"
-                title="Maison de Gainsbourg"
-                price="39"/>
+                    <div style={{width:'60vw'}}>
+                        <Input 
+                            placeholder="essayer 'Paris'"
+                            type="text"
+                            onChange={e=>setContent(e)}
+                            value={content}
+                            />
+                    </div>
+                    <div style={{width:'75px', marginLeft: '3vmin'}}>
+                        <Button 
+                        buttonTitle="Valider"
+                        />
+                    </div>
 
-            <Card
-                info="paris"
-                image="/cover/ponti.jpg"
-                title="Villa Ponti"
-                price="45"/>
+                </div>
+            
 
-            <Card
-                info="paris"
-                image="/cover/rivoli.jpg"
-                title="Hôtel de Rivoli"
-                price="35"/>
+                <Row className="card_row">
 
-            <Card
-                info="paris"
-                image="/cover/mallet-stevens.jpg"
-                title="Hôtel Mallet-Stevens"
-                price="50"/>
+                {resultList.map((visit, i) => (
+                    <Card
+                        key={i}
+                        info={visit.address.city}
+                        image={visit.cover}
+                        title={visit.title}
+                        price={visit.price}/>
+                ))}
+                    
+                </Row>
 
-            <Card
-                info="paris"
-                image="/cover/collectionneur.jpg"
-                title="Maison de collectionneur"
-                price="59"/>
+                
 
-            <Card
-                info="paris"
-                image="/cover/klein.jpg"
-                title="Appartement d'Yves Klein"
-                price="39"/>
-
-            <Card
-                info="paris"
-                image="/cover/bievre.jpg"
-                title="Château de la Bièvre"
-                price="45"/>
-
-        </Row>
-
-        <Footer/>
+            </div>
+            
+            <Footer/>
 
       </div>
     )
   }
 
 
-export default App;
+export default Results;
