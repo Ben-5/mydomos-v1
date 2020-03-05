@@ -943,9 +943,6 @@ margin-bottom: 1vmin;
 
 /* SIGN END */
 
-
-
-
 /*  START SUCCESS screen */
 .bubble {
   height: 64vmin;
@@ -957,4 +954,50 @@ margin-bottom: 1vmin;
   justify-content: center;
   margin-bottom: 10vmin;
 }
+
+.fixed-menu-success {
+  background-color: #f4f3f3;
+  height: 14vmin;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  /* padding-bottom: 2.2vmin; A voir avec BEN */ 
+}
+
+@media only screen and (min-width: 576px) {
+  .menu-success {
+      display:none;
+  }
+}
 /*  END SUCCESS screen*/
+
+/*  START BASKET screen */
+.menu-success{
+  background-color: #791212 ;
+  height: 14vmin;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+}
+.success-title{
+margin-bottom: 3vmax;
+}
+
+.menu-basket-text{
+  color: #f4f3f3;
+  font-size: 1.643em;
+}
+
+.menu-basket{
+  justify-content: flex-end;
+  padding-bottom: 1vmax;
+}
+
+@media only screen and (max-width: 576px) {
+  .menu-basket  {
+      display:none;
+  }
+}
+
+/*  END BASKET screen*/
