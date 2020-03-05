@@ -626,9 +626,25 @@ margin-bottom: 1vmin;
   justify-content: space-between;
   flex-wrap: nowrap;
   overflow-x: auto;
-  margin-right: 10px;
+  margin-right: 2vmin;
   -webkit-overflow-scrolling: touch;
 }
+
+.scrolling-wrapper::-webkit-scrollbar {
+  background-color: transparent;
+  height: 2vmin;
+}
+
+.scrolling-wrapper::-webkit-scrollbar-thumb {
+  background-color: #e7e7e7;
+  border-radius: 1vmin;
+}
+
+/* to hide the scrollbar */
+
+/* .scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+} */
 
 .slider_rate {
   width: 1.2vmin;
