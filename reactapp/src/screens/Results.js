@@ -16,6 +16,7 @@ function Results(props) {
   
   //Récupérer les visites de la BDD
     useEffect(() => {
+        window.scrollTo(0, 0)
         const getlist = async() => {
         const response = await fetch('/visit/results')
         const data = await response.json()
@@ -62,10 +63,11 @@ function Results(props) {
                     {resultList.map((visit, i) => (
                         <Card
                             key={i}
+                            id={visit._id}
                             info={visit.address.city}
                             image={visit.cover}
                             title={visit.title}
-                            price={visit.price}/>
+                            price={visit.info[0].price}/>
                      ))}
                     
                     </Row>

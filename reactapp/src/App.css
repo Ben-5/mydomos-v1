@@ -1064,6 +1064,51 @@ margin-bottom: 3vmax;
 
 /*  END BASKET screen*/
 
+/*  START BOOK screen*/
+
+.grid-container-book {
+  padding-top: 6vmin;
+  display: grid;
+  grid-template-columns: 40vmin 40vmin 40vmin;
+  padding-bottom: 8vmin;
+}
+
+.grid-item-book {
+  margin-bottom: 5vmin;
+  font-size: 13px
+}
+
+.book-date {
+  margin-bottom: 2vmin;
+  font-size: 14px
+}
+
+.book-time {
+  margin-bottom: 2vmin;
+  font-size: 12px;
+  font-weight: 300
+}
+
+.book-stock {
+  margin-bottom: 2vmin;
+  font-size: 12px;
+  font-weight: 300
+}
+
+.book-ticket {
+  margin-bottom: 2vmin;
+  padding-right: 10vmin
+} 
+
+.book-button {
+  margin-bottom: 2vmin;
+  font-size: 12px;
+  font-weight: 300
+}
+
+
+/*  END BOOK screen*/
+
 
 
 

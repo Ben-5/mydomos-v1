@@ -18,6 +18,7 @@ export default function Visit(props){
 
 //Récupérer la visite
   useEffect(() => {
+    window.scrollTo(0, 0)
     const getVisit = async() => {
       const data = await fetch(`/visit/visitpage/${props.match.params._id}`)
       const body = await data.json()
