@@ -75,7 +75,7 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Bruxelles</h3>
-                    <Link className="card_link" to={/visit/5e5fc82ee886e20628918501}> 
+                    <Link className="card_link" to={'/visit/5e5fc82ee886e20628918501'}> 
                         <img className="card_img" alt="visit cover" src="/cover/tassinier.jpg"/>
                         <h4 className="card_title">Hôtel Tassinier</h4>
                     </Link>

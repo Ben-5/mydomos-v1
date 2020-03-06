@@ -50,7 +50,7 @@ router.post('/signup', async function(req, res, next) {
 });
 
 router.post('/signin', async function(req, res, next) {
-  var mail = req.body.mail;
+  var mail = req.body.email;
   var pswd = req.body.password;
   await UserModel.findOne({ userEmail: mail }).exec(function (err, user) {
     if (user) {
