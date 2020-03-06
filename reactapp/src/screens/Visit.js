@@ -42,21 +42,21 @@ return(
 
         <div>
         
-            <div className="scrolling-wrapper">
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[0]}/>
+            <div className="scrolling-visit">
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[0]}/>
                 </Col>
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[1]}/>
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[1]}/>
                 </Col>
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[2]}/>
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[2]}/>
                 </Col> 
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[3]}/>
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[3]}/>
                 </Col>
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[4]}/>
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[4]}/>
                 </Col>
           
             </div>
@@ -76,7 +76,7 @@ return(
                 {/* start partie remplacé par className=fixed-menu-visit  */}
                 <Row align="middle" className="menu-visit">
                     <Text text={`À partir de ${data.info[0].price} €`}/>
-                    <Button lien="/book" buttonTitle="Voir les dates" />
+                    <Button link={`/book/${data._id}`} buttonTitle="Voir les dates" />
                 </Row>
                 
             </Row>
@@ -108,10 +108,13 @@ return(
         <Footer/>
 
         {/*  start partie mobile-fixed qui remplace className=menu-visit  */}
+
+        {visit.map((data, i) => (
         <Row align="middle" justify="space-around"  className="fixed-menu-visit">
             <Text text="A partir de 69 €" />
-            <Button lien="/book" buttonTitle="Voir les dates" />
+            <Button link={`/book/${data._id}`} buttonTitle="Voir les dates" />
         </Row>
+        ))}
         {/*  end partie mobile-fixed qui remplace className=menu-visit  */}
 
     </div>

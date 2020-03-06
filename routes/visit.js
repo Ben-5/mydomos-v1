@@ -71,5 +71,14 @@ router.get('/visitpage/:id', async function(req, res, next) {
   res.json({result: true, visit : visit}); 
 });
 
+//Afficher les créneaux d'une visite
+router.get('/book/:id', async function(req, res, next) {
+  
+  var visit = await visitModel.find({_id : req.params.id});
+  console.log(visit)
+
+  res.json({result: true, visit : visit}); 
+});
+
 
 module.exports = router;

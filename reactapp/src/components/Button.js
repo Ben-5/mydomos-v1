@@ -22,7 +22,7 @@ export default function Button(props){
 
         return(
             <div>
-                <button 
+                <button link={props.link}
                         //style
                         className="button-container" 
                         //for redirect

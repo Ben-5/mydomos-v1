@@ -26,7 +26,7 @@ export default function App() {
         <Route path="/home"     component={HomeScreen} />
         <Route path="/about"    component={AboutScreen} />
         <Route path="/account"  component={AccountScreen} />
-        <Route path="/book"     component={BookScreen} />
+        <Route path="/book/:_id"     component={BookScreen} />
         <Route path="/home"     component={HomeScreen} />
         <Route path="/basket"   component={BasketScreen} />
         <Route path="/results"  component={ResultsScreen} />
