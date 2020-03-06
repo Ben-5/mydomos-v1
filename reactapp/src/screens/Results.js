@@ -62,7 +62,7 @@ function Results(props) {
                 {resultList.map((visit, i) => (
                     <Card
                         key={i}
-                        id={visit.ref}
+                        id={visit._id}
                         info={visit.address.city}
                         image={visit.cover}
                         title={visit.title}

@@ -64,10 +64,9 @@ router.post('/addinfo', async function(req, res, next) {
 });
 
 //Récupérer les infos d'une visite
-router.get('/visitpage/:ref', async function(req, res, next) {
+router.get('/visitpage/:id', async function(req, res, next) {
   
-  var visit = await visitModel.find({ref : req.params.ref});
-  console.log(visit)
+  var visit = await visitModel.find({_id : req.params.id});
 
   res.json({result: true, visit : visit}); 
 });

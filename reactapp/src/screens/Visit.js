@@ -19,10 +19,9 @@ export default function Visit(props){
 //Récupérer la visite
   useEffect(() => {
     const getVisit = async() => {
-      const data = await fetch(`/visit/visitpage/${props.match.params.ref}`)
+      const data = await fetch(`/visit/visitpage/${props.match.params._id}`)
       const body = await data.json()
       setVisit(body.visit)
-      console.log(body.visit)
     }
     getVisit()  
   },[])
