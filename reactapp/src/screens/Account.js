@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -13,23 +14,17 @@ import {Link} from 'react-router-dom'
 
 function Account(props) {
 
-  const [wig, setWig] = useState(true)
-  const [armor, setArmor] = useState(false)
-  const [medusa, setMedusa] = useState(false)
-  
-//   //Récupérer les infos de l'utilisateur depuis la BDD
+    const [currentUser, setCurrentUser] = useState(props.getCurrentUser || {});
+    const [wig, setWig] = useState(true)
+    const [armor, setArmor] = useState(false)
+    const [medusa, setMedusa] = useState(false)
 
-//     useEffect(() => {
-//         const findResults = async() => {
-//         const response = await fetch('/results/')
-//         const data = await response.json()
-//         setResultList(data) 
-//         }
-//         findResults()  
-//     },[])
+    useEffect(()=>{
+        console.log('currentUser :', currentUser);
+    }, [props.getCurrentUser])
 
-    
-//Sélectionner avatar
+
+    //Sélectionner avatar
 
     var chooseWig = () => {
         setWig(true)
@@ -66,14 +61,14 @@ function Account(props) {
 
 //Afficher les réservations de l'utilisateur
 
-const data = [
-    {
-        title: 'Réservation 357',
-        description: 'lundi 1 janvier 2020'
-    },{
-        title: 'Réservation 841',
-        description: 'lundi 1 janvier 2020'
-    },
+    const data = [
+        {
+            title: 'Réservation 357',
+            description: 'lundi 1 janvier 2020'
+        },{
+            title: 'Réservation 841',
+            description: 'lundi 1 janvier 2020'
+        },
     ];
   
     return (
@@ -101,13 +96,13 @@ const data = [
                 <div className="grid-container">
 
                     <div className="grid-item account-info"><Text text="Nom"/></div>
-                    <div className="grid-item "><Text text="Lala"/></div>
+                    <div className="grid-item "><Text text={currentUser.userFirstname}/></div>
 
                     <div className="grid-item account-info"><Text text="Prénom"/></div>
-                    <div className="grid-item"><Text text="Soso"/></div>
+                    <div className="grid-item"><Text text={currentUser.userLastName}/></div>
 
                     <div className="grid-item account-info"><Text text="Email"/></div>
-                    <div className="grid-item"><Text text="soso@soso.fr"/></div>
+                    <div className="grid-item"><Text text={currentUser.userEmail}/></div>
                    
                     <div className="grid-item account-info"><Text text="Date de naissance"/></div>
                     <div className="grid-item"><Text text="1 janvier 2000"/></div>
@@ -297,7 +292,14 @@ const data = [
 
       </div>
     )
-  }
+}
 
 
-export default Account;
+function mapStateToProps(state) {
+    return { getCurrentUser: state.currentUser }
+}
+
+export default connect (
+    mapStateToProps,
+    null,
+)(Account);

@@ -1,6 +1,13 @@
 import React from 'react';
 import './App.css';
 
+//REDUX
+import {Provider} from 'react-redux';
+import {createStore, combineReducers}  from 'redux';
+
+//REDUCERS
+import currentUser from './reducers/user-reducer';
+
 //ROUTER DOM
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -18,23 +25,28 @@ import VisitScreen    from './screens/Visit'
 
 import RedirectToHome from '../src/toHome'
 
+const STORE = createStore(combineReducers({currentUser}));
+
 export default function App() {
+
   return (
-    <Router>
-      <Switch>
-        <Route path="/"         exact component={RedirectToHome} />
-        <Route path="/home"     component={HomeScreen} />
-        <Route path="/about"    component={AboutScreen} />
-        <Route path="/account"  component={AccountScreen} />
-        <Route path="/book"     component={BookScreen} />
-        <Route path="/home"     component={HomeScreen} />
-        <Route path="/basket"   component={BasketScreen} />
-        <Route path="/results"  component={ResultsScreen} />
-        <Route path="/signin"   component={SigninScreen} />
-        <Route path="/signup"   component={SignupScreen} />
-        <Route path="/success"  component={SuccessScreen} />
-        <Route path="/visit/:_id"    component={VisitScreen} />
-      </Switch>
-    </Router>
+    <Provider store={STORE}>
+      <Router>
+        <Switch>
+          <Route path="/"         exact component={RedirectToHome} />
+          <Route path="/home"     component={HomeScreen} />
+          <Route path="/about"    component={AboutScreen} />
+          <Route path="/account"  component={AccountScreen} />
+          <Route path="/book"     component={BookScreen} />
+          <Route path="/home"     component={HomeScreen} />
+          <Route path="/basket"   component={BasketScreen} />
+          <Route path="/results"  component={ResultsScreen} />
+          <Route path="/signin"   component={SigninScreen} />
+          <Route path="/signup"   component={SignupScreen} />
+          <Route path="/success"  component={SuccessScreen} />
+          <Route path="/visit/:_id"    component={VisitScreen} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
