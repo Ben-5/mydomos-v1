@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Col, Row} from 'antd';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -75,7 +75,11 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Bruxelles</h3>
+<<<<<<< HEAD
                     <Link className="card_link" to={`/visit/5e5fc82ee886e20628918501`}>
+=======
+                    <Link to='/home' className="card_link">
+>>>>>>> de7ceba7e83b092b204ccf653bd857703d90e498
                         <img className="card_img" alt="visit cover" src="/cover/tassinier.jpg"/>
                         <h4 className="card_title">Hôtel Tassinier</h4>
                     </Link>
@@ -90,7 +94,11 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
+<<<<<<< HEAD
                     <Link className="card_link" to={`/visit/5e5fbe9d442af412383846c5`}>
+=======
+                    <Link to='/home' className="card_link">
+>>>>>>> de7ceba7e83b092b204ccf653bd857703d90e498
                         <img className="card_img" alt="visit cover" src="/cover/tournelles.jpg"/>
                         <h4 className="card_title">Hôtel des Tournelles</h4>
                     </Link>
@@ -105,7 +113,11 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
+<<<<<<< HEAD
                     <Link className="card_link" to={`/visit/5e5fccfde886e20628918505`}>
+=======
+                    <Link to='/home' className="card_link">
+>>>>>>> de7ceba7e83b092b204ccf653bd857703d90e498
                         <img className="card_img" alt="visit cover" src="/cover/gainsbourg.jpg"/>
                         <h4 className="card_title">Maison de Gainsbourg</h4>
                     </Link>
@@ -120,7 +132,11 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
+<<<<<<< HEAD
                     <Link className="card_link" to={`/visit/5e5fca14e886e20628918503`}>
+=======
+                    <Link to='/home' className="card_link">
+>>>>>>> de7ceba7e83b092b204ccf653bd857703d90e498
                         <img className="card_img" alt="visit cover" src="/cover/ponti.jpg"/>
                         <h4 className="card_title">Villa Ponti</h4>
                     </Link>
@@ -137,7 +153,7 @@ function App(props) {
                 </div>
 
                 <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
-                    <Button buttonTitle="Voir plus"/>
+                    <Button link='/results' buttonTitle="Voir plus"/>
                 </div>
 
             </div>
@@ -169,7 +185,11 @@ function App(props) {
 
                 <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
+<<<<<<< HEAD
                     <Link className="card_link" to={`/visit/5e5fbd3f442af412383846c3`}>
+=======
+                    <Link to='/home' className="card_link">
+>>>>>>> de7ceba7e83b092b204ccf653bd857703d90e498
                         <img className="card_img" alt="visit cover" src="/cover/rivoli.jpg"/>
                         <h4 className="card_title">Hôtel de Rivoli</h4>
                     </Link>
@@ -184,7 +204,11 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
+<<<<<<< HEAD
                     <Link className="card_link" to={`/visit/5e5fc695e886e206289184ff`}>
+=======
+                    <Link to='/home' className="card_link">
+>>>>>>> de7ceba7e83b092b204ccf653bd857703d90e498
                         <img className="card_img" alt="visit cover" src="/cover/mallet-stevens.jpg"/>
                         <h4 className="card_title">Hôtel Mallet Stevens</h4>
                     </Link>
@@ -199,7 +223,11 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
+<<<<<<< HEAD
                     <Link className="card_link" to={`/visit/5e5fcdf8e886e20628918507`}>
+=======
+                    <Link to='/home' className="card_link">
+>>>>>>> de7ceba7e83b092b204ccf653bd857703d90e498
                         <img className="card_img" alt="visit cover" src="/cover/collectionneur.jpg"/>
                         <h4 className="card_title">Maison de collectionneur</h4>
                     </Link>
@@ -214,7 +242,11 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
+<<<<<<< HEAD
                     <Link className="card_link" to={`/visit/5e5fbb46442af412383846c1`}>
+=======
+                    <Link to='/home' className="card_link">
+>>>>>>> de7ceba7e83b092b204ccf653bd857703d90e498
                         <img className="card_img" alt="visit cover" src="/cover/klein.jpg"/>
                         <h4 className="card_title">Appartement d'Yves klein</h4>
                     </Link>
@@ -229,7 +261,11 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
+<<<<<<< HEAD
                     <Link className="card_link" to={`/visit/5e5fc53de886e206289184fd`}>
+=======
+                    <Link to='/home' className="card_link">
+>>>>>>> de7ceba7e83b092b204ccf653bd857703d90e498
                         <img className="card_img" alt="visit cover" src="/cover/bievre.jpg"/>
                         <h4 className="card_title">Château de la Bièvre</h4>
                     </Link>

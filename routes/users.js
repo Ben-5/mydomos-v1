@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 router.post('/signup', async function(req, res, next) {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
-  var mail = req.body.mail;
+  var mail = req.body.email;
   var pswd = req.body.password;
 
   var user = await UserModel.findOne({

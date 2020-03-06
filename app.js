@@ -12,11 +12,11 @@ var app = express();
 var uniqid = require('uniqid');
 
 app.locals.userRefForm = function(){
-  return `${uniqid.time('user#')}`;
+  return `${uniqid.time('user-')}`;
 }
 
-app.locals.visitRefForm = function(country, city, nb){
-  return `${country}${city}#${nb}`;
+app.locals.visitRefForm = function(country, zip, nb){
+  return `${country}${zip}-${nb}`;
 }
 
 // view engine setup

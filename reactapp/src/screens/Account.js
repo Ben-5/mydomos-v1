@@ -57,7 +57,7 @@ function Account(props) {
          borderA = {border: 'solid 2px #791212'}
          borderW = {border: 'none'} 
          borderM = {border: 'none'} 
-    } else {
+    } else if (medusa) {
          borderM = {border: 'solid 2px #791212'}
          borderW = {border: 'none'} 
          borderA = {border: 'none'} 
