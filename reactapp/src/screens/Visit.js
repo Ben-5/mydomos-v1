@@ -41,21 +41,21 @@ return(
 
         <div>
         
-            <div className="scrolling-wrapper">
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[0]}/>
+            <div className="scrolling-visit">
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[0]}/>
                 </Col>
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[1]}/>
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[1]}/>
                 </Col>
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[2]}/>
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[2]}/>
                 </Col> 
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[3]}/>
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[3]}/>
                 </Col>
-                <Col className="card_col" xs={24} md={12} lg={6}>
-                    <img className="card_img" alt="visit cover" src={data.pics[4]}/>
+                <Col className="visit_col" >
+                    <img className="visit_img" alt="visit cover" src={data.pics[4]}/>
                 </Col>
           
             </div>
