@@ -19,13 +19,12 @@ function Results(props) {
         const getlist = async() => {
         const response = await fetch('/visit/results')
         const data = await response.json()
-        console.log(data.list)
         setResultList(data.list) 
         }
         getlist()  
     },[])
 
-  
+
     return (
 
         <div>
@@ -63,10 +62,11 @@ function Results(props) {
                 {resultList.map((visit, i) => (
                     <Card
                         key={i}
+                        id={visit.ref}
                         info={visit.address.city}
                         image={visit.cover}
                         title={visit.title}
-                        price={visit.price}/>
+                        price={visit.info[0].price}/>
                 ))}
                     
                 </Row>
