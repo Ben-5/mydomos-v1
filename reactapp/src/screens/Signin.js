@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import {Redirect} from 'react-router-dom';
 
@@ -6,13 +7,17 @@ import Header   from '../components/Header';
 import Footer   from '../components/Footer';
 import Form     from '../components/Form';
 
-export default function Signin() {
+function Signin(props) {
 
     const [isLogged, setIsLogged] = useState(false);
 
+    useEffect(()=> {
+        if (props.currentUser) { setIsLogged(true) }
+    });
 
     var handleRes = (attempt) => {
         if (attempt.result) {
+            props.addUser(attempt.user);
             setIsLogged(true);
         }
     }
@@ -53,3 +58,20 @@ export default function Signin() {
         </div>
     );
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        addUser: function(user) { 
+          dispatch( {type: 'addUser', toAdd: user} ) 
+      }
+    }
+}
+
+function mapStateToProps(state) {
+    return { currentUser: state.currentUser }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(Signin);

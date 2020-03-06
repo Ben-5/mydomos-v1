@@ -25,10 +25,10 @@ import VisitScreen    from './screens/Visit'
 
 import RedirectToHome from '../src/toHome'
 
+const STORE = createStore(combineReducers({currentUser}));
+
 export default function App() {
 
-  const STORE = createStore(combineReducers({currentUser}));
-  
   return (
     <Provider store={STORE}>
       <Router>

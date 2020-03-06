@@ -1,6 +1,5 @@
-export default function(currentUser = {}, action) {
+export default function(currentUser = false, action) {
     if(action.type === 'addUser') {
-        console.log('action.toAdd :', action.toAdd);
       return action.toAdd;
     } else {
       return currentUser;
