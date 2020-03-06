@@ -5,16 +5,63 @@ import Button from '../components/Button';
 import Text from '../components/Text';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
-import {Row, Col, Avatar} from 'antd';
-// import {Link} from 'react-router-dom'
 
+import {Row, Col, Avatar} from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import { Table } from 'antd';
 
 import 'antd/dist/antd.css';
 
 import '../App.css';
 
-export default function Visit(){
+export default function Visit(prop){
+
+    const columns = [
+        {
+          title: 'Durée',
+          dataIndex: 'duree',
+          key: 'duree',
+          render: text => <span>{text}</span>,
+        },
+        {
+          title: 'Inclu',
+          dataIndex: 'inclu',
+          key: 'inclu',
+        },
+        {
+          title: 'Taille du groupe',
+          dataIndex: 'groupe',
+          key: 'groupe',
+        },
+        {
+          title: 'Tags',
+          key: 'tags',
+          dataIndex: 'tags',
+          render: tags => (
+            <span>
+               {tags.map(tag => {
+                 let url = tag.length > 2 ? '../breakfirst.png' : '../drink.png';
+                 if (tag === 'Apero') {
+                   url = '../drink.png';
+                 }
+                 return (
+                     <Avatar className="background-wig"  src={url} key={tag}>{tag.toUpperCase()}</Avatar>
+                 );
+               })}
+             </span> 
+          ),
+        },
+      ];
+      
+      const data = [
+        {
+          key: '1',
+          duree: '1h',
+          inclu: "Apero",
+          groupe: 'New York No. 1 Lake Park',
+          tags: ['Apero', 'Collation'],
+        },
+      ];
 
 return(
 
@@ -50,24 +97,45 @@ return(
                           {/* SECTION DESCRIPTION VISIT  */}
 
             <Row justify="space-between" className="text-visit">
-                <Col >
-                    <img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
+                <Col>
                     <Title title="Hotel MALLET" />
                     <Text text="Paris, France" />
+                    <img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
                 </Col>
 
                 {/* start partie remplacé par className=fixed-menu-visit  */}
-                <Row align="middle" className="menu-visit">
+                <Col align="middle" className="menu-visit">
                     <Text  text="A partir de 69 €" />
                     <Button lien="/book" buttonTitle="Voir les dates" />
-                </Row>
-                
+                </Col>
             </Row>
+            <Row className="text-visit" >
+            <Col>
+           
+            <Text text="Apéro" />
+            </Col>
+
+            <Col>
+            <Text text="Apéro" />
+            <Text text="Apéro" />
+            </Col>
+            </Row>
+            <Table columns={columns} dataSource={data} />
+
+                <Row style={{justifyContent:"space-evenly"}} className="text-visit">
+                    <Col align="middle" >
+                        <Avatar className="background-wig"  src="../drink.png" /> <Text text="Apéro" />
+                    </Col>
+                    <Col align="middle">
+                        <Avatar className="background-wig"  src="../breakfast.png" /> <Text text="Colation" />
+                    </Col>
+                </Row>
+
                {/* end partie remplacé fixed-menu-visit  */} 
 
-                          {/* SECTION TEXT VISIT  */}
 
-            <Row gutter={[32, 32]} className="visite-lieu text-visit">
+                          {/* SECTION TEXT VISIT  */}
+            <Row gutter={[32, 32]} className="text-visit">
                 <Col lg={{span:12}}>
                     <Subtitle subtitle="La Visite" />
                     <Text text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 

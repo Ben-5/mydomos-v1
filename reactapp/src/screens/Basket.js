@@ -17,8 +17,8 @@ function Basket(){
     return(
 <div className="background">
   <Header/>
-
-    <div  className="body-screen">
+<div className="basket-container">
+<div  className="body-screen">
     <Row justify="center" className="success-title">
                 <Title title='Votre Selection'/>
             </Row>
@@ -47,9 +47,9 @@ function Basket(){
                 </Col>
                     <Row justify="space-between" align='middle'>
                         <Text text="35€ par personne " />
-                        <Button buttonTitle="35€" />
+                        <Button buttonTitle="70€" />
                     </Row>
-                     <Text text="1 place" />
+                     <Text text="2 place" />
             </Col>            
         </Row>
 
@@ -59,14 +59,14 @@ function Basket(){
         <Button lien="/success" buttonTitle="Valider la commande" />
     </Row>
     
-    </div>
+</div>
 
 
-{/*-------->START slider section */}
-<div >
+{/*--------> SLIDER section */}
+<div>
             <h3 className="sliderTitle">Découvrez d'autres lieux</h3>
               <div className="scrolling-wrapper">
-                <Col className="card_col" sm={8} md={6} lg={6}>
+                <Col className="card_col" xs={12} md={6} lg={6}>
                     <h3 className="card_info">Paris</h3>
                         <Link className="card_link">
                           <img className="card_img" alt="visit cover" src="/cover/rivoli.jpg"/>
@@ -81,7 +81,7 @@ function Basket(){
                                 </div>
                             </div>
                 </Col>
-                <Col className="card_col" sm={8} md={6} lg={6}>
+                <Col className="card_col" xs={12} md={6} lg={6}>
                     <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/mallet-stevens.jpg"/>
@@ -96,7 +96,7 @@ function Basket(){
                             </div>
                         </div>
                 </Col>
-                <Col className="card_col" sm={8} md={6} lg={6}>
+                <Col className="card_col" xs={12} md={6} lg={6}>
                   <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                       <img className="card_img" alt="visit cover" src="/cover/collectionneur.jpg"/>
@@ -111,7 +111,7 @@ function Basket(){
                         </div>
                     </div>
                 </Col>
-                <Col className="card_col" sm={8} md={6} lg={6}>
+                <Col className="card_col" xs={12} md={6} lg={6}>
                   <h3 className="card_info">Paris</h3>
                     <Link className="card_link">
                       <img className="card_img" alt="visit cover" src="/cover/klein.jpg"/>
@@ -126,7 +126,7 @@ function Basket(){
                         </div>
                     </div>
                 </Col>
-                <Col className="card_col" sm={8} md={6} lg={6}>
+                <Col className="card_col" xs={12} md={6} lg={6}>
                     <h3 className="card_info">Paris</h3>
                 <Link className="card_link">
                     <img className="card_img" alt="visit cover" src="/cover/bievre.jpg"/>
@@ -143,14 +143,16 @@ function Basket(){
                 </Col>
            </div>
       </div>
-{/* --------> END slider section */}
-
-
-      {/*  start partie mobile-fixed qui remplace className=menu-visit  */}
-      <Row className="menu-success" >
-        <p className="menu-basket-text" >Valider la commande</p>
+     {/*  start partie mobile-fixed qui remplace className=menu-visit  */}
+   <div>
+   <Row className="menu-basket-fixed" >
+            <p className="menu-basket-text" >Valider la commande</p>
     </Row>
-                     {/*  end partie mobile-fixed qui remplace className=menu-visit  */}
+   </div>
+{/*  end partie mobile-fixed qui remplace className=menu-visit  */}
+</div>
+
+
     </div>
 
 
