@@ -1,16 +1,31 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Col, Row} from 'antd';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
+import Card from '../components/Card';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 import Button from '../components/Button';
 import LightButton from '../components/LightButton';
 
-function App() {
+function App(props) {
+
+    const [slider, setSlider] = useState([])
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        const getslider = async() => {
+        const response = await fetch('/visit/results')
+        const data = await response.json()
+        setSlider(data.list) 
+        console.log(data.list)
+        }
+        getslider()  
+    },[])
+
     return (
       <div className="background">
         <Header/>
@@ -41,11 +56,11 @@ function App() {
             
                 <h3 className="sliderTitle">Visites à la une</h3>
 
-                <div className="scrolling-wrapper">
+                <div className="scrolling-wrapper"> 
 
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link to="" className="card_link">
+                    <Link to={`/visit/5e5fb405442af412383846bf`} className="card_link">
                         <img className="card_img" alt="visit cover" src="/cover/chanel.jpg"/>
                         <h4 className="card_title">Appartement Chanel</h4>
                     </Link>
@@ -60,7 +75,7 @@ function App() {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Bruxelles</h3>
-                    <Link className="card_link">
+                    <Link className="card_link" to={/visit/5e5fc82ee886e20628918501}> 
                         <img className="card_img" alt="visit cover" src="/cover/tassinier.jpg"/>
                         <h4 className="card_title">Hôtel Tassinier</h4>
                     </Link>
@@ -75,7 +90,7 @@ function App() {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link className="card_link">
+                    <Link className="card_link" to={`/visit/5e5fbe9d442af412383846c5`}>
                         <img className="card_img" alt="visit cover" src="/cover/tournelles.jpg"/>
                         <h4 className="card_title">Hôtel des Tournelles</h4>
                     </Link>
@@ -90,7 +105,7 @@ function App() {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link className="card_link">
+                    <Link className="card_link" to={`/visit/5e5fccfde886e20628918505`}>
                         <img className="card_img" alt="visit cover" src="/cover/gainsbourg.jpg"/>
                         <h4 className="card_title">Maison de Gainsbourg</h4>
                     </Link>
@@ -105,7 +120,7 @@ function App() {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link className="card_link">
+                    <Link className="card_link" to={`/visit/5e5fca14e886e20628918503`}>
                         <img className="card_img" alt="visit cover" src="/cover/ponti.jpg"/>
                         <h4 className="card_title">Villa Ponti</h4>
                     </Link>
@@ -122,7 +137,7 @@ function App() {
                 </div>
 
                 <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
-                    <Button buttonTitle="Voir plus"/>
+                    <Button link='/results' buttonTitle="Voir plus"/>
                 </div>
 
             </div>
@@ -154,7 +169,7 @@ function App() {
 
                 <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link className="card_link">
+                    <Link className="card_link" to={`/visit/5e5fbd3f442af412383846c3`}>
                         <img className="card_img" alt="visit cover" src="/cover/rivoli.jpg"/>
                         <h4 className="card_title">Hôtel de Rivoli</h4>
                     </Link>
@@ -169,7 +184,7 @@ function App() {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link className="card_link">
+                    <Link className="card_link" to={`/visit/5e5fc695e886e206289184ff`}>
                         <img className="card_img" alt="visit cover" src="/cover/mallet-stevens.jpg"/>
                         <h4 className="card_title">Hôtel Mallet Stevens</h4>
                     </Link>
@@ -184,7 +199,7 @@ function App() {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link className="card_link">
+                    <Link className="card_link" to={`/visit/5e5fcdf8e886e20628918507`}>
                         <img className="card_img" alt="visit cover" src="/cover/collectionneur.jpg"/>
                         <h4 className="card_title">Maison de collectionneur</h4>
                     </Link>
@@ -199,7 +214,7 @@ function App() {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link className="card_link">
+                    <Link className="card_link" to={`/visit/5e5fbb46442af412383846c1`}>
                         <img className="card_img" alt="visit cover" src="/cover/klein.jpg"/>
                         <h4 className="card_title">Appartement d'Yves klein</h4>
                     </Link>
@@ -214,7 +229,7 @@ function App() {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Paris</h3>
-                    <Link className="card_link">
+                    <Link className="card_link" to={`/visit/5e5fc53de886e206289184fd`}>
                         <img className="card_img" alt="visit cover" src="/cover/bievre.jpg"/>
                         <h4 className="card_title">Château de la Bièvre</h4>
                     </Link>

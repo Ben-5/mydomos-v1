@@ -12,9 +12,9 @@ export default function Footer() {
             <Row>
                 <Col className="newsletter" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:1}} lg ={{span:12, order:1}}>
                     <Title title="Soyez exclusifs !"/>
-                    <Subtitle subtitle="Abonez-vous à notre newsletter pour découvrir les nouvelles visites et offres exclusives en priorité !"/>
+                    <Subtitle subtitle="Abonnez-vous à notre newsletter pour découvrir les nouvelles visites et offres exclusives en priorité !"/>
                     <div className="newsletter-form" >
-                            <Input/>
+                            <Input placeholder="email"/>
                             <OkButton/>
                     </div>
                 </Col>
