@@ -592,7 +592,8 @@ margin-bottom: 0;
 
 .card_row {
     display : flex;
-    justify-content: center;
+    justify-content: space-between;
+    
 }
 
 .card_col {
@@ -820,17 +821,49 @@ margin-bottom: 1vmin;
 
 /* START screen ACCOUNT */
 
+
+.my-account-main {
+
+  display: flex;
+  
+}
+
+.my-account {
+
+  padding-left: 2vmin;
+  padding-top: 4vmin;
+  padding-bottom: 8vmin;
+  width: 50%;
+}
+
+.my-avatar {
+
+  padding-top: 4vmin;
+  width: 50%;
+
+}
+
+.my-password {
+
+  padding-top: 2vmin;
+  padding-left: 2vmin;
+  padding-bottom: 6vmin;
+  width: 50%;
+  
+}
+
 .grid-container {
+  padding-top: 6vmin;
   display: grid;
   grid-template-columns: 40vmin 40vmin;
-  margin-bottom: 4vmin;
+  padding-bottom: 8vmin;
 }
 
 .grid-item {
   margin-bottom: 2vmin;
-  margin-left: 3vmin;
   font-size: 13px
 }
+
 
 @media only screen and (max-width: 576px) {
 
@@ -838,6 +871,8 @@ margin-bottom: 1vmin;
     font-size: 10px;
   }
 }
+
+
 
 .accountUpdateInfo {
   width: 40vmin;
@@ -864,7 +899,7 @@ margin-bottom: 1vmin;
 }
 
 .picto-portrait {
-  width: 70%;
+  width: 35vmin ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -914,7 +949,7 @@ margin-bottom: 1vmin;
 }
 
 .picto-medusa {
-  width: 90%;
+  width: 35vmin;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1030,3 +1065,7 @@ margin-bottom: 3vmax;
 }
 
 /*  END BASKET screen*/
+
+
+
+
