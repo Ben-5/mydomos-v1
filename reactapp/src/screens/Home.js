@@ -37,12 +37,12 @@ function App(props) {
                 
                 <Row>
 
-                <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:1}} lg ={{span:12, order:1}}>
+                <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:2}} lg ={{span:12, order:1}} xl ={{span:12, order:1}}>
                     <Title title="Voulez-vous visiter ?"/>
                     <Subtitle subtitle="Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés"/>
                 </Col>
 
-                <Col className="main-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:2}} lg ={{span:12, order:2}}>
+                <Col className="main-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:1}} lg ={{span:12, order:2}} xl ={{span:12, order:2}}>
                     <img src="../hand.png" className="hand" alt="hand" />  
                 </Col>
 

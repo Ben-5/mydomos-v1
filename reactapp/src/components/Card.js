@@ -14,7 +14,7 @@ export default function Card(props) {
 
     return (
 
-            <Col className="card_col" sm={8} md={6} lg={4}>
+            <Col className="card_col" sm={8} md={10} lg={6}>
                     <p className="card_info">{props.info}</p>
                     <Link className="card_link" to={`/visit/${props.id}`}>
                         <img className="card_img" alt="visit cover" src={props.image}/>

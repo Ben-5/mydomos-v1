@@ -127,7 +127,7 @@ function Account(props) {
                 {/* AVATAR */}
 
                 <div className="my-avatar">
-                    
+
                     <Subtitle subtitle="Mon portrait"/>
 
                     <div className="avatar">
