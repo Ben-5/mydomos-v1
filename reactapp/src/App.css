@@ -1193,6 +1193,10 @@ margin-bottom: 1vmin;
 
 
 /* start SECTION SCREEN VISIT */
+.tag-visit{
+padding: 55px;
+}
+
 .text-visit {
   margin-top: 3vmax;
   margin-bottom: 4vmax;
@@ -1271,14 +1275,6 @@ padding-top: 4vmin;
   /* padding-bottom: 2.2vmin; A voir avec BEN */ 
 }
 
-<<<<<<< HEAD
-@media only screen and (min-width: 576px) {
-  .fixed-menu-success {
-      display:none;
-  }
-}
-=======
->>>>>>> 35632bdfa5a582b6ba83d7175d2be8f48bc34752
 /*  END SUCCESS screen*/
 
 
@@ -1291,12 +1287,8 @@ padding-top: 4vmin;
   bottom: 0;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-  
   cursor: pointer;
-=======
   align-items: center;
->>>>>>> 35632bdfa5a582b6ba83d7175d2be8f48bc34752
 }
 
 @media only screen and (min-width: 576px) {
@@ -1306,17 +1298,10 @@ padding-top: 4vmin;
 }
 
 .menu-basket-text{
-<<<<<<< HEAD
-  color: #f4f3f3;
-  font-size: 1.643em;
-  margin: 0;
-  align-self: center;
-=======
   font-size: 4vmin;
   font-weight: 500;
   color: white;
   margin: auto;
->>>>>>> 35632bdfa5a582b6ba83d7175d2be8f48bc34752
 }
 
 

@@ -19,13 +19,13 @@ return(
         <Row className="success-container">
             <Col align="middle" >
                 <Title title='Votre visite est réservée !'/>
+                {/* IMAGE A REMPLACER PAR BEN */}
                 <img src="../success.png" className="success" alt="success"/>
                 <Text text="Vous allez recevoir un email de confimation." />
             </Col>
         </Row>
 
 
-  
     </div>
 
      {/*  start partie mobile-fixed qui remplace className=menu-visit  */}
