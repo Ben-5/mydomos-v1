@@ -36,12 +36,12 @@ function App(props) {
                 
                 <Row>
 
-                <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:1}} lg ={{span:12, order:1}}>
+                <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:2}} lg ={{span:12, order:1}} xl ={{span:12, order:1}}>
                     <Title title="Voulez-vous visiter ?"/>
                     <Subtitle subtitle="Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés"/>
                 </Col>
 
-                <Col className="main-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:2}} lg ={{span:12, order:2}}>
+                <Col className="main-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:1}} lg ={{span:12, order:2}} xl ={{span:12, order:2}}>
                     <img src="../hand.png" className="hand" alt="hand" />  
                 </Col>
 
@@ -74,7 +74,7 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Bruxelles</h3>
-                        <Link className="card_link" to={`/visit/5e5fc82ee886e20628918501`}>
+                    <Link className="card_link" to={`/visit/5e5fc82ee886e20628918501`}> 
                         <img className="card_img" alt="visit cover" src="/cover/tassinier.jpg"/>
                         <h4 className="card_title">Hôtel Tassinier</h4>
                     </Link>
@@ -153,7 +153,7 @@ function App(props) {
                             <h1 className="middle-caption-title">Ceci n'est pas un musée</h1>
                             <Subtitle subtitle="Résérvéz des visites exclusives de maisons historiques privées animées par des propriétaires passionés"/>
                         </div>
-                        <LightButton buttonTitle="Découvrir"/>
+                        <LightButton link='/about' buttonTitle="Découvrir"/>
                     </Col>
                 </Row>
                 </div>
@@ -243,7 +243,7 @@ function App(props) {
                     </Col>
                 </div>
                     <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
-                    <Button buttonTitle="Voir plus"/>
+                    <Button link='/results' buttonTitle="Voir plus"/>
                     </div>
                 </div>
         
@@ -253,7 +253,7 @@ function App(props) {
         <div className= "bottom-caption">
                         <span className="bottom-caption-image"><img src="../closer.png" className="closer" alt="closer"/></span>  
                         <h1 className="closer-title">Y'a quelq'un ?</h1>
-                        <LightButton buttonTitle="Entrez !"/>
+                        <LightButton link='/about' buttonTitle="Entrez !"/>
         </div>
       <Footer/>
       <Navigation/>

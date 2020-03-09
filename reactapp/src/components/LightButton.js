@@ -8,22 +8,30 @@ export default function LightButton(props){
 const [lien, setLien] = useState(null)
 
 var handleClick = () => {
-    setLien(props.lien)
-}
-    if(lien){
-        return <Redirect to={lien} />
+    if (props.link) {
+        setLien(props.link)
     }
-        return(
-            <div>
-                <button 
-                        //style
-                        className="button-light" 
-                        //for redirect
-                        onClick={ ()=>handleClick() }
-                        > 
-                        {/* set youy title button */}
-                    <p>{props.buttonTitle} </p> 
-                </button>
-            </div>
-        );
+    else {
+        props.onClick()
+    }
+}
+
+if(lien){
+    return <Redirect to={lien} />
+}
+
+    return(
+        <div>
+            <button 
+                    //style
+                    className="button-light" 
+                    //for redirect
+                    onClick={()=>handleClick()}
+                    > 
+                    {/* set youy title button */}
+                <p>{props.buttonTitle} </p> 
+            </button>
+        </div>
+        
+    );
 }

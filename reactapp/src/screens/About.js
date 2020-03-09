@@ -9,10 +9,9 @@ function App() {
     return (
       <div className="background">
         <Header/>
-            <div className="body-screen">
-
-
-            </div>
+        {/* <Col className="middle-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:1}} lg ={{span:12, order:1}}>
+                        <span className="middle-caption-background"><img src="../headset.png" className="headset" alt="headset"/></span>  
+                    </Col> */}
       <Footer/>
       <Navigation/>
     </div>

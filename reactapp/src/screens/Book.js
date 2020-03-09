@@ -46,7 +46,7 @@ const [ticket, setTicket] = useState(1)
 //Aller au panier
 
 var goToBasket = () => {
-    console.log('yes')
+    props.history.push("/basket")
 }
 
   return(
