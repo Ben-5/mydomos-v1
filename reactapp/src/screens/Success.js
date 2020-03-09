@@ -19,7 +19,7 @@ return(
         <Row className="success-container">
             <Col align="middle" >
                 <Title title='Votre visite est réservée !'/>
-                <img src="../success1.png" className="bubble" alt="bubble"/>
+                <img src="../success.png" className="success" alt="success"/>
                 <Text text="Vous allez recevoir un email de confimation." />
             </Col>
         </Row>

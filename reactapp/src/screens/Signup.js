@@ -1,19 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
 
 import {Redirect} from 'react-router-dom';
 
 import Header   from '../components/Header';
-import Footer   from '../components/Footer';
 import Form     from '../components/Form';
+import Navigation from '../components/Navigation';
 
-export default function Signup() {
+function Signup(props) {
 
     const [isLogged, setIsLogged] = useState(false);
 
+    useEffect(()=> {
+        window.scrollTo(0, 0)
+        if (props.currentUser) { setIsLogged(true) }
+    }, [props.currentUser])
+
 
     var handleRes = (attempt) => {
-        console.log('attempt :', attempt);
         if (attempt.result) {
+            props.addUser(attempt.user);
             setIsLogged(true);
         }
     }
@@ -27,11 +33,15 @@ export default function Signup() {
     return (
         <div className='background'>
             <Header />
-            <div className='body-screen'>
+            <div className='body-screen-sign'>
                 <div className="sign-body">
-                    <div className="main-caption-image">
-                        <img src="../hand.png" className="hand" alt="hand" />  
+                    <div className="keyhole-animation">
+                        <img src="../keyhole.png" className="keyhole" alt="keyhole" />
+                        <img src="../cover.png" className="cover" alt="cover" />
                     </div>
+
+                    <h1 className="sign-body-title">Inscription</h1>  
+
                     <Form
                         containerClassName='sign-form'
                         route = 'users/signup'
@@ -53,7 +63,24 @@ export default function Signup() {
                     />
                 </div>
             </div>
-            <Footer />
+            <Navigation/>
         </div>
     );
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        addUser: function(user) { 
+          dispatch( {type: 'addUser', toAdd: user} ) 
+      }
+    }
+}
+
+function mapStateToProps(state) {
+    return { currentUser: state.currentUser }
+}
+
+export default connect (
+    mapStateToProps,
+    mapDispatchToProps,
+)(Signup);
