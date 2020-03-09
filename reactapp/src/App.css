@@ -1189,9 +1189,15 @@ margin-bottom: 1vmin;
 
 /* END screen ACCOUNT */
 
+
 /* start SECTION SCREEN VISIT */
-.col-visit{
-  margin: 10px;
+.text-visit {
+  margin-top: 3vmax;
+  margin-bottom: 4vmax;
+}
+
+.votre-hote{
+padding-top: 4vmin;
 }
 
 .img-column-visit {
@@ -1233,9 +1239,11 @@ margin-bottom: 1vmin;
 }
 /* end SECTION SCREEN VISIT */
 
+
 /* SIGN START */
 
 /* SIGN END */
+
 
 /*  START SUCCESS screen */
 .success {
@@ -1244,7 +1252,7 @@ margin-bottom: 1vmin;
   margin-top: 3vmin;
 }
 
-.success-container{
+.success-container {
   justify-content: center;
   margin-bottom: 10vmin;
   margin-left: 2vmin;
@@ -1252,18 +1260,28 @@ margin-bottom: 1vmin;
 }
 
 .fixed-menu-success {
-  background-color: #f4f3f3;
+  background-color: white;
   height: 14vmin;
   position:fixed;
   bottom: 0;
   width: 100%;
+  min-height: 16vmin;
   /* padding-bottom: 2.2vmin; A voir avec BEN */ 
 }
 
+<<<<<<< HEAD
+@media only screen and (min-width: 576px) {
+  .fixed-menu-success {
+      display:none;
+  }
+}
+=======
+>>>>>>> 35632bdfa5a582b6ba83d7175d2be8f48bc34752
 /*  END SUCCESS screen*/
 
+
 /*  START BASKET screen */
-.menu-success{
+.menu-basket-fixed{
   background-color: #791212 ;
   height: 16vmin;
   width: 100%;
@@ -1271,7 +1289,12 @@ margin-bottom: 1vmin;
   bottom: 0;
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
+  
+  cursor: pointer;
+=======
   align-items: center;
+>>>>>>> 35632bdfa5a582b6ba83d7175d2be8f48bc34752
 }
 
 @media only screen and (min-width: 576px) {
@@ -1281,10 +1304,17 @@ margin-bottom: 1vmin;
 }
 
 .menu-basket-text{
+<<<<<<< HEAD
+  color: #f4f3f3;
+  font-size: 1.643em;
+  margin: 0;
+  align-self: center;
+=======
   font-size: 4vmin;
   font-weight: 500;
   color: white;
   margin: auto;
+>>>>>>> 35632bdfa5a582b6ba83d7175d2be8f48bc34752
 }
 
 
@@ -1300,10 +1330,13 @@ margin-bottom: 1vmin;
 
 }
 
+.basket-container{
+  position: relative;
+}
 /*  END BASKET screen*/
 
-/*  START BOOK screen*/
 
+/*  START BOOK screen*/
 .grid-container-book {
   padding-top: 6vmin;
   display: grid;

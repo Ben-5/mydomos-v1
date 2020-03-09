@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
-import Card from '../components/Card';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 import Button from '../components/Button';

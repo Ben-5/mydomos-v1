@@ -67,7 +67,7 @@ function Basket(){
                         <Text text="35€ par personne " />
                         <div>35€</div>
                     </Row>
-                     <Text text="1 place" />
+                     <Text text="2 place" />
             </Col>            
         </Row>
 
@@ -77,7 +77,7 @@ function Basket(){
         <Button link="/signin" buttonTitle="Valider la commande" />
     </Row>
     
-    </div>
+</div>
 
 
 {/*-------->START slider section */}
