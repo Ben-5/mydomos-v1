@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
-import Card from '../components/Card';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 import Button from '../components/Button';
@@ -75,7 +74,7 @@ function App(props) {
                     </Col>
                     <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
                         <h3 className="card_info">Bruxelles</h3>
-                    <Link className="card_link" to={`/visit/5e5fc82ee886e20628918501`}>
+                        <Link className="card_link" to={`/visit/5e5fc82ee886e20628918501`}>
                         <img className="card_img" alt="visit cover" src="/cover/tassinier.jpg"/>
                         <h4 className="card_title">Hôtel Tassinier</h4>
                     </Link>
