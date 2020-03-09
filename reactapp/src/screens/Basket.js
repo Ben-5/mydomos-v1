@@ -21,7 +21,7 @@ function Basket(props){
     var buttonConfirm
     var buttonLink
 
-    if(props.visitInBasket == 0){
+    if(props.visitInBasket === 0){
         subVisit = "Vous n'avez aucune visite dans votre sélection."
         sliderTitle = "Pourquoi ne pas commencez par celles-ci ?"
         buttonConfirm = "Rechercher des visites"

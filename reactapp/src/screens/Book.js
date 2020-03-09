@@ -14,8 +14,8 @@ import {connect} from 'react-redux'
 
 function Book(props){
 
-    const [visit, setVisit] = useState([])
-    const [info, setInfo] = useState([])
+    const [visit, setVisit] = useState([]);
+    const [info, setInfo] = useState([]);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -38,7 +38,7 @@ function formatDate(date) {
     return `${dateString} ${monthString} ${date.getFullYear()}`;
 }
 
-console.log(formatDate(new Date))
+// console.log(formatDate(new Date));
 
 //Ajouter des billets
 const [quantity, setQuantity] = useState(1)
@@ -47,6 +47,15 @@ const [quantity, setQuantity] = useState(1)
 
 var goToBasket = () => {
     props.history.push("/basket")
+}
+
+var handleAdd = (visit, save) => {
+    var toAdd = {
+        visitId: visit._id,
+        infoId: save._id,
+        orderNb: quantity,
+    }
+    props.addVisitToBasket(toAdd);
 }
 
   return(
@@ -70,7 +79,7 @@ var goToBasket = () => {
 
             {info.map((data,i) => (
 
-            <div className="grid-container-book">
+            <div key={i} className="grid-container-book">
 
                 <div className="grid-item-book book-date">
                     <div className="book-date"><Text text={data.date}/></div>
@@ -79,7 +88,7 @@ var goToBasket = () => {
                 </div>
                     <div><Text text={`${data.price} €`}/></div>
                     <div className="grid-item-book book-ticket"><InputNumber min={1} max={data.maxStock} defaultValue={1} onChange={e=>setQuantity(e)} value={quantity}/></div>
-                    <div className="grid-item-book book-button"><Button buttonTitle="Valider" onClick={ () => {props.addVisitToBasket(visit); goToBasket()}}/></div>
+                    <div className="grid-item-book book-button"><Button buttonTitle="Valider" onClick={ () => {handleAdd(visit, data); goToBasket()}}/></div>
             </div>
             ))}
                 
