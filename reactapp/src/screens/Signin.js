@@ -15,7 +15,7 @@ function Signin(props) {
     useEffect(()=> {
         window.scrollTo(0, 0)
         if (props.currentUser) { setIsLogged(true) }
-    });
+    }, [setIsLogged]);
 
     var handleRes = (attempt) => {
         if (attempt.result) {
