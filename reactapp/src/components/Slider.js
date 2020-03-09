@@ -13,7 +13,7 @@ export default function Slider(props) {
 
         <div>
 
-            <p className="sliderTitle">{props.sliderTitle}</p>
+            <h3 className="sliderTitle">{props.sliderTitle}</h3>
 
             <div className="scrolling-wrapper">
 

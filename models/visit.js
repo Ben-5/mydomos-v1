@@ -22,6 +22,7 @@ var visitSchema = mongoose.Schema({
     ref:        String,
     title:      String,
     desc:       String,
+    place:      String,
     host:       String,
     rate:       Number,
     isRmv:      Boolean,

@@ -1,10 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import {Redirect} from 'react-router-dom';
 
 import Header   from '../components/Header';
 import Footer   from '../components/Footer';
 import Form     from '../components/Form';
 
 export default function Signup() {
+
+    const [isLogged, setIsLogged] = useState(false);
+
+
+    var handleRes = (attempt) => {
+        console.log('attempt :', attempt);
+        if (attempt.result) {
+            setIsLogged(true);
+        }
+    }
+
+
+    if (isLogged) {
+        return (
+            <Redirect to='/account' />
+        );
+    }
     return (
         <div className='background'>
             <Header />
@@ -15,8 +34,7 @@ export default function Signup() {
                     </div>
                     <Form
                         containerClassName='sign-form'
-                        containerStyle={{paddingLeft: '10vmin'}}
-                        route = '/user/signup'
+                        route = 'users/signup'
                         inputList={[
                             {name: 'firstname', placeholder: 'firstname'},
                             {name: 'lastname',placeholder:'lastname'},
@@ -31,7 +49,7 @@ export default function Signup() {
                             {title: "J'ai déja les clefs !", link: '/signin'},
                         ]}
 
-                        getRes={e=>console.log(e)}
+                        getRes={e=>handleRes(e)}
                     />
                 </div>
             </div>

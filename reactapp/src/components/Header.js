@@ -13,7 +13,9 @@ export default function Header() {
                     <Link to='/home'>
                     <img src="../logo.png" className="logo" alt="logo" />
                     </Link>
+                    <Link to='/home'>
                     <div className="header-title">MYDOMOS</div>
+                    </Link>
                 </Col>
                 <Col className="header-lang" xs={12} sm={12} md={14} lg={12} xl={12}>
                     <Select className="header-lang" defaultValue="fr" style={{ width: 77, marginRight:'3vmin' }} bordered={false}>

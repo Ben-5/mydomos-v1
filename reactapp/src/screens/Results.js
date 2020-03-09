@@ -16,32 +16,32 @@ function Results(props) {
   
   //Récupérer les visites de la BDD
     useEffect(() => {
+        window.scrollTo(0, 0)
         const getlist = async() => {
         const response = await fetch('/visit/results')
         const data = await response.json()
-        console.log(data.list)
         setResultList(data.list) 
         }
         getlist()  
     },[])
 
-  
+
     return (
 
-        <div>
+        <div className="background">
     
             <Header/>
 
             <div className="body-screen">
 
 
-                <div style={{marginLeft: '2vmin'}}>
+                <div style={{marginLeft: '2vmin', marginTop:'4vmin'}}>
                     <Title title="Trouvez des visites"/>
                 </div>
 
-                <div style={{display:'flex', marginLeft: '6vmin', alignItems:'center', marginTop:'4vmin', marginBottom:'4vmin'}}>
+                <div style={{display:'flex', marginLeft: '2vmin', marginRight: '2vmin', alignItems:'center', marginTop:'6vmin', marginBottom:'10vmin'}}>
 
-                    <div style={{width:'60vw'}}>
+                    <div style={{width:'100vw'}}>
                         <Input 
                             placeholder="essayer 'Paris'"
                             type="text"
@@ -49,7 +49,7 @@ function Results(props) {
                             value={content}
                             />
                     </div>
-                    <div style={{width:'75px', marginLeft: '3vmin'}}>
+                    <div style={{ marginLeft: '10vmin'}}>
                         <Button 
                         buttonTitle="Valider"
                         />
@@ -57,21 +57,20 @@ function Results(props) {
 
                 </div>
             
-
-                <Row className="card_row">
-
-                {resultList.map((visit, i) => (
-                    <Card
-                        key={i}
-                        info={visit.address.city}
-                        image={visit.cover}
-                        title={visit.title}
-                        price={visit.price}/>
-                ))}
-                    
-                </Row>
-
                 
+                    <Row className="card_row">
+
+                    {resultList.map((visit, i) => (
+                        <Card
+                            key={i}
+                            id={visit._id}
+                            info={visit.address.city}
+                            image={visit.cover}
+                            title={visit.title}
+                            price={visit.info[0].price}/>
+                     ))}
+                    
+                    </Row>
 
             </div>
             

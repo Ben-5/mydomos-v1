@@ -57,7 +57,7 @@ function Account(props) {
          borderA = {border: 'solid 2px #791212'}
          borderW = {border: 'none'} 
          borderM = {border: 'none'} 
-    } else {
+    } else if (medusa) {
          borderM = {border: 'solid 2px #791212'}
          borderW = {border: 'none'} 
          borderA = {border: 'none'} 
@@ -84,14 +84,20 @@ const data = [
 
             <div className="body-screen">
 
+            <div style={{marginLeft: '2vmin', marginTop: '4vmin'}}>
 
-                <div style={{marginLeft: '2vmin', marginBottom: '4vmin'}}>
-                    <Title title="Mon compte"/>
+                <Title title="Mon compte"/>
 
-             {/* COORDONNEES */}
-                    <Subtitle subtitle="Mes informations"/>
-                </div>
+            </div>
 
+            {/* COORDONNEES */}
+
+            <div className="my-account-main">
+
+            <div className="my-account">
+
+                <Subtitle subtitle="Mes informations"/>
+                
                 <div className="grid-container">
 
                     <div className="grid-item account-info"><Text text="Nom"/></div>
@@ -119,59 +125,42 @@ const data = [
                     <div className="grid-item"><Text text="France"/></div>
                     
                 </div> 
-
-                <div>
                     <Button buttonTitle="Modifier mes informations"/> 
+
                 </div>
 
-            {/* AVATAR */}
-                <div className="account-subtitle">
-                <Subtitle subtitle="Mon portrait"/>
-                </div>
+                {/* AVATAR */}
 
-                <div className="avatar">
+                <div className="my-avatar">
+                    
+                    <Subtitle subtitle="Mon portrait"/>
+
+                    <div className="avatar">
 
                     <div className="middle-caption-image">
-                        <span className="background-wig" style={borderW}><img src="../picto-wig.png" className="picto-portrait" alt="picto-portrait" onClick={() => chooseWig() }/></span>  
+                        <span className="background-wig" style={borderW}><img src="../wig.png" className="picto-portrait" alt="picto-portrait" onClick={() => chooseWig() }/></span>  
                     </div>
 
                     <div className="middle-caption-image">
-                        <span className="background-armor" style={borderA}><img src="../picto-armor.png" className="picto-portrait" alt="picto-portrait" onClick={() => chooseArmor() }/></span>  
+                        <span className="background-armor" style={borderA}><img src="../armor.png" className="picto-portrait" alt="picto-portrait" onClick={() => chooseArmor() }/></span>  
                     </div>
 
                     <div className="middle-caption-image">
-                        <span className="background-medusa" style={borderM}><img src="../picto-medusa.png" className="picto-medusa" alt="picto-portrait" onClick={() => chooseMedusa() }/></span>  
+                        <span className="background-medusa" style={borderM}><img src="../medusa.png" className="picto-medusa" alt="picto-portrait" onClick={() => chooseMedusa() }/></span>  
+                    </div>
+
                     </div>
 
                 </div>
 
-            {/* RESERVATIONS DU COMPTE */}
-                <div className="account-subtitle">
-                    <Subtitle subtitle="Mes réservations"/>
                 </div>
-
-                <List
-                    itemLayout="horizontal"
-                    dataSource={data}
-                    renderItem={item => (
-                    <List.Item
-                        actions={[<Button buttonTitle="Voir ma réservation" />]}>
-                        <List.Item.Meta
-                        title={<Text text={item.title}></Text>}
-                        description={item.description}
-                        />
-                    </List.Item>
-                    )}
-                />
+                
+                {/* CHANGER MDP */}
 
 
+                <div className="my-password">
 
-            {/* CHANGER MDP */}
-
-                <div className="account-subtitle">
                     <Subtitle subtitle="Modifier mon mot de passe"/>
-                </div>
-
 
                 <div className="grid-container">
 
@@ -186,6 +175,33 @@ const data = [
                 </div>
 
                 <Button buttonTitle="Valider mon nouveau mot de passe"/>
+
+                </div>
+
+            
+
+            {/* RESERVATIONS DU COMPTE */}
+                <div className="account-subtitle">
+                    <Subtitle subtitle="Mes réservations"/>
+                </div>
+
+                <List
+                    itemLayout="horizontal"
+                    dataSource={data}
+                    renderItem={item => (
+                    <List.Item
+                        actions={[<Button buttonTitle="Voir"/>]}>
+                        <List.Item.Meta
+                        title={<Text text={item.title}></Text>}
+                        description={item.description}
+                        />
+                    </List.Item>
+                    )}
+                />
+
+
+
+            
 
             {/* SLIDER */}
             <div className="breaking-visits">

@@ -8,9 +8,9 @@ export default function Button(props){
     const [lien, setLien] = useState(null)
 
     var handleClick = () => {
-        if (lien) {
+        if (props.link) {
             setLien(props.link)
-        } 
+        }
         else {
             props.onClick()
         }
