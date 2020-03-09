@@ -75,7 +75,6 @@ router.get('/visitpage/:id', async function(req, res, next) {
 router.get('/book/:id', async function(req, res, next) {
   
   var visit = await visitModel.find({_id : req.params.id});
-  console.log(visit)
 
   res.json({result: true, visit : visit}); 
 });

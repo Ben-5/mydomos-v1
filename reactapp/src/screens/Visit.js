@@ -5,8 +5,8 @@ import Button from '../components/Button';
 import Text from '../components/Text';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
-import {Row, Col, Avatar} from 'antd';
 
+import {Row, Col, Avatar} from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
@@ -26,8 +26,6 @@ export default function Visit(props){
     }
     getVisit()  
   },[])
-
-
 
 return(
 
@@ -78,13 +76,44 @@ return(
                     <Text text={`À partir de ${data.info[0].price} €`}/>
                     <Button link={`/book/${data._id}`} buttonTitle="Voir les dates" />
                 </Row>
-                
             </Row>
+            
+            <Row className="text-visit" >
+                <Col xs ={{span:12}} sm ={{span:12}} md ={{span:12}} lg ={{span:12}} >
+                  <Text text="Durée" />
+                  <Text text={data.info[0].duration} />
+                </Col>
+                <Col xs ={{span:12}} sm ={{span:12}} md ={{span:12}} lg ={{span:12}}>
+                  <Text text="Taille du groupe" /> 
+                  <Text text={`Jusqu'à ${data.info[0].maxStock} personnes`} /> 
+                </Col>
+            </Row> 
+            <Row className="text-visit">
+               <Col xs ={{span:12}} sm ={{span:12}} md ={{span:12}} lg ={{span:12}}>
+                 <Text text=" Inclu" /> 
+                 <Text text={data.info[0].opt} /> 
+               </Col>
+               <Col xs ={{span:12}} sm ={{span:12}} md ={{span:12}} lg ={{span:12}}>
+                 <Text text="Language" />
+                 <Text text={data.info[0].lang} />
+               </Col>
+            </Row>
+            
+            <Row style={{justifyContent:"space-evenly"}} className="text-visit">
+                    <Col align="middle" >
+                        <Avatar className="background-wig"  src="../drink.png" /> <Text text="Apéro" />
+                    </Col>
+                    <Col align="middle">
+                        <Avatar className="background-wig"  src="../breakfast.png" /> <Text text="Colation" />
+                    </Col>
+                </Row>
+
                 {/* end partie remplacé fixed-menu-visit  */} 
 
             {/* SECTION TEXT VISIT  */}
 
-            <Row gutter={[32, 32]} className="visite-lieu text-visit">
+                          {/* SECTION TEXT VISIT  */}
+            <Row gutter={[32, 32]} className="text-visit">
                 <Col lg={{span:12}}>
                     <Subtitle subtitle="La visite" />
                     <Text text={data.desc}/></Col >
@@ -94,15 +123,13 @@ return(
                 </Col>
             </Row>
 
-            <Row gutter={[112, 112]} className="votre-hote">
+            <Row gutter={[32, 32]} className="votre-hote">
                 <Col lg={{span:112}}>
                     <Avatar className="avatar-hote" size={100} icon={<UserOutlined />} />
                     <Subtitle subtitle="Votre hôte"/>
                     <Text  text={data.host}/>
                 </Col>     
             </Row> 
-           
-
           </div>
         ))}
         <Footer/>

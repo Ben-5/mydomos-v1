@@ -1188,9 +1188,15 @@ margin-bottom: 1vmin;
 
 /* END screen ACCOUNT */
 
+
 /* start SECTION SCREEN VISIT */
-.col-visit{
-  margin: 10px;
+.text-visit {
+  margin-top: 3vmax;
+  margin-bottom: 4vmax;
+}
+
+.votre-hote{
+padding-top: 4vmin;
 }
 
 .img-column-visit {
@@ -1232,9 +1238,11 @@ margin-bottom: 1vmin;
 }
 /* end SECTION SCREEN VISIT */
 
+
 /* SIGN START */
 
 /* SIGN END */
+
 
 /*  START SUCCESS screen */
 .success {
@@ -1243,7 +1251,7 @@ margin-bottom: 1vmin;
   margin-top: 3vmin;
 }
 
-.success-container{
+.success-container {
   justify-content: center;
   margin-bottom: 10vmin;
   margin-left: 2vmin;
@@ -1251,18 +1259,25 @@ margin-bottom: 1vmin;
 }
 
 .fixed-menu-success {
-  background-color: #f4f3f3;
+  background-color: white;
   height: 14vmin;
   position:fixed;
   bottom: 0;
   width: 100%;
+  min-height: 16vmin;
   /* padding-bottom: 2.2vmin; A voir avec BEN */ 
 }
 
+@media only screen and (min-width: 576px) {
+  .fixed-menu-success {
+      display:none;
+  }
+}
 /*  END SUCCESS screen*/
 
+
 /*  START BASKET screen */
-.menu-success{
+.menu-basket-fixed{
   background-color: #791212 ;
   height: 16vmin;
   width: 100%;
@@ -1270,6 +1285,7 @@ margin-bottom: 1vmin;
   bottom: 0;
   display: flex;
   justify-content: center;
+  cursor: pointer;
   align-items: center;
 }
 
@@ -1299,10 +1315,13 @@ margin-bottom: 1vmin;
 
 }
 
+.basket-container{
+  position: relative;
+}
 /*  END BASKET screen*/
 
-/*  START BOOK screen*/
 
+/*  START BOOK screen*/
 .grid-container-book {
   padding-top: 3vmin;
   display: grid;

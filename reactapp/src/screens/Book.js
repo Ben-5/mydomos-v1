@@ -41,7 +41,7 @@ function formatDate(date) {
 console.log(formatDate(new Date))
 
 //Ajouter des billets
-const [ticket, setTicket] = useState(1)
+const [quantity, setQuantity] = useState(1)
 
 //Aller au panier
 
@@ -78,8 +78,8 @@ var goToBasket = () => {
                     <div className="book-stock"><Text text={`Il ne reste que ${data.stock} places`}/></div>
                 </div>
                     <div><Text text={`${data.price} €`}/></div>
-                    <div className="grid-item-book book-ticket"><InputNumber min={1} max={data.maxStock} defaultValue={1} onChange={e=>setTicket(e)} value={ticket}/></div>
-                    <div className="grid-item-book book-button"><Button buttonTitle="Valider" onClick={ () => {props.addToBasket(visit); goToBasket()}}/></div>
+                    <div className="grid-item-book book-ticket"><InputNumber min={1} max={data.maxStock} defaultValue={1} onChange={e=>setQuantity(e)} value={quantity}/></div>
+                    <div className="grid-item-book book-button"><Button buttonTitle="Valider" onClick={ () => {props.addVisitToBasket(visit); goToBasket()}}/></div>
             </div>
             ))}
                 
@@ -98,7 +98,7 @@ var goToBasket = () => {
 
 function mapDispatchToProps(dispatch){
     return {
-      addToBasket: function(visit){
+      addVisitToBasket: function(visit){
         dispatch({type: 'addVisit', visit})
       }
     }
