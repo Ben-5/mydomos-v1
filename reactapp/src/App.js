@@ -7,6 +7,7 @@ import {createStore, combineReducers}  from 'redux';
 
 //REDUCERS
 import currentUser from './reducers/user-reducer';
+import visit from './reducers/visit-reducer';
 
 //ROUTER DOM
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -25,7 +26,7 @@ import VisitScreen    from './screens/Visit'
 
 import RedirectToHome from '../src/toHome'
 
-const STORE = createStore(combineReducers({currentUser}));
+const STORE = createStore(combineReducers({currentUser, visit}), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default function App() {
 
@@ -37,7 +38,7 @@ export default function App() {
           <Route path="/home"     component={HomeScreen} />
           <Route path="/about"    component={AboutScreen} />
           <Route path="/account"  component={AccountScreen} />
-          <Route path="/book"     component={BookScreen} />
+          <Route path="/book/:_id"     component={BookScreen} />
           <Route path="/home"     component={HomeScreen} />
           <Route path="/basket"   component={BasketScreen} />
           <Route path="/results"  component={ResultsScreen} />

@@ -74,7 +74,7 @@ return(
                 {/* start partie remplacé par className=fixed-menu-visit  */}
                 <Row align="middle" className="menu-visit">
                     <Text text={`À partir de ${data.info[0].price} €`}/>
-                    <Button lien="/book" buttonTitle="Voir les dates" />
+                    <Button link={`/book/${data._id}`} buttonTitle="Voir les dates" />
                 </Row>
             </Row>
             
@@ -135,10 +135,13 @@ return(
         <Footer/>
 
         {/*  start partie mobile-fixed qui remplace className=menu-visit  */}
+
+        {visit.map((data, i) => (
         <Row align="middle" justify="space-around"  className="fixed-menu-visit">
             <Text text="A partir de 69 €" />
-            <Button lien="/book" buttonTitle="Voir les dates" />
+            <Button link={`/book/${data._id}`} buttonTitle="Voir les dates" />
         </Row>
+        ))}
         {/*  end partie mobile-fixed qui remplace className=menu-visit  */}
 
     </div>

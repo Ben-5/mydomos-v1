@@ -1052,7 +1052,6 @@ margin-bottom: 1vmin;
 .my-account-main {
 
   display: flex;
-  
 }
 
 .my-account {
@@ -1076,7 +1075,7 @@ margin-bottom: 1vmin;
   padding-left: 2vmin;
   padding-bottom: 6vmin;
   width: 50%;
-  
+
 }
 
 .grid-container {
@@ -1098,8 +1097,6 @@ margin-bottom: 1vmin;
     font-size: 10px;
   }
 }
-
-
 
 .accountUpdateInfo {
   width: 40vmin;
@@ -1286,8 +1283,8 @@ padding-top: 4vmin;
   bottom: 0;
   display: flex;
   justify-content: center;
-  
   cursor: pointer;
+  align-items: center;
 }
 
 @media only screen and (min-width: 576px) {
@@ -1324,10 +1321,27 @@ padding-top: 4vmin;
 
 /*  START BOOK screen*/
 .grid-container-book {
-  padding-top: 6vmin;
+  padding-top: 3vmin;
   display: grid;
-  grid-template-columns: 40vmin 40vmin 40vmin;
-  padding-bottom: 8vmin;
+  align-items: center;
+  grid-template-columns: 60vmin 20vmin 20vmin 20vmin;
+  padding-bottom: 3vmin;
+}
+
+@media only screen and (max-width: 576px) {
+  .grid-container-book   {
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      grid-template-columns: 10vmin 10vmin 10vmin 10vmin;
+  }
+
+  .book-ticket {
+    width: 10vmin;
+    margin-bottom: 2vmin;
+    padding-right: 10vmin
+  } 
+
 }
 
 .grid-item-book {
@@ -1349,10 +1363,12 @@ padding-top: 4vmin;
 .book-stock {
   margin-bottom: 2vmin;
   font-size: 12px;
-  font-weight: 300
+  font-weight: 300;
+  color:  #791212
 }
 
 .book-ticket {
+  width: 20vmin;
   margin-bottom: 2vmin;
   padding-right: 10vmin
 } 
@@ -1363,10 +1379,4 @@ padding-top: 4vmin;
   font-weight: 300
 }
 
-
 /*  END BOOK screen*/
-
-
-
-
-
