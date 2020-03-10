@@ -28,6 +28,7 @@ var visitSchema = mongoose.Schema({
     isRmv:      Boolean,
     cover:      String,
     pics:       [String],
+    slider:     String,
     info:       [visitInfoSchema],
     address:    visitAddressSchema,
 });
