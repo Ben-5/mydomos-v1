@@ -13,42 +13,19 @@ import {Row, Col} from 'antd';
 
 function Basket(props){
 
-    const [basketList, setBasketList] = useState([]);
+    const [basketList] = useState(props.visitInBasket);
 
     useEffect(() => {
-        async function fetchData() {
-
-            var list = props.visitInBasket;
-
-            for (var i=0;i<list.length;i++) {
-                const rawVisit = await fetch(`/visit/visitpage/${list[i].visitId}`);
-                const fetchVisit = await rawVisit.json();
-
-                for (var j=0;j<fetchVisit.visit[0].info.length;j++) {
-                    if (fetchVisit.visit[0].info[j]._id === list[i].infoId) {
-                        var toPush = {
-                            title: fetchVisit.visit[0].title,
-                            date: fetchVisit.visit[0].info[j].date,
-                            time: fetchVisit.visit[0].info[j].time,
-                            price: fetchVisit.visit[0].info[j].price,
-                            quantity: list[i].orderNb,
-                        }
-                        setBasketList([...basketList, toPush]);
-                        console.log('basketList :', basketList);
-                    }
-                }
-            }
-        }
-        fetchData();
-      }, [props.visitInBasket]);
+        window.scrollTo(0, 0);
+    }, []);
 
 
 
     //Afficher un texte différent si le panier est vide
-    var subVisit
-    var sliderTitle
-    var buttonConfirm
-    var buttonLink
+    var subVisit;
+    var sliderTitle;
+    var buttonConfirm;
+    var buttonLink;
 
     if(props.visitInBasket === 0){
         subVisit = "Vous n'avez aucune visite dans votre sélection."
@@ -61,7 +38,7 @@ function Basket(props){
         buttonConfirm = "Valider la commande"
         buttonLink = "/signin"
     }
-
+console.log('basketList :', basketList);
     return(
 
     <div className="background">
@@ -89,25 +66,25 @@ function Basket(props){
 
         {/* ---->ROW className="success-container" A MAPPER AVEC BDD<---- */}
 
-        {/* {basketList.map((visit,i) => (
+        {basketList.map((order, i) => (
 
             <Row className="success-container">
 
                 <Col xs={{span:24}}>
-                <Subtitle subtitle={visit.title} />
+                <Subtitle subtitle={order.title} />
                     <Col style={{borderTopStyle: "inset"}}>
-                        <Text text={visit.info.date}/>
-                        <Text text={visit.info.time} />
+                        <Text text={order.date}/>
+                        <Text text={order.time} />
                     </Col>
                         <Row justify="space-between" align='middle'>
-                            <Text text={`${visit.info.price} € par personne`}/>
+                            <Text text={`${order.price} € par personne`}/>
                             <div>35€</div>
                         </Row>
                         <Text text={`2 places`} />
                 </Col>
             </Row>
 
-        ))} */}
+        ))}
 
         {/* start partie remplacée par className=fixed-menu-visit  */}
         <Row align="middle" className="menu-basket">
