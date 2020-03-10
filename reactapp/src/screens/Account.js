@@ -23,8 +23,6 @@ function Account(props) {
     const [wig, setWig] = useState(false)
     const [armor, setArmor] = useState(false)
     const [medusa, setMedusa] = useState(false)
-
-    console.log(props.getCurrentUser)
     
     //Sélectionner avatar
 
