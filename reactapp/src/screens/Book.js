@@ -52,6 +52,7 @@ var handleAdd = (visit, save) => {
         time: save.time,
         price: save.price,
         quantity: quantity,
+        stock: save.stock
     }
     props.addVisitToBasket(toAdd);
 }
@@ -106,6 +107,6 @@ function mapDispatchToProps(dispatch){
         dispatch({type: 'addVisit', visit})
       }
     }
-  }
+}
 
   export default connect(null, mapDispatchToProps)(Book)
