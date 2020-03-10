@@ -412,7 +412,7 @@
 
 }
 
-.headset {
+.headphones {
 
   height: 44vmin;
   transform-origin: 80% 100%;
@@ -428,7 +428,7 @@
   100%   {transform: rotate(0deg);}
 }
 
-.headset {    
+.headphones {    
   animation: shake alternate infinite 1.9s ease-out;
 }
 
@@ -1270,14 +1270,11 @@ padding-top: 4vmin;
   /* padding-bottom: 2.2vmin; A voir avec BEN */ 
 }
 
-<<<<<<< HEAD
-=======
 @media only screen and (min-width: 576px) {
   .fixed-menu-success {
       display:none;
   }
 }
->>>>>>> ac76e54c20da42e5f7cae3a1fdf50c68681d2f5c
 /*  END SUCCESS screen*/
 
 
