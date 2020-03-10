@@ -68,7 +68,7 @@ console.log('basketList :', basketList);
 
         {basketList.map((order, i) => (
 
-            <Row className="success-container">
+            <Row key={i} className="success-container">
 
                 <Col xs={{span:24}}>
                 <Subtitle subtitle={order.title} />
@@ -78,7 +78,7 @@ console.log('basketList :', basketList);
                     </Col>
                         <Row justify="space-between" align='middle'>
                             <Text text={`${order.price} € par personne`}/>
-                            <div>35€</div>
+                            <div>{`${order.price * order.quantity} €`}</div>
                         </Row>
                         <Text text={`2 places`} />
                 </Col>
