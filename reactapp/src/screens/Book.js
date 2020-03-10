@@ -47,7 +47,11 @@ var handleAdd = (visit, save) => {
     var toAdd = {
         visitId: visit._id,
         infoId: save._id,
-        orderNb: quantity,
+        title: visit.title,
+        date: save.date,
+        time: save.time,
+        price: save.price,
+        quantity: quantity,
     }
     props.addVisitToBasket(toAdd);
 }
