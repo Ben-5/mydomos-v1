@@ -6,7 +6,7 @@ import Text from '../components/Text';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 
-import {Row, Col, Avatar, Tag} from 'antd';
+import {Row, Col, Avatar} from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
@@ -31,11 +31,28 @@ export default function Visit(props){
   //map de toutes les infos via BDD
 const visitSelected = visit.map((data, i) => {    
     const dataOptList = data.info[0].opt;
-    let optList = dataOptList.map((opt, j) => (
-             <Text text={opt} key={j} />    
-    )
-    )
-    console.log(optList)
+    const tagList = [];
+        let optList = dataOptList.map((opt, i) => {
+          if(opt === 'Apéro' ){
+            tagList.push ( <Col align="middle"> <Avatar className="background-wig"  src="../drink.png" /><Text text="Apéro" /></Col> )
+            }
+            if(opt === 'Collation' ){
+                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../breakfast.png" /><Text text="Colation" /></Col> )
+            }
+            if(opt === 'Café Thé' ){
+                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../coffe.png" /><Text text="Café Thé" /></Col> )
+            }
+            if(opt === 'Concert' ){
+                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../concert.png" /><Text text="Concert" /></Col> )
+            }
+            if(opt === 'By night' ){
+                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../bynight.png" /><Text text="By night" /></Col> )
+            }
+            if(opt === 'Perle rare' ){
+                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../perle.png" /><Text text="Perle rare" /></Col> )
+            }
+          return ( <Text text={opt} />)
+        });
 
     return(
 <div key={i} className="body-screen">
@@ -78,7 +95,7 @@ const visitSelected = visit.map((data, i) => {
         {/* start partie remplacé par className=fixed-menu-visit  */}
         <Row align="middle" className="menu-visit">
             <Text text={`À partir de ${data.info[0].price} €`}/>
-            <Button lien="/book" buttonTitle="Voir les dates" />
+            <Button link={`/book/${visit[0]._id}`} buttonTitle="Voir les dates" />
         </Row>
     </Row>
     
@@ -102,15 +119,11 @@ const visitSelected = visit.map((data, i) => {
          <Text text={data.info[0].lang} />
        </Col>
     </Row>
-    
+               
+
     <Row style={{justifyContent:"space-evenly"}} className="text-visit">
-            <Col align="middle" >
-                <Avatar className="background-wig"  src="../drink.png" /> <Text text="Apéro" />
-            </Col>
-            <Col align="middle">
-                <Avatar className="background-wig"  src="../breakfast.png" /> <Text text="Colation" />
-            </Col>
-        </Row>
+         {tagList}
+    </Row> 
 
         {/* end partie remplacé fixed-menu-visit  */} 
 
@@ -136,8 +149,7 @@ const visitSelected = visit.map((data, i) => {
     </Row> 
   </div>
 )
-}) 
-
+})
  
     return(
  

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
@@ -13,13 +13,19 @@ import {Row, Col} from 'antd';
 
 function Basket(props){
 
+    const [basketList] = useState(props.visitInBasket);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
 
 
     //Afficher un texte différent si le panier est vide
-    var subVisit
-    var sliderTitle
-    var buttonConfirm
-    var buttonLink
+    var subVisit;
+    var sliderTitle;
+    var buttonConfirm;
+    var buttonLink;
 
     if(props.visitInBasket === 0){
         subVisit = "Vous n'avez aucune visite dans votre sélection."
@@ -32,14 +38,13 @@ function Basket(props){
         buttonConfirm = "Valider la commande"
         buttonLink = "/signin"
     }
-
-
+console.log('basketList :', basketList);
     return(
 
-<div className="background">
-  <Header/>
+    <div className="background">
+    <Header/>
 
-    <div  className="body-screen">
+        <div  className="body-screen">
 
             <div className= "main-caption">
                 
@@ -61,19 +66,19 @@ function Basket(props){
 
         {/* ---->ROW className="success-container" A MAPPER AVEC BDD<---- */}
 
-        {props.visitInBasket.map((visit,i) => (
+        {basketList.map((order, i) => (
 
-            <Row className="success-container">
+            <Row key={i} className="success-container">
 
                 <Col xs={{span:24}}>
-                <Subtitle subtitle={visit.title} />
+                <Subtitle subtitle={order.title} />
                     <Col style={{borderTopStyle: "inset"}}>
-                        <Text text={visit.info.date}/>
-                        <Text text={visit.info.time} />
+                        <Text text={order.date}/>
+                        <Text text={order.time} />
                     </Col>
                         <Row justify="space-between" align='middle'>
-                            <Text text={`${visit.info.price} € par personne`}/>
-                            <div>35€</div>
+                            <Text text={`${order.price} € par personne`}/>
+                            <div>{`${order.price * order.quantity} €`}</div>
                         </Row>
                         <Text text={`2 places`} />
                 </Col>
