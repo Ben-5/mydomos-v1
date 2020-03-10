@@ -10,6 +10,7 @@ function Header(props) {
 
     const [currentUser, setCurrentUser] = useState(props.getCurrentUser || {});
 
+    //Changement d'avatar dans la nav
     var pictoAvatar
     if (props.getCurrentUser) {
             if (props.getCurrentUser.userAvatar === "avatarMedusa") {
@@ -22,6 +23,15 @@ function Header(props) {
     } else {
         pictoAvatar = "../picto-key.png"
     } 
+
+    //Changement de tooltip connexion/mon compte
+    var account 
+    if (currentUser.userAvatar) {
+        account = "mon compte"
+    } else {
+        account = "connexion"
+    }
+
 
   return (
         <header className="header-container">
@@ -53,7 +63,7 @@ function Header(props) {
                             </Tooltip>
                             </Link>
                             <Link to='/signin'>
-                            <Tooltip placement="bottomRight" title="connexion">
+                            <Tooltip placement="bottomRight" title={account}>
                             <span className="picto-background"><img src={pictoAvatar} className="picto" alt="picto"/></span>
                             </Tooltip>
                             </Link>
