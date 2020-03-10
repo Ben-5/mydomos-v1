@@ -8,6 +8,8 @@ import Button from '../components/Button';
 import Footer from '../components/Footer';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
+import SliderNow from '../components/SliderNow';
+
 
 import {Row, Col} from 'antd';
 
@@ -103,96 +105,19 @@ function Basket(props){
     </div>
 
 
-    {/*START slider section */}
-
+{/*START slider section */}
     <div style={{paddingBottom: '8vmin', paddingTop: '8vmin'}} className="paris-visits">
             
             <h3 className="sliderTitle">{sliderTitle}</h3>
 
-            <div className="scrolling-wrapper">
+            <SliderNow />
 
-                <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fbd3f442af412383846c3`}>
-                        <img className="card_img" alt="visit cover" src="/cover/rivoli.jpg"/>
-                        <h4 className="card_title">Hôtel de Rivoli</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 35 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fc695e886e206289184ff`}>
-                        <img className="card_img" alt="visit cover" src="/cover/mallet-stevens.jpg"/>
-                        <h4 className="card_title">Hôtel Mallet Stevens</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 59 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fcdf8e886e20628918507`}>
-                        <img className="card_img" alt="visit cover" src="/cover/collectionneur.jpg"/>
-                        <h4 className="card_title">Maison de collectionneur</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 59 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fbb46442af412383846c1`}>
-                        <img className="card_img" alt="visit cover" src="/cover/klein.jpg"/>
-                        <h4 className="card_title">Appartement d'Yves klein</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 39 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fc53de886e206289184fd`}>
-                        <img className="card_img" alt="visit cover" src="/cover/bievre.jpg"/>
-                        <h4 className="card_title">Château de la Bièvre</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 45 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                </div> 
                     <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
                         <Button link='/results' buttonTitle="Voir plus"/>
                     </div>
             </div>
-             
-        {/* --------> END slider section */}
+{/* --------> END slider section  */}
+
 
             <Row className="menu-success" >
                 <p className="menu-basket-text" >Valider la commande</p>
