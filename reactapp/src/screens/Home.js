@@ -19,8 +19,7 @@ function App(props) {
         const getslider = async() => {
         const response = await fetch('/visit/results')
         const data = await response.json()
-        setSlider(data.list) 
-        console.log(data.list)
+        setSlider(data.list)
         }
         getslider()  
     },[])
