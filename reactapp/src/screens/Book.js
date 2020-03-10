@@ -26,19 +26,13 @@ function Book(props){
         setInfo(data.visit[0].info) 
         }
         getinfo()
+
     },[])
 
-// Formater la date
-function formatDate(date) {
-    console.log("c'est passé")
-    const currentDate = date.getDate();
-    const dateString = currentDate >= 10 ? currentDate : `0${currentDate}`;
-    const currentMonth = date.getMonth();
-    const monthString = currentMonth >= 10 ? currentMonth : `0${currentMonth}`;
-    return `${dateString} ${monthString} ${date.getFullYear()}`;
-}
 
-// console.log(formatDate(new Date));
+//Formater la date
+const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+
 
 //Ajouter des billets
 const [quantity, setQuantity] = useState(1)
@@ -82,7 +76,7 @@ var handleAdd = (visit, save) => {
             <div key={i} className="grid-container-book">
 
                 <div className="grid-item-book book-date">
-                    <div className="book-date"><Text text={data.date}/></div>
+                    <div className="book-date"><Text text={new Date(data.date).toLocaleDateString('fr-FR', options)}/></div>
                     <div className="book-time"><Text text={data.time}/></div>
                     <div className="book-stock"><Text text={`Il ne reste que ${data.stock} places`}/></div>
                 </div>
@@ -92,9 +86,6 @@ var handleAdd = (visit, save) => {
             </div>
             ))}
                 
-
-            
-
         </div>
 
         <Footer/>

@@ -19,7 +19,6 @@ function Signin(props) {
 
     var handleRes = (attempt) => {
         if (attempt.result) {
-            console.log(attempt.user)
             props.addUser(attempt.user);
             setIsLogged(true);
         }

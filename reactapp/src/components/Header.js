@@ -12,11 +12,11 @@ function Header(props) {
 
     var pictoAvatar
     if (props.getCurrentUser) {
-            if (props.getCurrentUser.userAvatar = "avatarMedusa") {
+            if (props.getCurrentUser.userAvatar === "avatarMedusa") {
                 pictoAvatar = "https://i.pinimg.com/originals/d9/da/ee/d9daee40abe5c7bc82c5b69874bd19b2.png"
-            } else if (props.getCurrentUser.userAvatar = "avatarArmor") {
+            } else if (props.getCurrentUser.userAvatar === "avatarArmor") {
                 pictoAvatar = "https://i.pinimg.com/originals/e8/9f/61/e89f61356b20acb2f65ab25e5191ce8b.png"
-            } else if (props.getCurrentUser.userAvatar = "avatarWig") {
+            } else if (props.getCurrentUser.userAvatar === "avatarWig") {
                 pictoAvatar = "https://i.pinimg.com/originals/18/4a/a7/184aa79ab86d3a3a65a63a32c4fa1b33.png"
             }    
     } else {

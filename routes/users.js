@@ -57,7 +57,6 @@ router.post('/signin', async function(req, res, next) {
     if (user) {
       var hash = SHA256(pswd + user.salt).toString(encBase64);
       if (user.userPassword === hash) {
-        console.log('user:',user)
         res.json({result: true, user: user});
       } else {
         res.json({result: false, exist: true});
@@ -74,9 +73,7 @@ router.post('/changeavatar', async function(req, res, next) {
     { _id: req.body._id },
     { $set: { userAvatar : req.body.userAvatar}}
   );
-
-  console.log(avatar)
-
+  
   res.json({result: true, avatarSaved: avatar});
 });
 
