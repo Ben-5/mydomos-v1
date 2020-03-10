@@ -79,5 +79,18 @@ router.get('/book/:id', async function(req, res, next) {
   res.json({result: true, visit : visit}); 
 });
 
+router.get('/slidernow', async function(req, res, next) {
+
+  var visit = await visitModel.find({slider : "now"});
+
+  res.json({result: true, list : visit}); 
+});
+
+router.get('/slidercity', async function(req, res, next) {
+
+  var visit = await visitModel.find({slider : "city"});
+
+  res.json({result: true, list : visit}); 
+});
 
 module.exports = router;

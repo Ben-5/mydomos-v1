@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Col, Row} from 'antd';
-import {Link} from 'react-router-dom';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -9,76 +8,11 @@ import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 import Button from '../components/Button';
 import LightButton from '../components/LightButton';
+import SliderNow from '../components/SliderNow';
+import SliderCity from '../components/SliderCity';
+
 
 function App(props) {
-
-    const [slider, setSlider] = useState([])
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-        const getslider = async() => {
-        const response = await fetch('/visit/results')
-        const data = await response.json()
-        setSlider(data.list)
-        }
-        getslider()  
-    },[])
-
-// Mise en place des notes
-
-
-// gris #e7e7e7    rouge#791212
-
-// recuperation info pour slider NOW (à la une) 
-const rateTAB = []
-let sliderNow = slider.map((visit, i) => {
-        for(var i=0;i<5;i++){
-            var backgroundColor = {}
-            if(i<visit.rate){
-                backgroundColor = {backgroundColor:'#e7e7e7'}
-            }
-            rateTAB.push(<span style={backgroundColor}  className="card_rate"> </span>)
-        }
-        if(visit.slider === 'now'){
-            return ( 
-                <Col key={i} className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">{visit.address.city}</h3>
-                        <Link  className="card_link" to={`/visit/${visit._id}`}>
-                            <img className="card_img" alt="visit cover" src={visit.cover}/>
-                            <h4 className="card_title">{visit.title}</h4>
-                        </Link>
-                        <div className="card_pricerate">
-                        <div>
-                            <p className="card_price">À partir de {visit.info[0].price} €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                {rateTAB}
-                                {/* <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> */}
-                            </div>
-                        </div>
-                </Col>)
-    }})
-
-// recuperation info pour slider CITY (en ce moment à Paris)
-    let sliderCity = slider.map((visit, i) => {
-        if(visit.slider === 'city'){
-            return ( 
-                <Col key={i} className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">{visit.address.city}</h3>
-                        <Link  className="card_link" to={`/visit/${visit._id}`}>
-                            <img className="card_img" alt="visit cover" src={visit.cover}/>
-                            <h4 className="card_title">{visit.title}</h4>
-                        </Link>
-                        <div className="card_pricerate">
-                        <div>
-                            <p className="card_price">À partir de {visit.info[0].price} €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span>
-                            </div>
-                        </div>
-                </Col>)
-       }})
 
     return (
       <div className="background">
@@ -103,23 +37,17 @@ let sliderNow = slider.map((visit, i) => {
 
             </div>
         </div>
+
  {/* Slider visites à la une  */}
- 
-
-
             <div className="breaking-visits">
             
                 <h3 className="sliderTitle">Visites à la une</h3>
+                    <SliderNow />
+                        <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
+                            <Button link='/results' buttonTitle="Voir plus"/>
+                        </div>
 
-                <div className="scrolling-wrapper"> 
-                {sliderNow}
-                </div>
-
-                <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
-                    <Button link='/results' buttonTitle="Voir plus"/>
-                </div>
-
-            </div>
+                    </div>
 
 {/* Deuxieme accroche  */}
             
@@ -144,10 +72,8 @@ let sliderNow = slider.map((visit, i) => {
             
             <h3 className="sliderTitle">En ce moment à Paris</h3>
 
-            <div className="scrolling-wrapper">
-            {sliderCity}
+            <SliderCity />
 
-                </div>
                     <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
                     <Button link='/results' buttonTitle="Voir plus"/>
                     </div>
