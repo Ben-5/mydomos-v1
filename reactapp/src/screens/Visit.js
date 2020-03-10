@@ -55,7 +55,13 @@ const visitSelected = visit.map((data, i) => {
         });
 
     return(
-<div key={i} className="body-screen">
+
+        <div key={i} >
+        
+        <Header/>
+
+        <div className="body-screen">
+
 
 {/* SECTION SLIDER */}
 
@@ -147,26 +153,29 @@ const visitSelected = visit.map((data, i) => {
             <Text  text={data.host}/>
         </Col>     
     </Row> 
-  </div>
-)
+    
+    </div>
+    
+  <Footer/>
+    
+    {/* start partie mobile-fixed qui remplace className=menu-visit */}
+
+    <Row align="middle" justify="space-around"  className="fixed-menu-visit">
+        <Text text={`À partir de ${data.info[0].price} €`}/>
+            <Button link={`/book/${visit[0]._id}`} buttonTitle="Voir les dates" />
+    </Row>
+    
+    {/* end partie mobile-fixed qui remplace className=menu-visit */}
+    
+    </div>
+
+    )
 })
- 
-    return(
- 
-        <div className="background">    
-            <Header/>
-            {visitSelected}
-            
-            <Footer/>
-    
-            {/*  start partie mobile-fixed qui remplace className=menu-visit  */}
-            <Row align="middle" justify="space-around"  className="fixed-menu-visit">
-                <Text text="A partir de 69 €" />
-                <Button lien="/book" buttonTitle="Voir les dates" />
-            </Row>
-            {/*  end partie mobile-fixed qui remplace className=menu-visit  */}
-    
-        </div>
-    
-      );
+return (
+    <div className="background">    
+
+    {visitSelected}
+
+    </div>
+    )
     }

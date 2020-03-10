@@ -142,7 +142,7 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: white;
-  min-height: 19vmin;
+  min-height: 18vmin;
   position:fixed;
   bottom: 0;
   width: 100%;
@@ -150,7 +150,7 @@
 
 .navigation-menu-padding {
   background-color: #B5ACAC;
-  min-height: 19vmin;
+  min-height: 18vmin;
   width: 100%;
 
 }
@@ -320,12 +320,12 @@
 @keyframes blowup { 
 
 0%   {transform: scale(1.21, 1.21);}
-100% {transform: scale(0.96, 0.96);}
+100% {transform: scale(0.88, 0.88);}
 }
 
 .bubble {
 
-  animation: blowup 2s infinite ease-in;
+  animation: blowup 1.5s infinite ease-in;
   animation-direction: alternate;
 } 
 
@@ -1214,10 +1214,13 @@ padding-top: 4vmin;
 
 .fixed-menu-visit {
   background-color: #f4f3f3;
-  height: 14vmin;
+  height: 18vmin;
   position:fixed;
   bottom: 0;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* padding-bottom: 2.2vmin; A voir avec BEN */ 
 }
 
