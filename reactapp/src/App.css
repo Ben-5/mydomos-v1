@@ -421,17 +421,15 @@
 
 @keyframes shake { 
   0%   {transform: rotate(0deg);}
-  5%   {transform: rotate(1.5deg);}
-  15%  {transform: rotate(0deg);}
-  20%  {transform: rotate(2deg);}
-  30%  {transform: rotate(0deg);}
-  40%  {transform: rotate(0deg);}
-  60%  {transform: rotate(2deg);}
-  100% {transform: rotate(0deg);}
+  15%   {transform: rotate(2deg);}
+  28%  {transform: rotate(0deg);}
+  35%  {transform: rotate(2deg);}
+  50%  {transform: rotate(0deg);}
+  100%   {transform: rotate(0deg);}
 }
 
 .headset {    
-  animation: shake alternate infinite 3s ease-in;
+  animation: shake alternate infinite 1.9s ease-out;
 }
 
 
@@ -1190,6 +1188,10 @@ margin-bottom: 1vmin;
 
 
 /* start SECTION SCREEN VISIT */
+.tag-visit{
+padding: 55px;
+}
+
 .text-visit {
   margin-top: 3vmax;
   margin-bottom: 4vmax;
@@ -1268,11 +1270,14 @@ padding-top: 4vmin;
   /* padding-bottom: 2.2vmin; A voir avec BEN */ 
 }
 
+<<<<<<< HEAD
+=======
 @media only screen and (min-width: 576px) {
   .fixed-menu-success {
       display:none;
   }
 }
+>>>>>>> ac76e54c20da42e5f7cae3a1fdf50c68681d2f5c
 /*  END SUCCESS screen*/
 
 
