@@ -14,52 +14,82 @@ import {Link} from 'react-router-dom'
 
 function Account(props) {
 
+    // useEffect( ()=>{
+    //     console.log('currentUser :', currentUser);
+    // }, [props.getCurrentUser])
+
     const [currentUser, setCurrentUser] = useState(props.getCurrentUser || {});
-    const [wig, setWig] = useState(true)
+    const [avatar, setAvatar] = useState(props.getCurrentUser.userAvatar || "")
+    const [wig, setWig] = useState(false)
     const [armor, setArmor] = useState(false)
-    const [medusa, setMedusa] = useState(false)
-
-    useEffect(()=>{
-        console.log('currentUser :', currentUser);
-    }, [props.getCurrentUser])
-
+    const [medusa, setMedusa] = useState(true)
 
     //Sélectionner avatar
 
-    var chooseWig = () => {
-        setWig(true)
-        setArmor(false)
-        setMedusa(false)
-    }
+    var avatarMedusa = "https://i.pinimg.com/originals/ad/28/d7/ad28d7a340ebb80456cb80ebe9d370c7.png"
+    var avatarArmor = "https://i.pinimg.com/originals/40/66/50/40665088b153af9d6f0307f9c40b7300.png"
+    var avatarWig = "https://i.pinimg.com/originals/cd/ec/1c/cdec1cf376a1b8e1474124944af84d30.png"
 
-    var chooseArmor = () => {
-        setWig(false)
-        setArmor(true)
-        setMedusa(false)
-    }
 
-    var chooseMedusa = () => {
+    var chooseMedusa = async (avatar) => {
         setWig(false)
         setArmor(false)
         setMedusa(true)
+
+        const response = await fetch('/users/changeavatar', {
+            method: 'POST',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: `_id=${props.getCurrentUser._id}&userAvatar=${avatar}`
+          }) 
+        
+        let resp = await response.json()
     }
 
-    if(wig) {
-       var borderW = {border: 'solid 2px #791212'}
-       var borderA = {border: 'none'} 
-       var borderM = {border: 'none'} 
-    } else if (armor) {
-         borderA = {border: 'solid 2px #791212'}
-         borderW = {border: 'none'} 
-         borderM = {border: 'none'} 
-    } else if (medusa) {
-         borderM = {border: 'solid 2px #791212'}
-         borderW = {border: 'none'} 
-         borderA = {border: 'none'} 
+    var chooseArmor = async (avatar) => {
+        setWig(false)
+        setArmor(true)
+        setMedusa(false)
+
+        const response = await fetch('/users/changeavatar', {
+            method: 'POST',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: `_id=${props.getCurrentUser._id}&userAvatar=${avatar}`
+          }) 
+        
+        let resp = await response.json()
+    }
+
+    var chooseWig = async (avatar) => {
+        setWig(true)
+        setArmor(false)
+        setMedusa(false)
+
+        const response = await fetch('/users/changeavatar', {
+            method: 'POST',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: `_id=${props.getCurrentUser._id}&userAvatar=${avatar}`
+          }) 
+        
+        let resp = await response.json()
     }
 
 
-//Afficher les réservations de l'utilisateur
+    if(avatar === "avatarMedusa") {
+        var borderW = {border: 'solid 2px #791212'}
+        var borderA = {border: 'none'} 
+        var borderM = {border: 'none'} 
+    } else if (avatar === "avatarArmor") {
+        borderA = {border: 'solid 2px #791212'}
+        borderW = {border: 'none'} 
+        borderM = {border: 'none'} 
+    } else if (avatar === "avatarWig") {
+        borderM = {border: 'solid 2px #791212'}
+        borderW = {border: 'none'} 
+        borderA = {border: 'none'} 
+    }
+
+
+    //Afficher les réservations de l'utilisateur
 
     const data = [
         {
@@ -71,6 +101,7 @@ function Account(props) {
         },
     ];
   
+
     return (
 
         <div  className="background">
@@ -105,16 +136,16 @@ function Account(props) {
                     <div className="grid-item"><Text text={currentUser.userEmail}/></div>
                    
                     <div className="grid-item account-info"><Text text="Date de naissance"/></div>
-                    <div className="grid-item"><Text text="1 janvier 2000"/></div>
+                    <div className="grid-item"><Text text={currentUser.userBirthday}/></div>
 
                     <div className="grid-item account-info"><Text text="Adresse"/></div>
-                    <div className="grid-item"><Text text="151 rue Saint Denis"/></div>
+                    <div className="grid-item"><Text text={currentUser.userAddress}/></div>
 
                     <div className="grid-item account-info"><Text text="Code postal"/></div>
-                    <div className="grid-item"><Text text="75002"/></div>
+                    <div className="grid-item"><Text text={currentUser.userZIP}/></div>
 
                     <div className="grid-item account-info"><Text text="Ville"/></div>
-                    <div className="grid-item"><Text text="Paris"/></div>
+                    <div className="grid-item"><Text text={currentUser.userCity}/></div>
 
                     <div className="grid-item account-info"><Text text="Pays"/></div>
                     <div className="grid-item"><Text text="France"/></div>
@@ -133,15 +164,15 @@ function Account(props) {
                     <div className="avatar">
 
                     <div className="middle-caption-image">
-                        <span className="background-wig" style={borderW}><img src="../wig.png" className="picto-portrait" alt="picto-portrait" onClick={() => chooseWig() }/></span>  
+                        <span className="background-medusa" style={borderM}><img src={avatarMedusa} className="picto-medusa" alt="picto-portrait" onClick={() => chooseMedusa("avatarMedusa") }/></span>  
                     </div>
 
                     <div className="middle-caption-image">
-                        <span className="background-armor" style={borderA}><img src="../armor.png" className="picto-portrait" alt="picto-portrait" onClick={() => chooseArmor() }/></span>  
+                        <span className="background-armor" style={borderA}><img src={avatarArmor} className="picto-portrait" alt="picto-portrait" onClick={() => chooseArmor("avatarArmor") }/></span>  
                     </div>
 
                     <div className="middle-caption-image">
-                        <span className="background-medusa" style={borderM}><img src="../medusa.png" className="picto-medusa" alt="picto-portrait" onClick={() => chooseMedusa() }/></span>  
+                        <span className="background-wig" style={borderW}><img src={avatarWig} className="picto-portrait" alt="picto-portrait" onClick={() => chooseWig("avatarWig") }/></span>  
                     </div>
 
                     </div>

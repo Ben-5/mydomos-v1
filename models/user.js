@@ -9,9 +9,11 @@ var userSchema = mongoose.Schema({
     salt:           String,
     userPassword:   String,
     token:          String,
+    userBirthday:   Date,
     userAddress:    String,
     userZIP:        String,
     userCity:       String,
+    userAvatar:     String
 });
 
 var userModel = mongoose.model('users', userSchema);
