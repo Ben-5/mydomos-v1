@@ -24,48 +24,61 @@ function App(props) {
         getslider()  
     },[])
 
-// recuperation info pour slider NOW (à la une) 
+// Mise en place des notes
 
+
+// gris #e7e7e7    rouge#791212
+
+// recuperation info pour slider NOW (à la une) 
+const rateTAB = []
 let sliderNow = slider.map((visit, i) => {
-    if(visit.slider === 'now'){
-        return ( 
-            <Col key={i} className="card_col" xs={17} sm={17} md={12} lg={6}>
-                    <h3 className="card_info">{visit.address.city}</h3>
-                    <Link  className="card_link" to={`/visit/${visit._id}`}>
-                        <img className="card_img" alt="visit cover" src={visit.cover}/>
-                        <h4 className="card_title">{visit.title}</h4>
-                    </Link>
-                    <div className="card_pricerate">
-                    <div>
-                        <p className="card_price">À partir de {visit.info[0].price} €</p>
+        for(var i=0;i<5;i++){
+            var backgroundColor = {}
+            if(i<visit.rate){
+                backgroundColor = {backgroundColor:'#e7e7e7'}
+            }
+            rateTAB.push(<span style={backgroundColor}  className="card_rate"> </span>)
+        }
+        if(visit.slider === 'now'){
+            return ( 
+                <Col key={i} className="card_col" xs={17} sm={17} md={12} lg={6}>
+                        <h3 className="card_info">{visit.address.city}</h3>
+                        <Link  className="card_link" to={`/visit/${visit._id}`}>
+                            <img className="card_img" alt="visit cover" src={visit.cover}/>
+                            <h4 className="card_title">{visit.title}</h4>
+                        </Link>
+                        <div className="card_pricerate">
+                        <div>
+                            <p className="card_price">À partir de {visit.info[0].price} €</p>
+                            </div>
+                            <div className="card_div_rate">
+                                {rateTAB}
+                                {/* <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> */}
+                            </div>
                         </div>
-                        <div className="card_div_rate">
-                            <img className="card_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
-                        </div>
-                    </div>
-            </Col>)
-}})
+                </Col>)
+    }})
 
 // recuperation info pour slider CITY (en ce moment à Paris)
-let sliderCity = slider.map((visit, i) => {
-    if(visit.slider === 'city'){
-        return ( 
-            <Col key={i} className="card_col" xs={17} sm={17} md={12} lg={6}>
-                    <h3 className="card_info">{visit.address.city}</h3>
-                    <Link  className="card_link" to={`/visit/${visit._id}`}>
-                        <img className="card_img" alt="visit cover" src={visit.cover}/>
-                        <h4 className="card_title">{visit.title}</h4>
-                    </Link>
-                    <div className="card_pricerate">
-                    <div>
-                        <p className="card_price">À partir de {visit.info[0].price} €</p>
+    let sliderCity = slider.map((visit, i) => {
+        if(visit.slider === 'city'){
+            return ( 
+                <Col key={i} className="card_col" xs={17} sm={17} md={12} lg={6}>
+                        <h3 className="card_info">{visit.address.city}</h3>
+                        <Link  className="card_link" to={`/visit/${visit._id}`}>
+                            <img className="card_img" alt="visit cover" src={visit.cover}/>
+                            <h4 className="card_title">{visit.title}</h4>
+                        </Link>
+                        <div className="card_pricerate">
+                        <div>
+                            <p className="card_price">À partir de {visit.info[0].price} €</p>
+                            </div>
+                            <div className="card_div_rate">
+                                <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span> <span className="card_rate"> </span>
+                            </div>
                         </div>
-                        <div className="card_div_rate">
-                            <img className="card_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
-                        </div>
-                    </div>
-            </Col>)
-    }})
+                </Col>)
+       }})
 
     return (
       <div className="background">
