@@ -34,7 +34,8 @@ router.post('/signup', async function(req, res, next) {
     userEmail: mail,
     salt: salt,
     userPassword: SHA256(pswd + salt).toString(encBase64),
-    token: uid2(32)
+    token: uid2(32),
+    userAvatar : "https://i.pinimg.com/originals/40/66/50/40665088b153af9d6f0307f9c40b7300.png"
     });
 
     var userSaved = await newUser.save();
@@ -64,6 +65,16 @@ router.post('/signin', async function(req, res, next) {
       res.json({result: false, exist: false});
     }
   });
+});
+
+router.post('/changeavatar', async function(req, res, next) {
+
+  var avatar = await UserModel.updateOne(
+    { _id: req.body._id },
+    { $set: { userAvatar : req.body.userAvatar}}
+  );
+  
+  res.json({result: true, avatarSaved: avatar});
 });
 
 module.exports = router;

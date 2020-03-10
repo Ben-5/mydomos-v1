@@ -21,7 +21,8 @@ function Basket(props){
         window.scrollTo(0, 0);
     }, []);
 
-
+    //Formater la date
+    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
 
     //Afficher un texte différent si le panier est vide
     var subVisit;
@@ -75,7 +76,7 @@ console.log('basketList :', basketList);
                 <Col xs={{span:24}}>
                 <Subtitle subtitle={order.title} />
                     <Col style={{borderTopStyle: "inset"}}>
-                        <Text text={order.date}/>
+                        <Text text={new Date(order.date).toLocaleDateString('fr-FR', options)}/>
                         <Text text={order.time} />
                     </Col>
                         <Row justify="space-between" align='middle'>
