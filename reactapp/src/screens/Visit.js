@@ -52,8 +52,8 @@ const visitSelected = visit.map((data, i) => {
                 tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../perle.png" /><Text text="Perle rare" /></Col> )
             }
           return ( <Text text={opt} />)
-        })
-        
+        });
+
     return(
 <div key={i} className="body-screen">
 
@@ -95,7 +95,7 @@ const visitSelected = visit.map((data, i) => {
         {/* start partie remplacé par className=fixed-menu-visit  */}
         <Row align="middle" className="menu-visit">
             <Text text={`À partir de ${data.info[0].price} €`}/>
-            <Button lien="/book" buttonTitle="Voir les dates" />
+            <Button link={`/book/${visit[0]._id}`} buttonTitle="Voir les dates" />
         </Row>
     </Row>
     

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
@@ -12,6 +12,35 @@ import Subtitle from '../components/Subtitle';
 import {Row, Col} from 'antd';
 
 function Basket(props){
+
+    const [basketList, setBasketList] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+
+            var list = props.visitInBasket;
+
+            for (var i=0;i<list.length;i++) {
+                const rawVisit = await fetch(`/visit/visitpage/${list[i].visitId}`);
+                const fetchVisit = await rawVisit.json();
+
+                for (var j=0;j<fetchVisit.visit[0].info.length;j++) {
+                    if (fetchVisit.visit[0].info[j]._id === list[i].infoId) {
+                        var toPush = {
+                            title: fetchVisit.visit[0].title,
+                            date: fetchVisit.visit[0].info[j].date,
+                            time: fetchVisit.visit[0].info[j].time,
+                            price: fetchVisit.visit[0].info[j].price,
+                            quantity: list[i].orderNb,
+                        }
+                        setBasketList([...basketList, toPush]);
+                        console.log('basketList :', basketList);
+                    }
+                }
+            }
+        }
+        fetchData();
+      }, [props.visitInBasket]);
 
 
 
@@ -33,13 +62,12 @@ function Basket(props){
         buttonLink = "/signin"
     }
 
-
     return(
 
-<div className="background">
-  <Header/>
+    <div className="background">
+    <Header/>
 
-    <div  className="body-screen">
+        <div  className="body-screen">
 
             <div className= "main-caption">
                 
@@ -61,7 +89,7 @@ function Basket(props){
 
         {/* ---->ROW className="success-container" A MAPPER AVEC BDD<---- */}
 
-        {props.visitInBasket.map((visit,i) => (
+        {/* {basketList.map((visit,i) => (
 
             <Row className="success-container">
 
@@ -79,7 +107,7 @@ function Basket(props){
                 </Col>
             </Row>
 
-        ))}
+        ))} */}
 
         {/* start partie remplacée par className=fixed-menu-visit  */}
         <Row align="middle" className="menu-basket">
