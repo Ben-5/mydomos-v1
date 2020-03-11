@@ -1128,6 +1128,7 @@ margin-bottom: 1vmin;
 
 .avatar {
   display: flex;
+  justify-content: space-between;
   margin-top: 4vmin;
   margin-bottom: 4vmin
 }
@@ -1184,28 +1185,44 @@ margin-bottom: 1vmin;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vmin;
-  width: 30vmin;
-  background-color: #B5ACAC;
+  height: 29vmin;
+  width: 29vmin;
+  background-color:  #d0c3c3;
   border-radius: 50%;
 }
 
 .background-armor:hover {
-  background-color: #a39a9a;
+  background-color: #ddd2d2;
 }
 
 .background-medusa {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vmin;
-  width: 30vmin;
-  background-color: #AA848B;
+  height: 29vmin;
+  width: 29vmin;
+  background-color: #B5ACAC;
   border-radius: 50%;
 }
 
 .background-medusa:hover {
-  background-color: #967878;
+  background-color: rgb(196, 188, 188);
+}
+
+.background-wig {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 29vmin;
+  width: 29vmin;
+  background-color: #E0DCDC;
+  border-radius: 50%;
+
+}
+
+.background-wig:hover {
+  background-color: rgb(238, 234, 234);
 }
 
 .picto-medusa {
