@@ -34,28 +34,40 @@ const visitSelected = visit.map((data, i) => {
     const tagList = [];
         let optList = dataOptList.map((opt, i) => {
           if(opt === 'Apéro' ){
-            tagList.push ( <Col align="middle"> <Avatar className="background-wig"  src="../drink.png" /><Text text="Apéro" /></Col> )
+            tagList.push ( <div className="option"><span className="background-option"><img src="https://i.pinimg.com/originals/3d/97/c7/3d97c7b8000a512ddc9457990ad4732e.png" className="picto-option" alt="drink"/></span><Text text="Apéro"/></div>)
             }
             if(opt === 'Collation' ){
-                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../breakfast.png" /><Text text="Colation" /></Col> )
+                tagList.push ( <div className="option"><span className="background-option"><img src="https://i.pinimg.com/originals/c8/7e/18/c87e18940869c649eb34dd28f2b31965.png" className="picto-option" alt="breakfast"/></span><Text text="Breakfast"/></div>)
             }
             if(opt === 'Café Thé' ){
-                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../coffe.png" /><Text text="Café Thé" /></Col> )
+                tagList.push ( <div className="option"><span className="background-option"><img src="https://i.pinimg.com/originals/5c/4f/42/5c4f420da05657b3404b862c8cf1edd9.png" className="picto-option" alt="coffe"/></span><Text text="Café Thé"/></div>)
             }
             if(opt === 'Concert' ){
-                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../concert.png" /><Text text="Concert" /></Col> )
+                tagList.push ( <div className="option"><span className="background-option"><img src="https://i.pinimg.com/originals/3a/be/93/3abe93c50c81e43144536f796e68235f.png" className="picto-option" alt="concert"/></span><Text text="Concert"/></div>)
             }
             if(opt === 'By night' ){
-                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../bynight.png" /><Text text="By night" /></Col> )
+                tagList.push ( <div className="option"><span className="background-option"><img src="https://i.pinimg.com/originals/21/00/3e/21003e1267b560e9995dc1558a99c286.png" className="picto-option" alt="bynight"/></span><Text text="By Night"/></div> )
             }
             if(opt === 'Perle rare' ){
-                tagList.push ( <Col align="middle"><Avatar className="background-wig"  src="../perle.png" /><Text text="Perle rare" /></Col> )
+                tagList.push ( <div className="option"><span className="background-option"><img src="https://i.pinimg.com/originals/f3/07/b7/f307b7f65051dbf839e187e1b3e26f0f.png" className="picto-option" alt="perle"/></span><Text text="Perle rare"/></div> )
+            }
+            if(opt === 'XXe' ){
+                tagList.push ( <div className="option"><span className="background-option"><img src="https://i.pinimg.com/originals/11/8b/d3/118bd33cd0f34191d8302ee9ce056868.png" className="picto-option" alt="XXe"/></span><Text text="XXe"/></div> )
+            }
+            if(opt === 'XVIIIe' ){
+                tagList.push ( <div className="option"><span className="background-option"><img src="https://i.pinimg.com/originals/32/47/7c/32477c2f02b60b78e93ef830c38d17a0.png" className="picto-option" alt="XVIIIe"/></span><Text text="XVIII"/></div> )
             }
           return ( <Text text={opt} />)
-        })
-        
+        });
+
     return(
-<div key={i} className="body-screen">
+
+        <div key={i} >
+        
+        <Header/>
+
+        <div className="body-screen">
+
 
 {/* SECTION SLIDER */}
 
@@ -84,53 +96,58 @@ const visitSelected = visit.map((data, i) => {
 
     {/* SECTION DESCRIPTION VISIT  */}
 
-    <Row justify="space-between" className="text-visit">
+    <div className="visit-main">
 
-        <Col >
-            <img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
+        <div className="text-visit">
             <Title title={data.title}/>
             <Text text={`${data.address.city}, ${data.address.country}`}/>
-        </Col>
+            <div className="rate">
+                <img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/note.png'/><img className="card_rate" alt="note" src='/noteG.png'/><img className="card_rate" alt="note" src='/noteG.png'/>
+            </div>
+        </div>
+            <div className="menu-visit">
+                <Text text={`À partir de ${data.info[0].price} €`}/>
+                <Button link={`/book/${visit[0]._id}`} buttonTitle="Voir les dates" />
+            </div>
+    </div>  
+ 
+    <div className="options-row">{tagList}</div>
 
-        {/* start partie remplacé par className=fixed-menu-visit  */}
-        <Row align="middle" className="menu-visit">
-            <Text text={`À partir de ${data.info[0].price} €`}/>
-            <Button lien="/book" buttonTitle="Voir les dates" />
-        </Row>
-    </Row>
-    
+
+    <div className="features">
     <Row className="text-visit" >
-        <Col xs ={{span:12}} sm ={{span:12}} md ={{span:12}} lg ={{span:12}} >
+        <Col xs ={{span:12}} sm ={{span:12}} md ={{span:6}} lg ={{span:6}} >
           <Subtitle subtitle="Durée" />
           <Text text={data.info[0].duration} />
         </Col>
-        <Col xs ={{span:12}} sm ={{span:12}} md ={{span:12}} lg ={{span:12}}>
+        <Col xs ={{span:12}} sm ={{span:12}} md ={{span:6}} lg ={{span:6}}>
           <Subtitle subtitle="Taille du groupe" /> 
           <Text text={`Jusqu'à ${data.info[0].maxStock} personnes`} /> 
         </Col>
     </Row> 
     <Row className="text-visit">
-       <Col xs ={{span:12}} sm ={{span:12}} md ={{span:12}} lg ={{span:12}}>
-         <Subtitle subtitle=" Inclu" /> 
+       <Col xs ={{span:12}} sm ={{span:12}} md ={{span:6}} lg ={{span:6}}>
+         <Subtitle subtitle="Inclu" /> 
          {optList}
        </Col>
-       <Col xs ={{span:12}} sm ={{span:12}} md ={{span:12}} lg ={{span:12}}>
-         <Subtitle subtitle="Language" />
+       <Col xs ={{span:12}} sm ={{span:12}} md ={{span:6}} lg ={{span:6}}>
+         <Subtitle subtitle="Langue" />
          <Text text={data.info[0].lang} />
        </Col>
     </Row>
+    </div>
                
 
-    <Row style={{justifyContent:"space-evenly"}} className="text-visit">
-         {tagList}
-    </Row> 
+    
 
         {/* end partie remplacé fixed-menu-visit  */} 
 
     {/* SECTION TEXT VISIT  */}
 
                   {/* SECTION TEXT VISIT  */}
-    <Row gutter={[32, 32]} className="text-visit">
+
+    <div className="visit-description">          
+    <Row gutter={[32, 32]}>
         <Col lg={{span:12}}>
             <Subtitle subtitle="La visite" />
             <Text text={data.desc}/></Col >
@@ -147,26 +164,29 @@ const visitSelected = visit.map((data, i) => {
             <Text  text={data.host}/>
         </Col>     
     </Row> 
-  </div>
-)
+    </div>  
+</div>
+    
+  <Footer/>
+    
+    {/* start partie mobile-fixed qui remplace className=menu-visit */}
+
+    <Row align="middle" justify="space-around"  className="fixed-menu-visit">
+        <Text text={`À partir de ${data.info[0].price} €`}/>
+            <Button link={`/book/${visit[0]._id}`} buttonTitle="Voir les dates" />
+    </Row>
+    
+    {/* end partie mobile-fixed qui remplace className=menu-visit */}
+    
+    </div>
+
+    )
 })
- 
-    return(
- 
-        <div className="background">    
-            <Header/>
-            {visitSelected}
-            
-            <Footer/>
-    
-            {/*  start partie mobile-fixed qui remplace className=menu-visit  */}
-            <Row align="middle" justify="space-around"  className="fixed-menu-visit">
-                <Text text="A partir de 69 €" />
-                <Button lien="/book" buttonTitle="Voir les dates" />
-            </Row>
-            {/*  end partie mobile-fixed qui remplace className=menu-visit  */}
-    
-        </div>
-    
-      );
+return (
+    <div className="background">    
+
+    {visitSelected}
+
+    </div>
+    )
     }

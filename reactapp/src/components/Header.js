@@ -1,11 +1,38 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Select, Tooltip} from 'antd';
+import {connect} from 'react-redux';
 
 import {Link} from 'react-router-dom'
 
 const { Option } = Select;
 
-export default function Header() {
+function Header(props) {
+
+    const [currentUser, setCurrentUser] = useState(props.getCurrentUser || {});
+
+    //Changement d'avatar dans la nav
+    var pictoAvatar
+    if (props.getCurrentUser) {
+            if (props.getCurrentUser.userAvatar === "avatarMedusa") {
+                pictoAvatar = "https://i.pinimg.com/originals/71/9c/e0/719ce0c638ca25a20bdf096ffc0e6501.png"
+            } else if (props.getCurrentUser.userAvatar === "avatarArmor") {
+                pictoAvatar = "https://i.pinimg.com/originals/6d/7e/d1/6d7ed13dc8172578feaa84dbd25c915b.png"
+            } else if (props.getCurrentUser.userAvatar === "avatarWig") {
+                pictoAvatar = "https://i.pinimg.com/originals/3c/62/96/3c62962b72f5a24b854cfce7049424de.png"
+            }    
+    } else {
+        pictoAvatar = "../picto-key.png"
+    } 
+
+    //Changement de tooltip connexion/mon compte
+    var account 
+    if (currentUser.userAvatar) {
+        account = "mon compte"
+    } else {
+        account = "connexion"
+    }
+
+
   return (
         <header className="header-container">
                 
@@ -36,8 +63,8 @@ export default function Header() {
                             </Tooltip>
                             </Link>
                             <Link to='/signin'>
-                            <Tooltip placement="bottomRight" title="connexion">
-                            <span className="picto-background"><img src="../picto-key.png" className="picto" alt="picto"/></span>
+                            <Tooltip placement="bottomRight" title={account}>
+                            <span className="picto-background"><img src={pictoAvatar} className="picto" alt="picto"/></span>
                             </Tooltip>
                             </Link>
                         </div>
@@ -45,3 +72,12 @@ export default function Header() {
         </header>
     );
 }
+
+function mapStateToProps(state) {
+    return { getCurrentUser: state.currentUser }
+}
+
+export default connect (
+    mapStateToProps,
+    null,
+)(Header);

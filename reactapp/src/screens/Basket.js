@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
@@ -8,20 +8,34 @@ import Button from '../components/Button';
 import Footer from '../components/Footer';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
+import SliderNow from '../components/SliderNow';
+
 
 import {Row, Col} from 'antd';
 
 function Basket(props){
 
+    const [basketList, setBasketList] = useState([]);
 
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    }, [])
+
+    useEffect(() => {
+        setBasketList(props.visitInBasket);
+    }, [props.visitInBasket]);
+
+    //Formater la date
+    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
 
     //Afficher un texte différent si le panier est vide
-    var subVisit
-    var sliderTitle
-    var buttonConfirm
-    var buttonLink
-
-    if(props.visitInBasket === 0){
+    var subVisit;
+    var sliderTitle;
+    var buttonConfirm;
+    var buttonLink;
+    
+    if(!basketList[0]){
         subVisit = "Vous n'avez aucune visite dans votre sélection."
         sliderTitle = "Pourquoi ne pas commencez par celles-ci ?"
         buttonConfirm = "Rechercher des visites"
@@ -31,19 +45,16 @@ function Basket(props){
         sliderTitle = "Découvrez d'autres lieux"
         buttonConfirm = "Valider la commande"
         buttonLink = "/signin"
+
     }
-
-
     return(
 
-<div className="background">
-  <Header/>
+    <div className="background">
+    <Header/>
 
-    <div  className="body-screen">
+        <div  className="body-screen">
 
-            <div className= "main-caption">
-                
-                <Row>
+            <Row className= "main-caption">
 
                 <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:2}} lg ={{span:12, order:1}} xl ={{span:12, order:1}}>
                     <Title title="Votre sélection"/>
@@ -54,131 +65,55 @@ function Basket(props){
                     <img src="../fan.png" className="fan" alt="fan" />  
                 </Col>
 
-                </Row>
-
-            </div>
+            </Row>
 
 
         {/* ---->ROW className="success-container" A MAPPER AVEC BDD<---- */}
 
-        {props.visitInBasket.map((visit,i) => (
+        {basketList.map((order, i) => (
 
-            <Row className="success-container">
+            <Row key={i} className="success-container">
 
                 <Col xs={{span:24}}>
-                <Subtitle subtitle={visit.title} />
+                <Subtitle subtitle={`${order.title} - ${new Date(order.date).toLocaleDateString('fr-FR', options)}`} />
                     <Col style={{borderTopStyle: "inset"}}>
-                        <Text text={visit.info.date}/>
-                        <Text text={visit.info.time} />
+                        
                     </Col>
-                        <Row justify="space-between" align='middle'>
-                            <Text text={`${visit.info.price} € par personne`}/>
-                            <div>35€</div>
+                        <Row style={{paddingTop: '3vmin', paddingBottom: '3vmin'}} justify="space-between" align='middle'>
+                            <Text text={order.time} />
+                            <Text text={`${order.price} € par personne`}/>
+                            <Text text={`${order.price * order.quantity} €`}/>
+                            <Text text={`${order.stock} places restantes`} />
+                            <Text onClick={()=>props.rmvFromCart(i)} isLink={true} text={`Supprimer`} />
                         </Row>
-                        <Text text={`2 places`} />
                 </Col>
+                
             </Row>
 
         ))}
 
         {/* start partie remplacée par className=fixed-menu-visit  */}
+        
         <Row align="middle" className="menu-basket">
-            <Button link={buttonLink} buttonTitle={buttonConfirm}/>
+            <Button link={buttonLink} buttonTitle={buttonConfirm}/>
         </Row>
         
     </div>
 
 
-    {/*START slider section */}
-
+{/*START slider section */}
     <div style={{paddingBottom: '8vmin', paddingTop: '8vmin'}} className="paris-visits">
             
             <h3 className="sliderTitle">{sliderTitle}</h3>
 
-            <div className="scrolling-wrapper">
+            <SliderNow />
 
-                <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fbd3f442af412383846c3`}>
-                        <img className="card_img" alt="visit cover" src="/cover/rivoli.jpg"/>
-                        <h4 className="card_title">Hôtel de Rivoli</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 35 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fc695e886e206289184ff`}>
-                        <img className="card_img" alt="visit cover" src="/cover/mallet-stevens.jpg"/>
-                        <h4 className="card_title">Hôtel Mallet Stevens</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 59 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fcdf8e886e20628918507`}>
-                        <img className="card_img" alt="visit cover" src="/cover/collectionneur.jpg"/>
-                        <h4 className="card_title">Maison de collectionneur</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 59 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fbb46442af412383846c1`}>
-                        <img className="card_img" alt="visit cover" src="/cover/klein.jpg"/>
-                        <h4 className="card_title">Appartement d'Yves klein</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 39 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="card_col" xs={17} sm={17} md={12} lg={6}>
-                        <h3 className="card_info">Paris</h3>
-                    <Link className="card_link" to={`/visit/5e5fc53de886e206289184fd`}>
-                        <img className="card_img" alt="visit cover" src="/cover/bievre.jpg"/>
-                        <h4 className="card_title">Château de la Bièvre</h4>
-                    </Link>
-                        <div className="card_pricerate">
-                            <div>
-                                <p className="card_price">À partir de 45 €</p>
-                            </div>
-                            <div className="card_div_rate">
-                                <img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/note.png'/><img className="slider_rate" alt="note" src='/noteG.png'/><img className="slider_rate" alt="note" src='/noteG.png'/>
-                            </div>
-                        </div>
-                    </Col>
-                </div> 
                     <div style={{paddingLeft: '2vmin', marginTop: '7vmin'}}>
                         <Button link='/results' buttonTitle="Voir plus"/>
                     </div>
             </div>
-             
-        {/* --------> END slider section */}
+{/* --------> END slider section  */}
+
 
             <Row className="menu-success" >
                 <p className="menu-basket-text" >Valider la commande</p>
@@ -209,4 +144,12 @@ function mapStateToProps(state) {
     return {visitInBasket: state.visit}
 }
 
-export default connect(mapStateToProps, null)(Basket)
+function mapDispatchToProps(dispatch){
+    return {
+      rmvFromCart: function(index){
+        dispatch({type: 'rmvVisit', toRmv: index});
+      }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Basket)
