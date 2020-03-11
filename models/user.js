@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var userSchema = mongoose.Schema({
     userOrders:     [{ type: mongoose.Schema.Types.ObjectId, ref: 'orders' }],
     userRef:        String,
-    userLastName:   String,
+    userLastname:   String,
     userFirstname:  String,
     userEmail:      String,
     salt:           String,
@@ -13,6 +13,7 @@ var userSchema = mongoose.Schema({
     userAddress:    String,
     userZIP:        String,
     userCity:       String,
+    userCountry:    String,
     userAvatar:     String
 });
 

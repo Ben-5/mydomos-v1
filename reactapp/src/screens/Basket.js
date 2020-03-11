@@ -81,7 +81,7 @@ console.log('basketList :', basketList);
                             <Text text={`${order.price} € par personne`}/>
                             <div>{`${order.price * order.quantity} €`}</div>
                         </Row>
-                        <Text text={`2 places`} />
+                        <Text text={`${order.quantity} places`} />
                 </Col>
             </Row>
 

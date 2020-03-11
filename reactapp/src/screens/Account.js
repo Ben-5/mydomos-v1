@@ -8,6 +8,7 @@ import Subtitle from '../components/Subtitle';
 import Text from '../components/Text';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import FormInfoUser from '../components/FormInfoUser';
 
 import {Col, List} from 'antd';
 import {Link} from 'react-router-dom'
@@ -23,6 +24,8 @@ function Account(props) {
     const [wig, setWig] = useState(false)
     const [armor, setArmor] = useState(false)
     const [medusa, setMedusa] = useState(false)
+
+
     
     //Sélectionner avatar
 
@@ -30,7 +33,7 @@ function Account(props) {
     var avatarArmor = "https://i.pinimg.com/originals/40/66/50/40665088b153af9d6f0307f9c40b7300.png"
     var avatarWig = "https://i.pinimg.com/originals/cd/ec/1c/cdec1cf376a1b8e1474124944af84d30.png"
     
-
+    //La méduse
     var chooseMedusa = async (avatar) => {
         setAvatar("avatarMedusa")
         setWig(false)
@@ -46,6 +49,7 @@ function Account(props) {
         let resp = await response.json()
     }
 
+    //Le casque
     var chooseArmor = async (avatar) => {
         setAvatar("avatarArmor")
         setWig(false)
@@ -61,6 +65,7 @@ function Account(props) {
         let resp = await response.json()
     }
 
+    //La perruque
     var chooseWig = async (avatar) => {
         setAvatar("avatarWig")
         setWig(true)
@@ -90,7 +95,6 @@ function Account(props) {
         borderA = {border: 'none'} 
     }
 
-
     //Afficher les réservations de l'utilisateur
 
     const data = [
@@ -102,7 +106,7 @@ function Account(props) {
             description: 'lundi 1 janvier 2020'
         },
     ];
-  
+
 
     return (
 
@@ -125,37 +129,10 @@ function Account(props) {
             <div className="my-account">
 
                 <Subtitle subtitle="Mes informations"/>
-                
-                <div className="grid-container">
 
-                    <div className="grid-item account-info"><Text text="Nom"/></div>
-                    <div className="grid-item "><Text text={currentUser.userFirstname}/></div>
+                <FormInfoUser/>
 
-                    <div className="grid-item account-info"><Text text="Prénom"/></div>
-                    <div className="grid-item"><Text text={currentUser.userLastName}/></div>
-
-                    <div className="grid-item account-info"><Text text="Email"/></div>
-                    <div className="grid-item"><Text text={currentUser.userEmail}/></div>
-                   
-                    <div className="grid-item account-info"><Text text="Date de naissance"/></div>
-                    <div className="grid-item"><Text text={currentUser.userBirthday}/></div>
-
-                    <div className="grid-item account-info"><Text text="Adresse"/></div>
-                    <div className="grid-item"><Text text={currentUser.userAddress}/></div>
-
-                    <div className="grid-item account-info"><Text text="Code postal"/></div>
-                    <div className="grid-item"><Text text={currentUser.userZIP}/></div>
-
-                    <div className="grid-item account-info"><Text text="Ville"/></div>
-                    <div className="grid-item"><Text text={currentUser.userCity}/></div>
-
-                    <div className="grid-item account-info"><Text text="Pays"/></div>
-                    <div className="grid-item"><Text text="France"/></div>
-                    
-                </div> 
-                    <Button buttonTitle="Modifier mes informations"/> 
-
-                </div>
+            </div>
 
                 {/* AVATAR */}
 

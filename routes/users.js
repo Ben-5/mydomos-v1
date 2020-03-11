@@ -29,13 +29,18 @@ router.post('/signup', async function(req, res, next) {
     var salt = uid2(32);
     var newUser = new UserModel ({
     userRef: await req.app.locals.userRefForm(),
-    userLastName: lastname,
+    userLastname: lastname,
     userFirstname: firstname,
     userEmail: mail,
     salt: salt,
     userPassword: SHA256(pswd + salt).toString(encBase64),
     token: uid2(32),
-    userAvatar : "https://i.pinimg.com/originals/40/66/50/40665088b153af9d6f0307f9c40b7300.png"
+    userAvatar : "avatarMedusa",
+    userBirthday: "",
+    userAddress: "",
+    userZIP: "",
+    userCity: "",
+    userCountry: ""
     });
 
     var userSaved = await newUser.save();
@@ -73,8 +78,28 @@ router.post('/changeavatar', async function(req, res, next) {
     { _id: req.body._id },
     { $set: { userAvatar : req.body.userAvatar}}
   );
+
   
   res.json({result: true, avatarSaved: avatar});
+});
+
+router.post('/updateInfo', async function(req, res, next) {
+
+  var info = await UserModel.updateOne(
+    { _id: req.body._id},
+    { $set: { 
+      userLastname : req.body.userLastname,
+      userFirstname : req.body.userFirstname,
+      userEmail : req.body.userEmail,
+      userBirthday : req.body.userBirthday,
+      userAddress : req.body.userAddress,
+      userZIP : req.body.userZIP,
+      userCity : req.body.userCity,
+      userCountry: req.body.userCountry
+    }}
+  );
+
+  res.json({result: true, userSaved: info});
 });
 
 module.exports = router;
