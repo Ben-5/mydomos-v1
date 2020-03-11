@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from 'react';
 
+
 export default function Input (props) {
 
     const [content, setContent] = useState(props.value || '');
     const [inputClass, setInputClass] = useState('');
 
-
-
     useEffect(()=> {
         props.error ? setInputClass('input-container input-error') : setInputClass('input-container');
     }, [props.error]);
 
+    // function handleEnter(e) {
+    //     if (e.key === 'Enter') {
+    //         if (props.onEnter) {
+    //             props.onEnter();
+    //         }
+    //     }
+    // }
+
+    // useEffect(()=>{
+    //     window.removeEventListener('keypress', handleEnter);
+    //     window.addEventListener('keypress', handleEnter);
+    // }, [content])
 
     return (
         <input
@@ -25,7 +36,10 @@ export default function Input (props) {
         placeholder={props.placeholder || 'PLACE HOLDER PROPS MISSING'}
         //style
         className={inputClass}
-        onClick={()=>{if (props.onClick){props.onClick()}}}
+        // OnClick Prop dont use it outside a form
+        onClick={()=>{
+            if (props.onClick && props.isInForm){props.onClick()}
+        }}
         >
         </input>
     );
