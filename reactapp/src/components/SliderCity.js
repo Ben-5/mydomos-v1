@@ -32,15 +32,14 @@ const tabSlider = slider.map((visit, i) => {
     if(visit.rate > 5){
         visit.rate = 5
     }
-     for(var i=0;i<5;i++){
+     for(var j=0;j<5;j++){
          var backgroundColor = {}
-         if(i<visit.rate){
+         if(j<visit.rate){
              backgroundColor = {backgroundColor:'#791212'}
          }
-         rateTAB.push(<span style={backgroundColor}  className="card_rate"></span>)
+         rateTAB.push(<span key={j} style={backgroundColor}  className="card_rate"></span>)
      }
         if(visit.slider === 'city'){
-            
     return ( 
         <Col key={i} className="card_col" xs={17} sm={17} md={12} lg={6}>
                 <h3 className="card_info">{visit.address.city}</h3>
