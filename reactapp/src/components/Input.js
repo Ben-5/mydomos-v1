@@ -25,6 +25,7 @@ export default function Input (props) {
         placeholder={props.placeholder || 'PLACE HOLDER PROPS MISSING'}
         //style
         className={inputClass}
+        onClick={()=>{if (props.onClick){props.onClick()}}}
         >
         </input>
     );

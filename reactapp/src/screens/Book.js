@@ -9,13 +9,9 @@ import Button from '../components/Button';
 
 import { Row, InputNumber } from 'antd';
 import {connect} from 'react-redux'
-// import { Redirect } from 'react-router-dom';
   
 
 function Book(props){
-
-    const [visit, setVisit] = useState([]);
-    const [info, setInfo] = useState([]);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -26,8 +22,11 @@ function Book(props){
         setInfo(data.visit[0].info) 
         }
         getinfo()
-
     },[])
+
+    const [visit, setVisit] = useState([]);
+    const [info, setInfo] = useState([]);
+
 
 
 //Formater la date
@@ -52,9 +51,20 @@ var handleAdd = (visit, save) => {
         time: save.time,
         price: save.price,
         quantity: quantity,
+        stock: save.stock
     }
     props.addVisitToBasket(toAdd);
 }
+
+console.log(visit.title)
+
+    //Afficher les billets restants
+    let stock
+    for (var i = 0; i < visit.info[i].opt.length; i ++) {
+        if (visit.info[i].opt.stock <= 3) {
+            let stock = <Text text={`Il ne reste que ${visit.info[i].stock} places`}/>
+        }
+    }
 
   return(
 
@@ -72,7 +82,7 @@ var handleAdd = (visit, save) => {
             
         {/* CRENEAU DU VISITE */}
             <div className="account-subtitle">
-                <Subtitle subtitle="Les visites disponibles"/>
+                <Subtitle subtitle={`Les visites disponibles pour ${visit.title}`}/>
             </div>
 
             {info.map((data,i) => (
@@ -82,7 +92,9 @@ var handleAdd = (visit, save) => {
                 <div className="grid-item-book book-date">
                     <div className="book-date"><Text text={new Date(data.date).toLocaleDateString('fr-FR', options)}/></div>
                     <div className="book-time"><Text text={data.time}/></div>
-                    <div className="book-stock"><Text text={`Il ne reste que ${data.stock} places`}/></div>
+                    <div className="book-time"><Text text={data.lang}/></div>
+                    <div className="book-time"><Text text={data.opt.join(" / ")}/></div>
+                    <div className="book-stock">{stock}</div>
                 </div>
                     <div><Text text={`${data.price} €`}/></div>
                     <div className="grid-item-book book-ticket"><InputNumber min={1} max={data.maxStock} defaultValue={1} onChange={e=>setQuantity(e)} value={quantity}/></div>
@@ -106,6 +118,6 @@ function mapDispatchToProps(dispatch){
         dispatch({type: 'addVisit', visit})
       }
     }
-  }
+}
 
   export default connect(null, mapDispatchToProps)(Book)

@@ -40,7 +40,8 @@ router.post('/signup', async function(req, res, next) {
     userAddress: "",
     userZIP: "",
     userCity: "",
-    userCountry: ""
+    userCountry: "",
+    userAvatar:"avatarMedusa",
     });
 
     var userSaved = await newUser.save();
