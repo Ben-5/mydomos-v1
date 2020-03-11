@@ -33,7 +33,7 @@ export default function Form (props) {
                 }
             });
         }
-    }, [isOnForm])
+    }, [isOnForm]);
 
 
     var changeToState = (content, position) => {
@@ -107,6 +107,7 @@ export default function Form (props) {
             onChange={e=>changeToState(e, i)}
             type={input.type}
             onClick={()=>setIsOnForm(true)}
+            isInForm={true}
             />
         );
     });

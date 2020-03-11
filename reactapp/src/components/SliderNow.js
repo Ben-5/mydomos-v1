@@ -20,10 +20,10 @@ export default function SliderNow() {
         getslider()  
     },[])
 
-
+    
 // recuperation info pour slider NOW (à la une) + Mise en place des notes
-
 const tabSlider = slider.map((visit, i) => {
+
     const rateTAB = []
     if(visit.rate < 0){
         visit.rate = 0
@@ -31,12 +31,12 @@ const tabSlider = slider.map((visit, i) => {
     if(visit.rate > 5){
         visit.rate = 5
     }
-     for(var i=0;i<5;i++){
+     for(var j=0;j<5;j++){
          var backgroundColor = {}
-         if(i<visit.rate){
+         if(j<visit.rate){
              backgroundColor = {backgroundColor:'#791212'}
          }
-         rateTAB.push(<span style={backgroundColor}  className="card_rate"></span>)
+         rateTAB.push(<span key={j} style={backgroundColor}  className="card_rate"></span>)
      }
         if(visit.slider === 'now'){
             

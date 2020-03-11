@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ExternalLink } from 'react-external-link';
 
 import {Col, Row} from 'antd';
@@ -8,6 +8,8 @@ import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
 
 export default function Footer() {
+    const [newInput, setNewInput] = useState('');
+
     return (
     <footer>
         <div className="newsletter-container">
@@ -16,7 +18,7 @@ export default function Footer() {
                     <Title title="Soyez exclusifs !"/>
                     <Subtitle subtitle="Abonnez-vous à notre newsletter pour découvrir les nouvelles visites et offres exclusives en priorité !"/>
                     <div className="newsletter-form" >
-                            <Input placeholder="email"/>
+                            <Input onChange={e=>setNewInput(e)} placeholder="email"/>
                             <OkButton/>
                     </div>
                 </Col>

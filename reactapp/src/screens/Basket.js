@@ -12,19 +12,40 @@ import SliderNow from '../components/SliderNow';
 
 
 import {Row, Col} from 'antd';
+import { request } from 'express';
 
 function Basket(props){
 
     const [basketList, setBasketList] = useState([]);
 
-
     useEffect(()=>{
         window.scrollTo(0, 0);
-    }, [])
+    }, []);
 
     useEffect(() => {
         setBasketList(props.visitInBasket);
     }, [props.visitInBasket]);
+
+
+    var handleCheckout = async (total) => {
+        
+        for (var i=0;i<basketList.length;i++){
+            
+            console.log('basketList[i] :', basketList[i]);
+            // var toSend = {
+
+            // };
+        }
+
+        var rawRes = await fetch('/checkout/getCart', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({'req': request, 'TOTAL': total}),
+        });
+
+    }
+
+
 
     //Formater la date
     const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
@@ -34,19 +55,31 @@ function Basket(props){
     var sliderTitle;
     var buttonConfirm;
     var buttonLink;
+    var checkoutButton;
     
     if(!basketList[0]){
-        subVisit = "Vous n'avez aucune visite dans votre sélection."
-        sliderTitle = "Pourquoi ne pas commencez par celles-ci ?"
-        buttonConfirm = "Rechercher des visites"
-        buttonLink = "/results"
+        subVisit = "Vous n'avez aucune visite dans votre sélection.";
+        sliderTitle = "Pourquoi ne pas commencez par celles-ci ?";
+        buttonConfirm = "Rechercher des visites";
+        buttonLink = "/results";
+        checkoutButton = (<Button buttonTitle={buttonConfirm} link={buttonLink}/>);
     } else {
-        subVisit = "Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés"
-        sliderTitle = "Découvrez d'autres lieux"
-        buttonConfirm = "Valider la commande"
-        buttonLink = "/signin"
-
+        subVisit = "Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés";
+        sliderTitle = "Découvrez d'autres lieux";
+        buttonConfirm = "Valider la commande";
+        checkoutButton = (<Button buttonTitle={buttonConfirm} onClick={()=>handleCheckout(totalCmd)}/>);
     }
+
+    //Afficher le total du panier
+    let total 
+    let totalCmd = 0
+    for (var i = 0; i < basketList.length; i++ ) {
+       totalCmd = basketList[i].price * basketList[i].quantity + totalCmd
+       total = totalCmd + " €";
+    }
+
+
+
     return(
 
     <div className="background">
@@ -82,20 +115,26 @@ function Basket(props){
                         <Row style={{paddingTop: '3vmin', paddingBottom: '3vmin'}} justify="space-between" align='middle'>
                             <Text text={order.time} />
                             <Text text={`${order.price} € par personne`}/>
+                            <Text text={`${order.quantity} places`} />
                             <Text text={`${order.price * order.quantity} €`}/>
-                            <Text text={`${order.stock} places restantes`} />
                             <Text onClick={()=>props.rmvFromCart(i)} isLink={true} text={`Supprimer`} />
                         </Row>
                 </Col>
                 
             </Row>
 
+            
+
         ))}
+
+            <Row align="middle" className="menu-basket">
+                <Text text={total}/>
+            </Row>
 
         {/* start partie remplacée par className=fixed-menu-visit  */}
         
         <Row align="middle" className="menu-basket">
-            <Button link={buttonLink} buttonTitle={buttonConfirm}/>
+            {checkoutButton}
         </Row>
         
     </div>
