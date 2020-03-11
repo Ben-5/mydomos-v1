@@ -1134,7 +1134,7 @@ margin-bottom: 1vmin;
 }
 
 .picto-portrait {
-  width: 35vmin ;
+  height: 25vmin ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1226,7 +1226,7 @@ margin-bottom: 1vmin;
 }
 
 .picto-medusa {
-  width: 35vmin;
+  width: 24vmin;
   display: flex;
   justify-content: center;
   align-items: center;
