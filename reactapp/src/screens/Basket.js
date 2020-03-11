@@ -54,9 +54,7 @@ function Basket(props){
 
         <div  className="body-screen">
 
-            <div className= "main-caption">
-                
-                <Row>
+            <Row className= "main-caption">
 
                 <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:2}} lg ={{span:12, order:1}} xl ={{span:12, order:1}}>
                     <Title title="Votre sélection"/>
@@ -67,9 +65,7 @@ function Basket(props){
                     <img src="../fan.png" className="fan" alt="fan" />  
                 </Col>
 
-                </Row>
-
-            </div>
+            </Row>
 
 
         {/* ---->ROW className="success-container" A MAPPER AVEC BDD<---- */}
