@@ -54,7 +54,7 @@ function App(props) {
                 <div className= "middle-caption">
                 <Row>
                     <Col className="middle-caption-image" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:1}} lg ={{span:12, order:1}}>
-                        <span className="middle-caption-background"><img src="../headset.png" className="headset" alt="headset"/></span>  
+                        <span className="middle-caption-background"><img src="../headphones.png" className="headphones" alt="headphones"/></span>  
                     </Col>
                     <Col className="middle-caption-text-button" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:2}} lg ={{span:12, order:2}}>
                         <div className="middle-caption-text">

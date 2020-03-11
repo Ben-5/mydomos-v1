@@ -14,10 +14,6 @@ import {Link} from 'react-router-dom'
 
 function Account(props) {
 
-    useEffect( ()=>{
-        console.log('currentUser :', currentUser);
-    }, [props.getCurrentUser])
-
     const [currentUser, setCurrentUser] = useState(props.getCurrentUser || {});
     const [avatar, setAvatar] = useState(props.getCurrentUser.userAvatar || "")
     const [wig, setWig] = useState(false)
@@ -26,9 +22,9 @@ function Account(props) {
     
     //Sélectionner avatar
 
-    var avatarMedusa = "https://i.pinimg.com/originals/ad/28/d7/ad28d7a340ebb80456cb80ebe9d370c7.png"
-    var avatarArmor = "https://i.pinimg.com/originals/40/66/50/40665088b153af9d6f0307f9c40b7300.png"
-    var avatarWig = "https://i.pinimg.com/originals/cd/ec/1c/cdec1cf376a1b8e1474124944af84d30.png"
+    var avatarMedusa = "https://i.pinimg.com/originals/cb/0c/ca/cb0cca26f462d845354ed8d8392a9c26.png"
+    var avatarArmor = "https://i.pinimg.com/originals/59/12/f3/5912f3ea00d3c097cfaf76ac5c3e92b5.png"
+    var avatarWig = "https://i.pinimg.com/originals/9b/8a/95/9b8a9506be47bc780710976192180b55.png"
     
 
     var chooseMedusa = async (avatar) => {
@@ -115,6 +111,7 @@ function Account(props) {
             <div style={{marginLeft: '2vmin', marginTop: '4vmin'}}>
 
                 <Title title="Mon compte"/>
+                <Button onClick={()=>props.signout()} buttonTitle="Me Deconnecter"/> 
 
             </div>
 
@@ -166,7 +163,7 @@ function Account(props) {
                     <div className="avatar">
 
                     <div className="middle-caption-image">
-                        <span className="background-medusa" style={borderM}><img src={avatarMedusa} className="picto-medusa" alt="picto-portrait" onClick={() => {chooseMedusa("avatarMedusa"); props.changeAvatar("avatarMedusa")}}/></span>  
+                        <span className="background-wig" style={borderW}><img src={avatarWig} className="picto-portrait" alt="picto-portrait" onClick={() => {chooseWig("avatarWig"); props.changeAvatar("avatarWig")} }/></span>  
                     </div>
 
                     <div className="middle-caption-image">
@@ -174,7 +171,7 @@ function Account(props) {
                     </div>
 
                     <div className="middle-caption-image">
-                        <span className="background-wig" style={borderW}><img src={avatarWig} className="picto-portrait" alt="picto-portrait" onClick={() => {chooseWig("avatarWig"); props.changeAvatar("avatarWig")} }/></span>  
+                        <span className="background-medusa" style={borderM}><img src={avatarMedusa} className="picto-medusa" alt="picto-portrait" onClick={() => {chooseMedusa("avatarMedusa"); props.changeAvatar("avatarMedusa")}}/></span>  
                     </div>
 
                     </div>
@@ -336,7 +333,10 @@ function mapDispatchToProps(dispatch) {
     return {
         changeAvatar: function(avatar) { 
           dispatch( {type: 'changeAvatar', avatar : avatar} ) 
-      }
+        },
+        signout: function() { 
+            dispatch( {type: 'signout'} )
+        },
     }
 }
 

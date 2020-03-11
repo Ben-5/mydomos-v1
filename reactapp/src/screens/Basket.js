@@ -15,11 +15,16 @@ import {Row, Col} from 'antd';
 
 function Basket(props){
 
-    const [basketList] = useState(props.visitInBasket);
+    const [basketList, setBasketList] = useState([]);
+
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    }, [])
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        setBasketList(props.visitInBasket);
+    }, [props.visitInBasket]);
 
     //Formater la date
     const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
@@ -29,8 +34,8 @@ function Basket(props){
     var sliderTitle;
     var buttonConfirm;
     var buttonLink;
-
-    if(props.visitInBasket === 0){
+    
+    if(!basketList[0]){
         subVisit = "Vous n'avez aucune visite dans votre sélection."
         sliderTitle = "Pourquoi ne pas commencez par celles-ci ?"
         buttonConfirm = "Rechercher des visites"
@@ -40,8 +45,8 @@ function Basket(props){
         sliderTitle = "Découvrez d'autres lieux"
         buttonConfirm = "Valider la commande"
         buttonLink = "/signin"
+
     }
-console.log('basketList :', basketList);
     return(
 
     <div className="background">
@@ -49,9 +54,7 @@ console.log('basketList :', basketList);
 
         <div  className="body-screen">
 
-            <div className= "main-caption">
-                
-                <Row>
+            <Row className= "main-caption">
 
                 <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:2}} lg ={{span:12, order:1}} xl ={{span:12, order:1}}>
                     <Title title="Votre sélection"/>
@@ -62,9 +65,7 @@ console.log('basketList :', basketList);
                     <img src="../fan.png" className="fan" alt="fan" />  
                 </Col>
 
-                </Row>
-
-            </div>
+            </Row>
 
 
         {/* ---->ROW className="success-container" A MAPPER AVEC BDD<---- */}
@@ -74,24 +75,27 @@ console.log('basketList :', basketList);
             <Row key={i} className="success-container">
 
                 <Col xs={{span:24}}>
-                <Subtitle subtitle={order.title} />
+                <Subtitle subtitle={`${order.title} - ${new Date(order.date).toLocaleDateString('fr-FR', options)}`} />
                     <Col style={{borderTopStyle: "inset"}}>
-                        <Text text={new Date(order.date).toLocaleDateString('fr-FR', options)}/>
-                        <Text text={order.time} />
+                        
                     </Col>
-                        <Row justify="space-between" align='middle'>
+                        <Row style={{paddingTop: '3vmin', paddingBottom: '3vmin'}} justify="space-between" align='middle'>
+                            <Text text={order.time} />
                             <Text text={`${order.price} € par personne`}/>
-                            <div>{`${order.price * order.quantity} €`}</div>
+                            <Text text={`${order.price * order.quantity} €`}/>
+                            <Text text={`${order.stock} places restantes`} />
+                            <Text onClick={()=>props.rmvFromCart(i)} isLink={true} text={`Supprimer`} />
                         </Row>
-                        <Text text={`2 places`} />
                 </Col>
+                
             </Row>
 
         ))}
 
         {/* start partie remplacée par className=fixed-menu-visit  */}
+        
         <Row align="middle" className="menu-basket">
-            <Button link={buttonLink} buttonTitle={buttonConfirm}/>
+            <Button link={buttonLink} buttonTitle={buttonConfirm}/>
         </Row>
         
     </div>
@@ -140,4 +144,12 @@ function mapStateToProps(state) {
     return {visitInBasket: state.visit}
 }
 
-export default connect(mapStateToProps, null)(Basket)
+function mapDispatchToProps(dispatch){
+    return {
+      rmvFromCart: function(index){
+        dispatch({type: 'rmvVisit', toRmv: index});
+      }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Basket)

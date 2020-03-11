@@ -14,22 +14,25 @@ function Header(props) {
     var pictoAvatar
     if (props.getCurrentUser) {
             if (props.getCurrentUser.userAvatar === "avatarMedusa") {
-                pictoAvatar = "https://i.pinimg.com/originals/d9/da/ee/d9daee40abe5c7bc82c5b69874bd19b2.png"
+                pictoAvatar = "https://i.pinimg.com/originals/71/9c/e0/719ce0c638ca25a20bdf096ffc0e6501.png"
             } else if (props.getCurrentUser.userAvatar === "avatarArmor") {
-                pictoAvatar = "https://i.pinimg.com/originals/e8/9f/61/e89f61356b20acb2f65ab25e5191ce8b.png"
+                pictoAvatar = "https://i.pinimg.com/originals/6d/7e/d1/6d7ed13dc8172578feaa84dbd25c915b.png"
             } else if (props.getCurrentUser.userAvatar === "avatarWig") {
-                pictoAvatar = "https://i.pinimg.com/originals/18/4a/a7/184aa79ab86d3a3a65a63a32c4fa1b33.png"
+                pictoAvatar = "https://i.pinimg.com/originals/3c/62/96/3c62962b72f5a24b854cfce7049424de.png"
             }    
     } else {
         pictoAvatar = "../picto-key.png"
     } 
 
     //Changement de tooltip connexion/mon compte
-    var account 
+    var account;
+    var link;
     if (currentUser.userAvatar) {
-        account = "mon compte"
+        account = "mon compte";
+        link='/account';
     } else {
-        account = "connexion"
+        account = "connexion";
+        link='/signin';
     }
 
 
@@ -62,7 +65,7 @@ function Header(props) {
                             <span className="picto-background"><img src="../picto-bag.png" className="picto" alt="picto"/></span>
                             </Tooltip>
                             </Link>
-                            <Link to='/signin'>
+                            <Link to={link}>
                             <Tooltip placement="bottomRight" title={account}>
                             <span className="picto-background"><img src={pictoAvatar} className="picto" alt="picto"/></span>
                             </Tooltip>

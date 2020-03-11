@@ -35,7 +35,7 @@ router.post('/signup', async function(req, res, next) {
     salt: salt,
     userPassword: SHA256(pswd + salt).toString(encBase64),
     token: uid2(32),
-    userAvatar : "https://i.pinimg.com/originals/40/66/50/40665088b153af9d6f0307f9c40b7300.png"
+    userAvatar:"avatarMedusa",
     });
 
     var userSaved = await newUser.save();

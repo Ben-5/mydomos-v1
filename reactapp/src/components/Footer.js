@@ -1,4 +1,6 @@
 import React from 'react';
+import { ExternalLink } from 'react-external-link';
+
 import {Col, Row} from 'antd';
 import Input from '../components/Input';
 import OkButton from '../components/OkButton';
@@ -25,9 +27,9 @@ export default function Footer() {
         </div>    
         <div className= "footer-container">
             <div className= "socials-container">
-                <img src="../facebook.png" className="socials-button" alt="facebook" />
-                <img src="../instagram.png" className="socials-button" alt="instagram" />
-                <img src="../linkedin.png" className="socials-button" alt="flinkedin" />
+                <ExternalLink href="//facebook.com/"><img src="../facebook.png" className="socials-button" alt="facebook"/></ExternalLink>
+                <ExternalLink href="//instagram.com/mydomos/"><img src="../instagram.png" className="socials-button" alt="instagram"/></ExternalLink>
+                <ExternalLink href="//linkedin.com/"><img src="../linkedin.png" className="socials-button" alt="flinkedin"/></ExternalLink>
             </div>
             <div className="footer-links">
                 <h3 className="footer-title">À propos</h3>
