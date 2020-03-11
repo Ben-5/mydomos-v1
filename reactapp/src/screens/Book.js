@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 
 import Header from '../components/Header';
+import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Title from '../components/Title';
 import Text from '../components/Text';
 import Subtitle from '../components/Subtitle';
 import Button from '../components/Button';
 
-import { Row, InputNumber } from 'antd';
+import { Row, Col, InputNumber } from 'antd';
 import {connect} from 'react-redux'
 // import { Redirect } from 'react-router-dom';
   
@@ -63,9 +64,24 @@ var handleAdd = (visit, save) => {
         <Header/>
 
         <div  className="body-screen">
-            <Row justify="center" className="success-title">
-                <Title title='Choisissez votre visite'/>
-            </Row>
+
+            <div className="main-caption" style={{marginBottom:"6vmin"}}>
+                
+                <Row>
+
+                <Col className= "main-caption-text" xs ={{span:24, order:2}} sm ={{span:24, order:2}} md ={{span:24, order:2}} lg ={{span:12, order:1}} xl ={{span:12, order:1}}>
+                    <Title title="Faites votre choix !"/>
+                    <Subtitle subtitle="Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés"/>
+                </Col>
+
+                <Col className="olive-animation" xs ={{span:24, order:1}} sm ={{span:24, order:1}} md ={{span:24, order:1}} lg ={{span:12, order:2}} xl ={{span:12, order:2}}>
+                    <img src="../hand-olive.png" className="hand-olive" alt="hand-olive" />
+                    <img src="../stick-olive.png" className="stick-olive" alt="stick-olive" />     
+                </Col>
+
+                </Row>
+
+            </div>
 
         {/* CALENDRIER */}
         {/* Composant calendrier ici */}
@@ -94,6 +110,7 @@ var handleAdd = (visit, save) => {
         </div>
 
         <Footer/>
+        <Navigation/>
      
     </div>
 
