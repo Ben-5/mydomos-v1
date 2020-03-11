@@ -59,12 +59,12 @@ var handleAdd = (visit, save) => {
 console.log(visit.title)
 
     //Afficher les billets restants
-    let stock
-    for (var i = 0; i < visit.info[i].opt.length; i ++) {
-        if (visit.info[i].opt.stock <= 3) {
-            let stock = <Text text={`Il ne reste que ${visit.info[i].stock} places`}/>
-        }
-    }
+    // let stock
+    // for (var i = 0; i < visit.info[i].opt.length; i ++) {
+    //     if (visit.info[i].opt.stock <= 3) {
+    //         let stock = <Text text={`Il ne reste que ${visit.info[i].stock} places`}/>
+    //     }
+    // }
 
   return(
 
@@ -94,7 +94,7 @@ console.log(visit.title)
                     <div className="book-time"><Text text={data.time}/></div>
                     <div className="book-time"><Text text={data.lang}/></div>
                     <div className="book-time"><Text text={data.opt.join(" / ")}/></div>
-                    <div className="book-stock">{stock}</div>
+                    {/* <div className="book-stock">{stock}</div> */}
                 </div>
                     <div><Text text={`${data.price} €`}/></div>
                     <div className="grid-item-book book-ticket"><InputNumber min={1} max={data.maxStock} defaultValue={1} onChange={e=>setQuantity(e)} value={quantity}/></div>
