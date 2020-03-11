@@ -53,8 +53,18 @@ function Basket(props){
         sliderTitle = "Découvrez d'autres lieux";
         buttonConfirm = "Valider la commande";
         checkoutButton = (<Button buttonTitle={buttonConfirm} onClick={()=>handleCheckout()}/>);
-
     }
+    
+    //Afficher le total du panier
+    let total 
+    let totalCmd = 0
+    for (var i = 0; i < basketList.length; i++ ) {
+       totalCmd = basketList[i].price * basketList[i].quantity + totalCmd
+       total = totalCmd + " €"
+    }
+
+
+
     return(
 
     <div className="background">
@@ -90,15 +100,21 @@ function Basket(props){
                         <Row style={{paddingTop: '3vmin', paddingBottom: '3vmin'}} justify="space-between" align='middle'>
                             <Text text={order.time} />
                             <Text text={`${order.price} € par personne`}/>
+                            <Text text={`${order.quantity} places`} />
                             <Text text={`${order.price * order.quantity} €`}/>
-                            <Text text={`${order.stock} places restantes`} />
                             <Text onClick={()=>props.rmvFromCart(i)} isLink={true} text={`Supprimer`} />
                         </Row>
                 </Col>
                 
             </Row>
 
+            
+
         ))}
+
+            <Row align="middle" className="menu-basket">
+                <Text text={total}/>
+            </Row>
 
         {/* start partie remplacée par className=fixed-menu-visit  */}
         
