@@ -17,14 +17,20 @@ function Basket(props){
 
     const [basketList, setBasketList] = useState([]);
 
-
     useEffect(()=>{
         window.scrollTo(0, 0);
-    }, [])
+    }, []);
 
     useEffect(() => {
         setBasketList(props.visitInBasket);
     }, [props.visitInBasket]);
+
+
+    var handleCheckout = () => {
+
+    }
+
+
 
     //Formater la date
     const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
@@ -34,17 +40,19 @@ function Basket(props){
     var sliderTitle;
     var buttonConfirm;
     var buttonLink;
+    var checkoutButton;
     
     if(!basketList[0]){
-        subVisit = "Vous n'avez aucune visite dans votre sélection."
-        sliderTitle = "Pourquoi ne pas commencez par celles-ci ?"
-        buttonConfirm = "Rechercher des visites"
-        buttonLink = "/results"
+        subVisit = "Vous n'avez aucune visite dans votre sélection.";
+        sliderTitle = "Pourquoi ne pas commencez par celles-ci ?";
+        buttonConfirm = "Rechercher des visites";
+        buttonLink = "/results";
+        checkoutButton = (<Button buttonTitle={buttonConfirm} link={buttonLink}/>);
     } else {
-        subVisit = "Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés"
-        sliderTitle = "Découvrez d'autres lieux"
-        buttonConfirm = "Valider la commande"
-        buttonLink = "/signin"
+        subVisit = "Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés";
+        sliderTitle = "Découvrez d'autres lieux";
+        buttonConfirm = "Valider la commande";
+        checkoutButton = (<Button buttonTitle={buttonConfirm} onClick={()=>handleCheckout()}/>);
 
     }
     return(
@@ -95,7 +103,7 @@ function Basket(props){
         {/* start partie remplacée par className=fixed-menu-visit  */}
         
         <Row align="middle" className="menu-basket">
-            <Button link={buttonLink} buttonTitle={buttonConfirm}/>
+            {checkoutButton}
         </Row>
         
     </div>

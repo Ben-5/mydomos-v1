@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var visitRouter = require('./routes/visit');
+var paymentRouter = require('./routes/payment');
 
 var app = express();
 var uniqid = require('uniqid');
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'reactapp/build')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/visit', visitRouter);
+app.use('/checkout', paymentRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
