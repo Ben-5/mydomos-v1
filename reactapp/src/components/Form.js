@@ -10,6 +10,7 @@ export default function Form (props) {
     const [linkDis] = useState(props.linkList);
     const [result, setResult] = useState([]);
     const [errorDis, setErrorDis] = useState([]);
+    const [isOnForm, setIsOnForm] = useState(false);
     
     useEffect(()=> {
         var test = props.inputList
@@ -23,6 +24,17 @@ export default function Form (props) {
         }
         setResult(cpy);
     }, [props.inputList]);
+
+    useEffect(()=>{
+        if (isOnForm) {
+            window.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    postTheForm();
+                }
+            });
+        }
+    }, [isOnForm])
+
 
     var changeToState = (content, position) => {
         var cpy = [...result];
@@ -94,6 +106,7 @@ export default function Form (props) {
             placeholder={input.placeholder}
             onChange={e=>changeToState(e, i)}
             type={input.type}
+            onClick={()=>setIsOnForm(true)}
             />
         );
     });

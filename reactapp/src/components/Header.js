@@ -25,11 +25,14 @@ function Header(props) {
     } 
 
     //Changement de tooltip connexion/mon compte
-    var account 
+    var account;
+    var link;
     if (currentUser.userAvatar) {
-        account = "mon compte"
+        account = "mon compte";
+        link='/account';
     } else {
-        account = "connexion"
+        account = "connexion";
+        link='/signin';
     }
 
 
@@ -62,7 +65,7 @@ function Header(props) {
                             <span className="picto-background"><img src="../picto-bag.png" className="picto" alt="picto"/></span>
                             </Tooltip>
                             </Link>
-                            <Link to='/signin'>
+                            <Link to={link}>
                             <Tooltip placement="bottomRight" title={account}>
                             <span className="picto-background"><img src={pictoAvatar} className="picto" alt="picto"/></span>
                             </Tooltip>
