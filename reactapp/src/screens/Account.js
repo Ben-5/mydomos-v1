@@ -14,10 +14,6 @@ import {Link} from 'react-router-dom'
 
 function Account(props) {
 
-    useEffect( ()=>{
-        console.log('currentUser :', currentUser);
-    }, [props.getCurrentUser])
-
     const [currentUser, setCurrentUser] = useState(props.getCurrentUser || {});
     const [avatar, setAvatar] = useState(props.getCurrentUser.userAvatar || "")
     const [wig, setWig] = useState(false)
@@ -115,6 +111,7 @@ function Account(props) {
             <div style={{marginLeft: '2vmin', marginTop: '4vmin'}}>
 
                 <Title title="Mon compte"/>
+                <Button onClick={()=>props.signout()} buttonTitle="Me Deconnecter"/> 
 
             </div>
 
@@ -336,7 +333,10 @@ function mapDispatchToProps(dispatch) {
     return {
         changeAvatar: function(avatar) { 
           dispatch( {type: 'changeAvatar', avatar : avatar} ) 
-      }
+        },
+        signout: function() { 
+            dispatch( {type: 'signout'} )
+        },
     }
 }
 
