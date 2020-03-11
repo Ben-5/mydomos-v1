@@ -44,14 +44,14 @@ var goToBasket = () => {
 
 var handleAdd = (visit, save) => {
     var toAdd = {
-        visitId: visit._id,
         infoId: save._id,
         title: visit.title,
         date: save.date,
         time: save.time,
         price: save.price,
         quantity: quantity,
-        stock: save.stock
+        stock: save.stock,
+        img: visit.cover,
     }
     props.addVisitToBasket(toAdd);
 }

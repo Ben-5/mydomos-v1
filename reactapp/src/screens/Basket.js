@@ -12,6 +12,7 @@ import SliderNow from '../components/SliderNow';
 
 
 import {Row, Col} from 'antd';
+import { request } from 'express';
 
 function Basket(props){
 
@@ -26,7 +27,21 @@ function Basket(props){
     }, [props.visitInBasket]);
 
 
-    var handleCheckout = () => {
+    var handleCheckout = async (total) => {
+        
+        for (var i=0;i<basketList.length;i++){
+            
+            console.log('basketList[i] :', basketList[i]);
+            // var toSend = {
+
+            // };
+        }
+
+        var rawRes = await fetch('/checkout/getCart', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({'req': request, 'TOTAL': total}),
+        });
 
     }
 
@@ -52,15 +67,15 @@ function Basket(props){
         subVisit = "Réservez des visites exclusives de maisons historiques privées animées par des propriétaires passionés";
         sliderTitle = "Découvrez d'autres lieux";
         buttonConfirm = "Valider la commande";
-        checkoutButton = (<Button buttonTitle={buttonConfirm} onClick={()=>handleCheckout()}/>);
+        checkoutButton = (<Button buttonTitle={buttonConfirm} onClick={()=>handleCheckout(totalCmd)}/>);
     }
-    
+
     //Afficher le total du panier
     let total 
     let totalCmd = 0
     for (var i = 0; i < basketList.length; i++ ) {
        totalCmd = basketList[i].price * basketList[i].quantity + totalCmd
-       total = totalCmd + " €"
+       total = totalCmd + " €";
     }
 
 
